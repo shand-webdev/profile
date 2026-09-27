@@ -1,0 +1,113 @@
+[
+  {
+    "id": "cheeko",
+    "number": "01",
+    "name": "CHEEKO",
+    "tagline": "AI Consumer Hardware",
+    "period": "2025 – Present",
+    "status": "Active / In Production Preparation",
+    "summary": "Building an AI-first physical consumer device that brings interactive conversational intelligence to kids without addictive screen-time.",
+    "role": "Product Builder & Lead (Cross-functional: AI, Hardware, DFM, UX)",
+    "tags": ["Product", "AI", "Hardware", "UX", "Manufacturing"],
+    "hero_image": "assets/images/device_bare.png",
+    "accent_color": "#ff6b4a",
+    "meta": {
+      "display": "320×240 IPS Display",
+      "interaction": "Physical Knob + Dual Button + Voice AI",
+      "manufacturing": "Injection Molded Enclosure (ABS/PC), Custom DFM Tooling",
+      "packaging": "CMYK Box + Interactive Card System"
+    },
+    "overview": "Cheeko is an AI consumer hardware device designed from the ground up to turn digital conversational AI into a safe, tactile physical companion. Instead of an open tablet or smartphone screen, Cheeko utilizes a purposeful 320×240 interface, robust physical controls (rotary knob, tactile buttons), and low-latency voice AI interaction.",
+    "key_contributions": [
+      "Orchestrated cross-functional product development bridging industrial design, mechanical tooling, firmware, and AI conversational pipelines.",
+      "Defined the 320×240 UX constraints, ensuring glanceable interactions and purposeful non-distracting visual feedback.",
+      "Resolved critical injection molding and ejection issues directly with tooling partners, balancing surface texture, draft angles, and diamond polishing.",
+      "Engineered packaging as a physical onboarding interface, integrating custom-printed CMYK cards that trigger physical-to-digital interactions."
+    ],
+    "links": [
+      { "label": "Case Study", "url": "#/cheeko" },
+      { "label": "Builder Logs (Cheeko)", "url": "#/logs?project=Cheeko" }
+    ]
+  },
+  {
+    "id": "insol",
+    "number": "02",
+    "name": "INSOL",
+    "tagline": "AI Language-Learning Product",
+    "period": "2025 – 2026",
+    "status": "Shipped / Live System",
+    "summary": "Conversational AI platform designed for immersive spoken language practice with real-time feedback and dynamic conversation trees.",
+    "role": "Product & Technical Lead",
+    "tags": ["AI", "Voice", "Product", "Software"],
+    "hero_image": "assets/images/bedtime.png",
+    "accent_color": "#3b82f6",
+    "meta": {
+      "pipeline": "Speech-to-Text → LLM Intent Engine → Low-Latency TTS",
+      "stack": "FastAPI, Python, WebSocket Audio Streaming, Evaluation Framework",
+      "core_metric": "Sub-800ms conversational turn latency"
+    },
+    "overview": "Insol reframes language acquisition from rote grammar drills into situational spoken dialogue. By engineering low-latency conversational audio loops and pedagogical prompting boundaries, Insol simulates real-world spoken interactions with non-judgmental conversational pacing.",
+    "key_contributions": [
+      "Architected conversational voice loop balancing ASR token streaming, LLM first-token generation, and streaming audio synthesis.",
+      "Designed prompt eval suites to guard against language drift, hallucinated idioms, and premature turn-taking.",
+      "Conducted usability testing with non-native speakers to tune voice interruptibility and silence detection thresholds."
+    ],
+    "links": [
+      { "label": "Builder Logs", "url": "#/logs?project=Insol" }
+    ]
+  },
+  {
+    "id": "science-experience-centre",
+    "number": "03",
+    "name": "PARAM SCIENCE EXPERIENCE CENTRE",
+    "tagline": "Interactive Technology Experiences",
+    "period": "2022 – 2024",
+    "status": "Publicly Deployed (Bangalore)",
+    "summary": "Curated and engineered large-scale physical and interactive installations translating complex optical physics and system dynamics into tangible experiences.",
+    "role": "Curator & Experience Lead (Product Owner)",
+    "tags": ["Engineering", "Product", "Interaction", "Systems"],
+    "hero_image": "assets/images/news.png",
+    "accent_color": "#10b981",
+    "meta": {
+      "footprint": "Multi-zone permanent museum gallery ('House of Glass')",
+      "flagship": "GyroLens (Rotational motion + optical convergence exhibit)",
+      "audience": "10,000+ monthly visitors across diverse age groups"
+    },
+    "overview": "Led the end-to-end design, mechanical prototyping, and execution of the House of Glass gallery and GyroLens exhibit. Treated physical exhibition spaces as software platforms—where exhibits operate as modular features designed for intuitive discoverability without dense instructional text.",
+    "key_contributions": [
+      "Conceptualized, prototyped, and deployed the GyroLens flagship exhibit combining a motorized gyroscope and convex optics.",
+      "Managed multidisciplinary teams of fabricators, optical engineers, architects, and educators over a 2-year lifecycle.",
+      "Designed for physical fault tolerance, extreme wear-and-tear, and zero-instruction user affordances."
+    ],
+    "links": [
+      { "label": "Builder Logs", "url": "#/logs?project=Science%20Experience%20Centre" }
+    ]
+  },
+  {
+    "id": "onstrays",
+    "number": "04",
+    "name": "ONSTRAYS & H.I SYSTEMS",
+    "tagline": "Real-Time Social & Expression Platforms",
+    "period": "2024 – 2025",
+    "status": "MVP / Research System",
+    "summary": "Platforms exploring nuanced social interaction, structured debate mechanics, and high-performance knowledge retrieval systems.",
+    "role": "Product & Systems Designer",
+    "tags": ["Software", "UX", "Systems", "AI"],
+    "hero_image": "assets/images/sprint.png",
+    "accent_color": "#8b5cf6",
+    "meta": {
+      "debate_system": "H.I Expression Framework (Reasoning-based endorsements over likes)",
+      "knowledge_system": "18-Volume Mahabharata RAG Pipeline with Redis Caching (~800x latency reduction)",
+      "field_research": "Zomato last-mile logistics immersion"
+    },
+    "overview": "Explored structured digital systems designed for thoughtful human deliberation rather than dopamine-driven virality. Designed interaction patterns that require explicit stance declaration, paired with high-performance vector retrieval architectures.",
+    "key_contributions": [
+      "Engineered an 18-volume RAG knowledge retrieval system utilizing semantic chunking and Redis caching to eliminate repeated LLM compute costs.",
+      "Designed UI interaction patterns that substituted emotional reactions (likes) with structured intellectual endorsements and reasoned counter-arguments.",
+      "Embedded in last-mile logistics operations to analyze behavioral gamification and incentive loops from first principles."
+    ],
+    "links": [
+      { "label": "Builder Logs", "url": "#/logs?project=Onstrays" }
+    ]
+  }
+]
