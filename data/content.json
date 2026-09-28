@@ -10,7 +10,7 @@
   "projects": [
     {
       "id": "cheeko",
-      "name": "CHEEKO",
+      "name": "Cheeko",
       "tagline": "AI companion for kids",
       "category_tags": "AI · Hardware · Product",
       "period": "2025 – Present",
@@ -29,7 +29,7 @@
     },
     {
       "id": "insol",
-      "name": "INSOL",
+      "name": "Insol",
       "tagline": "AI language-learning product",
       "category_tags": "AI · Voice · Software",
       "period": "2025 – 2026",
@@ -46,27 +46,9 @@
       ]
     },
     {
-      "id": "science-centre",
-      "name": "PARAM SCIENCE EXPERIENCE CENTRE",
-      "tagline": "Interactive physical experiences",
-      "category_tags": "Engineering · Product · Experiences",
-      "period": "2022 – 2024",
-      "featured": false,
-      "image": "assets/images/news.png",
-      "image_alt": "Param Science Centre interactive installation",
-      "summary": "Large-scale physical and interactive installations translating complex optical physics and system dynamics into tangible experiences.",
-      "long_description": "Curated and engineered the House of Glass gallery and designed the GyroLens flagship exhibit. We treated physical spaces like software platforms: exhibits had to be durable, intuitive without reading plaques, and resilient to hundreds of thousands of hands.",
-      "my_role": "Curator & Experience Lead (Product Owner)",
-      "specs": [
-        { "label": "Scale", "value": "Permanent museum gallery" },
-        { "label": "Audience", "value": "10,000+ monthly visitors" },
-        { "label": "Key Exhibit", "value": "GyroLens (Rotational momentum + optics)" }
-      ]
-    },
-    {
       "id": "onstrays",
-      "name": "ONSTRAYS",
-      "tagline": "Real-time social communication product",
+      "name": "OnStrays",
+      "tagline": "Real-time social communication & debate platform",
       "category_tags": "Software · Systems · Interaction",
       "period": "2024 – 2025",
       "featured": false,
@@ -75,10 +57,84 @@
       "summary": "Platforms exploring nuanced social interaction, structured debate mechanics, and high-performance knowledge retrieval systems.",
       "long_description": "Explored structured digital interaction patterns designed for thoughtful debate rather than dopamine-driven engagement loops. Built alongside high-performance vector retrieval architectures and semantic caching systems.",
       "my_role": "Product & Systems Lead",
+      "context": "Most social platforms reduce complex ideas into simplistic engagement metrics like likes and shares, encouraging popularity over clarity. The H.I (Human Intelligence) app aimed to create a space where ideas could be evaluated, debated, and endorsed thoughtfully rather than reactively.",
+      "scope": "Designed the core UI and interaction system for the MVP, including a universal expression framework, endorsement mechanics, structured debate flows, identity abstraction, and onboarding experience.",
+      "thinking": "Instead of designing for engagement, I designed for judgment. Reactions were reframed as signals of reasoning rather than emotion. Debate was structured to require an explicit stance before participation, reducing noise and encouraging intent.",
+      "outcome": "Delivered a coherent MVP interface that operationalized the product's philosophy through interaction design. The system enabled clearer feedback on ideas, visible alignment or disagreement, and structured discourse.",
       "specs": [
         { "label": "Architecture", "value": "Semantic Caching & Grounded RAG" },
         { "label": "Interaction", "value": "Reasoned stances over emotional likes" },
         { "label": "Research", "value": "Last-mile systems field immersion" }
+      ]
+    },
+    {
+      "id": "science-centre",
+      "name": "Param Science Experience Centre",
+      "tagline": "Interactive physical experiences",
+      "category_tags": "Engineering · Product · Experiences",
+      "period": "2022 – 2024",
+      "featured": false,
+      "image": "assets/images/news.png",
+      "image_alt": "Param Science Centre interactive installation",
+      "summary": "Large-scale physical and interactive installations translating complex optical physics and system dynamics into tangible experiences.",
+      "long_description": "Curated and engineered the House of Glass gallery and designed the GyroLens flagship exhibit over a two-year period. We treated physical spaces like software platforms: exhibits had to be durable, intuitive without reading plaques, and resilient to hundreds of thousands of hands.",
+      "my_role": "Curator & Experience Lead (Product Owner)",
+      "context": "Science concepts like optics and light are often taught abstractly, making them difficult to internalize for students. Param Science Experience Centre aimed to create a large-scale, hands-on learning environment that could translate complex optical principles into intuitive, memorable experiences.",
+      "scope": "Led the end-to-end curation and design of the House of Glass gallery from concept to execution. Defined learning goals, designed user journeys across zones, prototyped interactive exhibits (including GyroLens), and collaborated with fabricators, optical engineers, and educators.",
+      "thinking": "I treated the gallery as a product platform rather than a collection of exhibits. Each installation demonstrated a specific behavior of light—reflection, refraction, dispersion—while contributing to an overall narrative flow.",
+      "outcome": "Delivered a permanent, scalable learning environment experienced by 10,000+ monthly visitors. GyroLens became a standout flagship exhibit, visually demonstrating the relationship between motion and light through direct touch.",
+      "specs": [
+        { "label": "Scale", "value": "Permanent museum gallery" },
+        { "label": "Audience", "value": "10,000+ monthly visitors" },
+        { "label": "Key Exhibit", "value": "GyroLens (Rotational momentum + optics)" }
+      ]
+    },
+    {
+      "id": "wish-a-bavathi",
+      "name": "Wish-a-bavathi",
+      "tagline": "Designing a public system for awareness & engagement",
+      "category_tags": "Experience · Systems Design",
+      "period": "2024",
+      "featured": false,
+      "image": "assets/images/news.png",
+      "image_alt": "Wish-a-bavathi installation feature in Deccan Herald and Indian Express",
+      "summary": "A three-act public installation combining a handcrafted mechanical bioscope, interactive TouchDesigner IoT media, and speculative VR.",
+      "long_description": "Bangalore’s river Vrishabhavathi has largely disappeared from public memory despite its ecological and cultural significance. As part of the Lost in Bangalore residency by Sensistan (2024), we created a collective civic experience reintroducing the river’s story.",
+      "my_role": "Co-creator, mentor, and systems lead",
+      "context": "Public awareness projects often fail by lecturing. The challenge was to reintroduce Bangalore's forgotten river through participatory, reflective storytelling under real-world constraints.",
+      "scope": "Co-led conception and delivery of a three-act public installation combining a handcrafted mechanical bioscope, an interactive media system built in TouchDesigner with IoT inputs, and a speculative VR environment in Mozilla Hubs. Mentored collaborators and ensured system reliability in a live public setting.",
+      "thinking": "Approached the installation as a system rather than an artwork. Each act represented a state of the river (past, present, future), connected through audience flow, interaction design, and narrative continuity. Physical craft, digital interaction, and immersive tech were treated as equal layers.",
+      "outcome": "Successfully delivered a fully functional public installation experienced by a diverse audience. Received featured coverage from The New Indian Express and Deccan Herald, validating civic engagement.",
+      "links": [
+        { "label": "The New Indian Express", "url": "https://www.newindianexpress.com/cities/bengaluru/2024/Mar/12/a-tech-art-odyssey" },
+        { "label": "Deccan Herald", "url": "https://www.deccanherald.com/india/karnataka/bengaluru/b-luru-themed-immersive-exhibition-on-till-april-7-2957056" }
+      ],
+      "specs": [
+        { "label": "Format", "value": "Mechanical Bioscope + TouchDesigner + VR" },
+        { "label": "Recognition", "value": "Covered in Indian Express & Deccan Herald" },
+        { "label": "Setting", "value": "Lost in Bangalore Residency (Sensistan)" }
+      ]
+    },
+    {
+      "id": "urban-waste-systems",
+      "name": "Urban Waste Systems",
+      "tagline": "Reimagining waste flows and economic incentives",
+      "category_tags": "Product · Service Systems",
+      "period": "2023",
+      "featured": false,
+      "image": "assets/images/news.png",
+      "image_alt": "Urban Waste Systems field research",
+      "summary": "Field research and incentive design rethinking municipal waste as a reusable resource rather than a disposal problem.",
+      "long_description": "Conducted field research with waste workers and municipal staff across Bangalore, mapping end-to-end waste flows from source to segregation and local reuse as part of an innovation challenge at NSRCEL, IIM Bangalore.",
+      "my_role": "Research-led product and service designer",
+      "context": "Urban waste systems often break down due to fragmented incentives, low visibility into flows, and misalignment between citizens, informal waste workers, and municipal bodies.",
+      "scope": "Conducted ground immersion with waste pickers and municipal staff, mapped the waste journey, and designed a localized service + product system to enable localized waste repurposing under tight constraints.",
+      "thinking": "Reframed waste from a logistics issue into an incentive design challenge. By aligning economic and behavioral incentives across stakeholders, the system encouraged source segregation and local circular reuse.",
+      "outcome": "Secured 3rd place at the NSRCEL hackathon and received ₹50,000 in seed grant funding.",
+      "specs": [
+        { "label": "Host", "value": "NSRCEL, IIM Bangalore" },
+        { "label": "Award", "value": "3rd Place & Seed Grant Funding" },
+        { "label": "Method", "value": "Field Research & Incentive Design" }
       ]
     }
   ],
@@ -166,38 +222,52 @@
     {
       "id": "onstrays-to-cheeko-heartbeat",
       "title": "From OnStrays to Cheeko: What a distributed software heartbeat taught me about hardware charging",
-      "category": "Cross-Project · Systems to Hardware",
+      "category": "Cross-project ideas",
       "date": "April 2026",
-      "tags": ["Systems Thinking", "Hardware UX", "Interaction"],
       "summary": "How a health-check signal from a distributed messaging system changed the way I thought about a hardware charging LED.",
-      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm (14 breaths per minute) before fading out completely once full. \n\nProjects are containers. Ideas move between them."
+      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm (14 breaths per minute) before fading out completely once full.\n\nProjects are containers. Ideas move between them."
+    },
+    {
+      "id": "standing-inside-the-system",
+      "title": "Standing Inside the System You Build",
+      "category": "Experiments",
+      "date": "September 2025",
+      "image": "assets/images/news.png",
+      "summary": "There is a photograph of me in a newspaper standing inside a public installation. It looked like visibility. In reality, it was about accountability.",
+      "content": "There is a photograph of me standing at the center of a public installation in a newspaper. On the surface, it looks like a moment of visibility. In reality, it represents something very different—accountability.\n\nWhen the installation opened to the public, the work stopped being an idea and became a living system. There was no staging area, no controlled environment, and no way to pause the experience. Every interaction unfolded in real time, shaped by people, space, and unpredictability.\n\n## When Work Leaves the Studio\n\nPeople don’t follow intended flows. They interpret, hesitate, skip steps, or engage emotionally in ways you can’t fully anticipate. Designing for a public audience forced me to abandon assumptions and respond to real behavior instead of ideal users.\n\n## Systems Are Invisible Until They Fail\n\nFrom the outside, the installation appeared seamless. Inside, it was a network of dependencies—physical mechanisms, digital interactions, facilitators, and environmental constraints. Small failures compound quickly in public-facing work. Recovery, clarity, and adaptability matter more than perfection.\n\n## Final Thought\n\nWhether it’s a public installation, a hardware product, or an organization, if you’re not willing to stand inside the system you design—to face its friction, failures, and human responses—then you’re not truly responsible for it."
+    },
+    {
+      "id": "zomato-last-mile",
+      "title": "Zomato: Understanding Last-Mile Systems Through Firsthand Experience",
+      "category": "Experiments",
+      "date": "May 2025",
+      "summary": "Why I spent a week working as a food delivery partner in Bangalore, and what it revealed about operations gamification.",
+      "content": "Zomato operates one of India's largest on-demand logistics platforms. While customers see a simple food-ordering interface, the real complexity lies in coordinating delivery partners, restaurants, incentives, safety, and trust at scale.\n\nI worked as a Zomato delivery partner for one week to study the system from the inside. Observed onboarding, task flows, incentives, gamification, customer behavior, restaurant operations, and safety touchpoints across the delivery lifecycle.\n\nInstead of starting with UI redesign, I focused on understanding the underlying system—incentives, feedback loops, trust mechanisms, and human behavior. The app revealed itself as a gamified operations engine where UX decisions directly influence efficiency, motivation, and compliance. Design here is not about screens, but about shaping behavior at scale.\n\nYou cannot design systems you refuse to stand inside. Proximity sharpens product judgment faster than analytics dashboards."
     },
     {
       "id": "cheapest-llm-call",
       "title": "The cheapest and fastest LLM call is the one you never make",
-      "category": "AI Architecture · Product Thinking",
+      "category": "Technical discoveries",
       "date": "August 2025",
-      "tags": ["AI", "RAG", "Cost", "Latency"],
-      "summary": "Why semantic caching and boundary evaluation belong in the product layer, not just infrastructure.",
-      "content": "When building an interactive knowledge system over an 18-volume historical dataset, every user query initially hit a full embedding search and LLM generation. Response latency sat between 3 and 5 seconds, and cost scaled directly with curiosity.\n\nAnalyzing user logs revealed that 60% of questions were semantic variations of core themes. Instead of treating every prompt as a new computation, we built a dual-layer Redis semantic cache with a strict 0.92 cosine similarity gate.\n\nRepeated queries dropped from 3,500ms to under 15ms with 100% compute savings. The takeaway was clear: caching isn't just a database technique. In AI products, caching is an intelligence and economics layer that protects user experience."
-    },
-    {
-      "id": "standing-inside-the-system",
-      "title": "Standing inside the system you build",
-      "category": "Field Research · Systems Thinking",
-      "date": "May 2025",
-      "tags": ["Field Research", "Operations", "Behavioral UX"],
-      "summary": "Why I spent a week working as a food delivery partner in Bangalore, and what it taught me about platform design.",
-      "content": "Product teams sitting in air-conditioned offices look at dashboards and assume delivery drivers behave according to clean algorithmic incentives.\n\nI spent a week delivering food across Bangalore to understand the system from the inside. What I saw on the road was completely different from what a dashboard shows: sudden sound cue confusion while navigating traffic, asymmetric accountability where drivers are penalized for kitchen delays, and intense cognitive strain.\n\nYou cannot design systems you refuse to stand inside. Proximity to the friction sharpens product judgment faster than analytics dashboards."
+      "summary": "Slashing latency by ~800× on an 18-volume historical RAG system using semantic Redis caching.",
+      "content": "Built a RAG system over 18 volumes of the Mahabharata to support a live storytelling and dialogue-based workshop. Querying the full pipeline initially caused 3–5s latency and unbounded API costs.\n\nAnalyzing user patterns showed that 60% of participant questions clustered around identical semantic themes. We built a dual-layer Redis semantic cache with a strict 0.92 cosine similarity gate.\n\nAchieved ~800× latency reduction (<15ms cache response vs 3,500ms API roundtrip) on repeated queries and 100% cost savings on recurring topics.\n\nThe fastest and cheapest LLM call is the one you never make. Caching is a core intelligence layer."
     },
     {
       "id": "affordance-is-the-manual",
       "title": "If an interface requires an instruction plaque, the design hasn't finished yet",
-      "category": "Physical Interaction · Product Design",
+      "category": "Product thinking",
       "date": "November 2024",
-      "tags": ["Interaction", "Physical Products", "Affordance"],
-      "summary": "Lessons from building the GyroLens exhibit at Param Science Experience Centre.",
-      "content": "At the science centre, exhibits are touched by thousands of people every week—from eight-year-olds to grandparents. Nobody reads the instructional wall text. If someone has to read a three-step instruction paragraph to understand how to interact with an object, the physical affordance has failed.\n\nWhen we designed GyroLens (coupling a spinning gyroscope with a centered convex lens), the mechanical form itself had to invite rotation. A balanced wheel invites a hand. A beam of light invites a glance. When the user spun it, an infinity convergence pattern emerged organically.\n\nAffordance is the manual. In hardware, software, and physical experiences: make the primary interaction inevitable."
+      "summary": "Making motion and light intuitively visible with the GyroLens flagship exhibit.",
+      "content": "Abstract concepts in physics like rotational motion and optical convergence are difficult to grasp through static diagrams. Within the House of Glass gallery at Param Science Experience Centre, the challenge was to design a single exhibit that visually encoded these ideas into an immediately understandable experience.\n\nRather than explaining the science, the goal was to let users discover it. By coupling rotational motion with optical convergence, the exhibit translates invisible principles into a visible pattern—an infinity form emerging through hand interaction.\n\nAffordance is the user manual. In physical products, software, and public installations: make the primary interaction inevitable."
+    },
+    {
+      "id": "digital-marketing-nit",
+      "title": "Digital Marketing — The NIT Way: Visibility to Value",
+      "category": "Product thinking",
+      "date": "March 2025",
+      "image": "assets/images/nit.jpeg",
+      "summary": "Selected for a 7-day residency program at NIT Warangal (MSME funded) exploring digital-first growth engines.",
+      "content": "Most people approach digital marketing as promotion. This program reframed it as value creation.\n\nWe broke down how customer problems translate into digital touchpoints: search intent, content, funnels, and retention loops. Every channel was treated as part of a larger business system.\n\n## Strategy Before Tools\n\nThis program emphasized fundamentals:\n- Who is the customer?\n- What problem are we solving?\n- Where does digital create unfair advantage?\n\nSEO, social media, analytics, and paid campaigns were introduced only after aligning them with business objectives. This approach mirrored strong product thinking: start with clarity, then scale execution.\n\nStrategy, execution, and measurement only create real impact when they work together, turning growth into something predictable."
     }
   ]
 }
