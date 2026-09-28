@@ -224,8 +224,10 @@
       "title": "From OnStrays to Cheeko: What a distributed software heartbeat taught me about hardware charging",
       "category": "Cross-project ideas",
       "date": "April 2026",
+      "related_project": "Cheeko",
+      "related_link": "#/cheeko",
       "summary": "How a health-check signal from a distributed messaging system changed the way I thought about a hardware charging LED.",
-      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm before fading out completely once full.\n\nProjects are containers. Ideas move between them."
+      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm (14 breaths per minute) before fading out completely once full.\n\nProjects are containers. Ideas move between them."
     },
     {
       "id": "standing-inside-the-system",
@@ -233,6 +235,8 @@
       "category": "Experiments",
       "date": "September 2025",
       "image": "assets/images/news.png",
+      "related_project": "Wish-a-bavathi",
+      "related_link": "#/project/wish-a-bavathi",
       "summary": "There is a photograph of me in a newspaper standing inside a public installation. It looked like visibility. In reality, it was about accountability.",
       "content": "There is a photograph of me standing at the center of a public installation in a newspaper. On the surface, it looks like a moment of visibility. In reality, it represents something very different—accountability.\n\nWhen the installation opened to the public, the work stopped being an idea and became a living system. There was no staging area, no controlled environment, and no way to pause the experience. Every interaction unfolded in real time, shaped by people, space, and unpredictability.\n\n## When Work Leaves the Studio\n\nPeople don’t follow intended flows. They interpret, hesitate, skip steps, or engage emotionally in ways you can’t fully anticipate. Designing for a public audience forced me to abandon assumptions and respond to real behavior instead of ideal users.\n\n## Systems Are Invisible Until They Fail\n\nFrom the outside, the installation appeared seamless. Inside, it was a network of dependencies—physical mechanisms, digital interactions, facilitators, and environmental constraints. Small failures compound quickly in public-facing work. Recovery, clarity, and adaptability matter more than perfection.\n\n## Final Thought\n\nWhether it’s a public installation, a hardware product, or an organization, if you’re not willing to stand inside the system you design—to face its friction, failures, and human responses—then you’re not truly responsible for it."
     },
@@ -241,6 +245,8 @@
       "title": "Zomato: Understanding Last-Mile Systems Through Firsthand Experience",
       "category": "Experiments",
       "date": "May 2025",
+      "related_project": "OnStrays",
+      "related_link": "#/project/onstrays",
       "summary": "Why I spent a week working as a food delivery partner in Bangalore, and what it revealed about operations gamification.",
       "content": "Zomato operates one of India's largest on-demand logistics platforms. While customers see a simple food-ordering interface, the real complexity lies in coordinating delivery partners, restaurants, incentives, safety, and trust at scale.\n\nI worked as a Zomato delivery partner for one week to study the system from the inside. Observed onboarding, task flows, incentives, gamification, customer behavior, restaurant operations, and safety touchpoints across the delivery lifecycle.\n\nInstead of starting with UI redesign, I focused on understanding the underlying system—incentives, feedback loops, trust mechanisms, and human behavior. The app revealed itself as a gamified operations engine where UX decisions directly influence efficiency, motivation, and compliance. Design here is not about screens, but about shaping behavior at scale.\n\nYou cannot design systems you refuse to stand inside. Proximity sharpens product judgment faster than analytics dashboards."
     },
@@ -249,6 +255,8 @@
       "title": "The cheapest and fastest LLM call is the one you never make",
       "category": "Technical discoveries",
       "date": "August 2025",
+      "related_project": "OnStrays",
+      "related_link": "#/project/onstrays",
       "summary": "Slashing latency by ~800× on an 18-volume historical RAG system using semantic Redis caching.",
       "content": "Built a RAG system over 18 volumes of the Mahabharata to support a live storytelling and dialogue-based workshop. Querying the full pipeline initially caused unpredictable latency and high compute costs.\n\nAnalyzing user patterns showed that the majority of participant questions clustered around recurring semantic themes. We built a dual-layer Redis semantic cache with a strict cosine similarity gate.\n\nAchieved ~800× latency reduction on repeated queries and 100% compute savings on recurring topics.\n\nThe fastest and cheapest LLM call is the one you never make. Caching is a core intelligence layer."
     },
@@ -257,6 +265,8 @@
       "title": "If an interface requires an instruction plaque, the design hasn't finished yet",
       "category": "Product thinking",
       "date": "November 2024",
+      "related_project": "Param Science Experience Centre",
+      "related_link": "#/project/science-centre",
       "summary": "Making motion and light intuitively visible with the GyroLens flagship exhibit.",
       "content": "Abstract concepts in physics like rotational motion and optical convergence are difficult to grasp through static diagrams. Within the House of Glass gallery at Param Science Experience Centre, the challenge was to design a single exhibit that visually encoded these ideas into an immediately understandable experience.\n\nRather than explaining the science, the goal was to let users discover it. By coupling rotational motion with optical convergence, the exhibit translates invisible principles into a visible pattern—an infinity form emerging through hand interaction.\n\nAffordance is the user manual. In physical products, software, and public installations: make the primary interaction inevitable."
     },
@@ -268,6 +278,64 @@
       "image": "assets/images/nit.jpeg",
       "summary": "Selected for a 7-day residency program at NIT Warangal (MSME funded) exploring digital-first growth engines.",
       "content": "Most people approach digital marketing as promotion. This program reframed it as value creation.\n\nWe broke down how customer problems translate into digital touchpoints: search intent, content, funnels, and retention loops. Every channel was treated as part of a larger business system.\n\n## Strategy Before Tools\n\nThis program emphasized fundamentals:\n- Who is the customer?\n- What problem are we solving?\n- Where does digital create unfair advantage?\n\nSEO, social media, analytics, and paid campaigns were introduced only after aligning them with business objectives. This approach mirrored strong product thinking: start with clarity, then scale execution.\n\nStrategy, execution, and measurement only create real impact when they work together, turning growth into something predictable."
+    }
+  ],
+  "studio_items": [
+    {
+      "id": "aalto-radical-creativity",
+      "title": "Radical Creativity & Visual Studies",
+      "date": "2026",
+      "context_label": "Aalto University · Radical Creativity",
+      "image": "assets/images/exhibit_1.png",
+      "images": ["assets/images/exhibit_1.png", "assets/images/exhibit_2.png"],
+      "description": "Visual thinking, lateral problem framing, and tactile media experiments explored during the Radical Creativity program at Aalto University.",
+      "what_i_explored": "How intentional friction and unfamiliar physical media disrupt linear product development assumptions. Exploring non-verbal communication, material constraints, and speculative forms.",
+      "what_i_learned": "Creativity isn't an isolated sprint or an aesthetic coat of paint. It is the discipline of noticing connections where others see separate domains.",
+      "related_label": "Related thinking",
+      "related_text": "Creativity & Product Exploration",
+      "related_link": "#/notes"
+    },
+    {
+      "id": "light-refraction-studies",
+      "title": "Light, Shadow & Optical Forms",
+      "date": "2024",
+      "context_label": "Physical Systems · Optical Studies",
+      "image": "assets/images/exhibit_3.png",
+      "images": ["assets/images/exhibit_3.png", "assets/images/exhibit_4.png"],
+      "description": "Studies on optical convergence, refractive glass curvatures, and emergent geometric patterns created by physical light beams.",
+      "what_i_explored": "Designing tangible physical interfaces where material properties dictate the visual output without software interpolation.",
+      "what_i_learned": "Physical light reveals geometric truths that CAD simulations frequently smooth over. When light interacts with real glass, micro-imperfections create life.",
+      "related_label": "Related to",
+      "related_text": "Param Science Experience Centre",
+      "related_link": "#/project/science-centre"
+    },
+    {
+      "id": "handheld-ergonomics-clay-foam",
+      "title": "Tactile Enclosure & Handheld Ergonomics",
+      "date": "2025",
+      "context_label": "Physical Prototyping · Form Studies",
+      "image": "assets/images/product_1.png",
+      "images": ["assets/images/product_1.png", "assets/images/device_bare.png"],
+      "description": "Foam, resin, and 3D print form studies examining palm curvature, grip retention, and thumb reach for non-screen physical companions.",
+      "what_i_explored": "Balancing child motor ergonomics with internal PCB volume, speaker back-volume, and battery mass distribution.",
+      "what_i_learned": "A one-millimeter change in corner fillet radius completely alters whether a physical object feels friendly or industrial to a child's hand.",
+      "related_label": "Related to",
+      "related_text": "Cheeko",
+      "related_link": "#/cheeko"
+    },
+    {
+      "id": "street-systems-photography",
+      "title": "Street Systems & Observational Photography",
+      "date": "2025",
+      "context_label": "Field Documentation · Bangalore",
+      "image": "assets/images/nit.jpeg",
+      "images": ["assets/images/nit.jpeg", "assets/images/news.png"],
+      "description": "Visual field documentation of urban logistics, informal human coordination, and street-level operations across Bangalore.",
+      "what_i_explored": "Documenting cognitive strain, ambient noise environments, and informal coordination patterns that digital platform dashboards never capture.",
+      "what_i_learned": "People develop ingenious physical workarounds whenever digital interfaces fail to reflect street reality. Observation must precede abstraction.",
+      "related_label": "Related to",
+      "related_text": "OnStrays & Field Research",
+      "related_link": "#/project/onstrays"
     }
   ]
 }
