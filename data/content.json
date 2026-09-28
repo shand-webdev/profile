@@ -4,8 +4,8 @@
     "title": "AI Product Builder",
     "location": "Bangalore, India",
     "email": "iamgowrishankar05@gmail.com",
-    "tagline": "I build products at the intersection of AI, software, hardware, and design.",
-    "intro_paragraph": "I work on ambiguous problems, figure out what matters, and turn ideas into working products. My background crosses mechanical engineering, product design, interactive technology, software, and AI. I like being close to the details—whether that's tuning voice latency, fixing tooling friction on an injection mold, or deciding what belongs on a tiny screen."
+    "tagline": "I build products across AI, software, hardware, and the physical world.",
+    "intro_paragraph": "I work on ambiguous problems, figure out what matters, and turn ideas into working products. My background crosses mechanical engineering, product design, interactive technology, software, and AI. I like being close to the details—whether that's tuning voice interaction, fixing tooling friction on an injection mold, or deciding what belongs on a tiny screen."
   },
   "projects": [
     {
@@ -18,7 +18,7 @@
       "image": "assets/images/device_bare.png",
       "image_alt": "Cheeko AI hardware companion",
       "summary": "An AI-first physical consumer device that brings conversational intelligence and storytelling to kids without addictive screen time.",
-      "long_description": "Cheeko is an AI consumer hardware companion designed from the ground up to replace passive screen time with tactile, conversational engagement. Instead of a smartphone or tablet screen, Cheeko pairs a purposeful 320×240 embedded display with physical controls (stepped rotary knob, tactile buttons) and low-latency voice AI.",
+      "long_description": "Cheeko is an AI consumer hardware companion designed from the ground up to replace passive screen time with tactile, conversational engagement. Instead of an open tablet or smartphone screen, Cheeko pairs a purposeful 320×240 embedded display with physical controls (stepped rotary knob, tactile buttons) and voice AI.",
       "my_role": "Product & Hardware Lead (Cross-functional: AI, DFM, Embedded UX, Packaging)",
       "specs": [
         { "label": "Format", "value": "Handheld AI Hardware" },
@@ -37,11 +37,11 @@
       "image": "assets/images/bedtime.png",
       "image_alt": "Insol AI conversational interface",
       "summary": "A conversational voice AI product designed for spoken language immersion, real-time feedback, and natural dialogue pacing.",
-      "long_description": "Insol reframes language acquisition from mechanical flashcards into spoken situational dialogue. We architected a low-latency conversational audio loop to make practice feel fluid and conversational rather than like an exam.",
+      "long_description": "Insol reframes language acquisition from mechanical flashcards into spoken situational dialogue. We architected a streaming conversational audio loop to make practice feel fluid and conversational rather than like an exam.",
       "my_role": "Product & Technical Lead",
       "specs": [
         { "label": "Core Engine", "value": "Streaming ASR → LLM → Low-Latency TTS" },
-        { "label": "Turn Latency", "value": "Sub-800ms end-to-end loop" },
+        { "label": "Architecture", "value": "Full-duplex audio streaming" },
         { "label": "Focus", "value": "Conversational pacing & hesitation tolerance" }
       ]
     },
@@ -146,11 +146,11 @@
       "date": "March 2026",
       "image": "assets/images/device_bare.png",
       "image_caption": "First trial test shots of the handheld enclosure.",
-      "what_happened": "During early trial shots for the enclosure, the molded ABS/PC parts were sticking inside the tool cavity. When the ejector pins fired, the part dragged along the cavity wall, leaving visible scuff marks and pin stress whitening on the rear surface.",
-      "what_i_did": "I worked directly with the tooling engineer at the shop floor. Instead of cutting deeper draft angles into the steel—which would have altered the external industrial design silhouette—we investigated the surface friction. We tested progressive diamond polishing (#800 to #1200 grit) along the exact draw direction in the high-friction cavity zones.",
-      "why_it_mattered": "Tool steel changes are permanent. Modifying draft angles would have softened the crisp industrial design lines and delayed the tooling milestone by weeks. Fixing the friction preserved both the aesthetic and the delivery timeline.",
-      "result": "The molded parts began demolding smoothly with minimal ejection force. Drag marks disappeared, cycle times stabilized, and the exterior surface met cosmetic A-surface requirements without altering the CAD geometry.",
-      "what_i_learned": "Mold surface finish directly alters mechanical kinematics, not just aesthetic appearance. A CAD model is very obedient. Plastic isn't."
+      "what_happened": "The molded part wasn't releasing cleanly during ejection. It was sticking in the cavity and leaving minor drag marks on the rear surface.",
+      "what_i_did": "We looked at the friction between the mould surface and the part rather than immediately changing the product geometry. Diamond polishing was explored along the draw direction on the relevant mould surface.",
+      "why_it_mattered": "Tool steel changes are permanent. Modifying draft angles would have altered the external industrial design lines and delayed the milestone by weeks. Fixing the surface friction preserved both the silhouette and the timeline.",
+      "result": "The part released more easily during ejection without dragging or pin deformation, meeting cosmetic surface standards without changing the CAD geometry.",
+      "what_i_learned": "A manufacturing problem doesn't always need a redesign. Sometimes the answer is hiding in the interface between two materials. A CAD model is very obedient. Plastic isn't."
     },
     {
       "id": "why-physical-knob",
@@ -159,11 +159,11 @@
       "date": "January 2026",
       "image": "assets/images/device_cut.png",
       "image_caption": "Cross-section showing physical rotary knob and actuation assembly.",
-      "what_happened": "Early concepts explored touch-sensitive pads and capacitive navigation. But in testing, touch controls caused constant accidental selections, greasy smudges, and forced children to keep their eyes glued to the glass to confirm whether an action had registered.",
-      "what_i_did": "I replaced the touch approach with a stepped incremental rotary encoder paired with a custom knurled outer grip, accompanied by two distinct silicone dome buttons with intentional actuation resistance.",
-      "why_it_mattered": "For a young child, physical resistance and muscular feedback are intuitive. A mechanical detent click provides unambiguous confirmation through the fingertips without requiring visual verification.",
-      "result": "During usability testing, kids immediately grabbed the dial and turned it. One physical click equaled one item shifted on screen. The learning curve dropped to zero, and navigation happened naturally even while looking around the room.",
-      "what_i_learned": "Tactile affordances make technology disappear. Physical friction can be a feature, not a bug."
+      "what_happened": "Early concepts explored touch-sensitive pads and capacitive navigation. But in testing, touch controls caused accidental touches, greasy smudges, and forced children to keep their eyes locked on the glass to verify their actions.",
+      "what_i_did": "I replaced touch controls with a stepped incremental rotary knob paired with a knurled grip, accompanied by two distinct tactile buttons with intentional actuation resistance.",
+      "why_it_mattered": "For a young child, physical resistance and muscular feedback are intuitive. A mechanical detent click provides clear tactile confirmation through the fingertips without requiring visual verification.",
+      "result": "Kids immediately understood the interaction. One click equaled one item shifted. Navigation became intuitive without reading or instructions.",
+      "what_i_learned": "Tactile affordances make technology disappear. Physical friction can be a feature, not a bug. Small mechanical click, surprisingly large leap in usability."
     },
     {
       "id": "designing-around-320x240-screen",
@@ -172,11 +172,11 @@
       "date": "February 2026",
       "image": "assets/images/bedtime.png",
       "image_caption": "Visual hierarchy and state transitions on the 2.4-inch display.",
-      "what_happened": "When we ported standard mobile UI patterns to a 2.4-inch 320×240 embedded display, everything fell apart. Text was cramped, menus felt claustrophobic, and the screen distracted from the core voice conversation.",
-      "what_i_did": "I stripped the interface down to absolute essentials. We defined three primary product states: Listening, Thinking, and Expressing. I established strict 8-pixel grid rules, high-contrast geometric glyphs, and bitmap-optimized typography where every single pixel had an explicit functional purpose.",
-      "why_it_mattered": "Cheeko is intentionally not an iPad. The display exists to acknowledge intent, reflect emotional states, and support physical knob navigation—not to become an endless content scroll.",
-      "result": "The UI became immediately glanceable for children. Firmware frame rendering stayed locked at a crisp 30fps without microcontroller buffer lag, and battery consumption dropped measurably.",
-      "what_i_learned": "The screen was only 320×240. Apparently, that was enough space to question every design decision. Extreme constraint forces product honesty."
+      "what_happened": "When we tried standard mobile UI patterns on a 320×240 embedded display, everything felt cluttered, text was cramped, and the screen distracted from the core voice conversation.",
+      "what_i_did": "I stripped the interface down to absolute essentials: high-contrast geometric states for Listening, Thinking, and Expressing, paired with bitmap-optimized typography and strict grid spacing.",
+      "why_it_mattered": "Cheeko is intentionally not an iPad. The display exists to acknowledge voice intent and anchor physical knob navigation, not to become an endless content scroll.",
+      "result": "The screen became immediately glanceable for children without distracting from the voice companion experience. Frame rendering stayed responsive without buffer lag.",
+      "what_i_learned": "The screen was 320×240. Apparently, that is enough space to question every design decision. Extreme constraint forces product honesty."
     },
     {
       "id": "making-voice-ai-work-in-physical-product",
@@ -185,10 +185,10 @@
       "date": "February 2026",
       "image": "assets/images/hero.png",
       "image_caption": "Acoustic chamber separation and microphone isolation.",
-      "what_happened": "When the speaker played audio responses, the microphone picked up internal casing vibrations through the plastic chassis. This caused the acoustic echo cancellation to fail, making the voice AI interrupt itself or miss the child's voice completely.",
-      "what_i_did": "I worked with our acoustic and hardware engineering team to isolate the vibration paths. We designed a custom silicone rubber boot that mechanically decoupled the MEMS microphone from the PCB and enclosure, and ultrasonically sealed the speaker cavity.",
-      "why_it_mattered": "Voice AI does not live purely in cloud inference; it lives in the acoustic reality of plastic, air chambers, and rubber gaskets. No prompt engineering can fix a physically deafened microphone.",
-      "result": "Acoustic coupling between the speaker and microphone dropped significantly. Wake-word detection and conversational barge-in became reliable, even when the device was playing loud stories or songs.",
+      "what_happened": "When the speaker played audio responses, internal casing vibrations bled into the microphone through the plastic housing, causing the voice AI to interrupt itself or miss the child's voice.",
+      "what_i_did": "I worked with our acoustic and hardware engineering team to isolate the vibration paths. We designed a silicone rubber boot that mechanically decoupled the microphone from the PCB and plastic casing, and sealed the speaker chamber.",
+      "why_it_mattered": "Voice AI does not live purely in cloud prompts; it lives in the physical acoustics of plastic, air chambers, and rubber gaskets. No prompt engineering can fix a physically deafened microphone.",
+      "result": "Acoustic coupling between the speaker and microphone dropped significantly. Wake-word detection and conversational barge-in became reliable, even when the device was playing stories.",
       "what_i_learned": "Voice AI doesn't live in the cloud. It lives in the acoustic reality of plastic, air, and rubber gaskets."
     },
     {
@@ -199,10 +199,10 @@
       "image": "assets/images/card_adventure.jpg",
       "image_caption": "Heavyweight CMYK story cards and unboxing tray.",
       "what_happened": "Typical tech onboarding is cold: download an app, scan a QR code, connect Wi-Fi, read fine print. While parents fiddle with their phones, children wait impatiently and lose the magic of the moment.",
-      "what_i_did": "I integrated physical story cards into the packaging architecture. We produced durable 400gsm matte-laminated cards printed in vivid CMYK that act as tangible adventure prompts. The rigid box was engineered so the device greets the child upright the moment the lid is lifted.",
-      "why_it_mattered": "The unboxing moment establishes the emotional relationship with the product. Setup should feel like opening a storybook, not configuring network equipment.",
-      "result": "Children immediately engaged with the cards and device as physical play objects before setup was even completed. Initial setup friction dropped from minutes to under 90 seconds.",
-      "what_i_learned": "The box basically became another interface. Physical packaging is the first chapter of the product experience."
+      "what_i_did": "I integrated physical story cards directly into the packaging architecture. We produced durable matte-laminated cards printed in vivid CMYK that act as tangible adventure prompts, and engineered the box so the device greets the child upright the moment the lid lifts.",
+      "why_it_mattered": "The unboxing moment establishes the emotional relationship with the product. Setup should feel like opening a storybook, not configuring network equipment. Packaging looked like the final 10%. It wasn't.",
+      "result": "Children immediately engaged with the cards and device as physical play objects before digital setup was even finished. Setup friction dropped dramatically.",
+      "what_i_learned": "The box basically became another interface. Packaging looked like the final 10%. It wasn't."
     },
     {
       "id": "from-prototype-to-production",
@@ -211,10 +211,10 @@
       "date": "March 2026",
       "image": "assets/images/colourway.jpg",
       "image_caption": "T1 tooling validation and tolerance alignment.",
-      "what_happened": "Transitioning from 3D-printed SLA prototypes to hardened steel injection molds exposed tiny tolerance gaps between the button keycaps, the silicone membrane travel, and the PCB switch actuation height.",
-      "what_i_did": "I built an integrated tolerance stack-up map connecting the mold maker's shrinkage rates, the silicone durometer specs, and the firmware debounce timings before approving the final tool cut.",
+      "what_happened": "Transitioning from 3D-printed prototypes to hardened steel injection molds exposed small tolerance gaps between the button keycaps, the silicone membrane travel, and the PCB switch actuation height.",
+      "what_i_did": "I mapped out tolerance stack-ups connecting the mold maker's shrinkage rates, the silicone durometer specs, and the firmware debounce timings before approving the final tool cut.",
       "why_it_mattered": "Once steel is cut, modifying button travel distance costs weeks of downtime and substantial rework expenses. Catching misalignment early protects both budget and timeline.",
-      "result": "The first molded T1 parts produced a crisp, reliable tactile click on the very first shot. Firmware debounce matched physical mechanics with zero tooling rework.",
+      "result": "The first molded trial parts produced a crisp, reliable tactile click on the first shot. Firmware debounce matched physical mechanics with zero tooling rework.",
       "what_i_learned": "Small part. Surprisingly large conversation. Cross-functional leadership is about catching misalignment before it gets hardened into steel."
     }
   ],
@@ -225,7 +225,7 @@
       "category": "Cross-project ideas",
       "date": "April 2026",
       "summary": "How a health-check signal from a distributed messaging system changed the way I thought about a hardware charging LED.",
-      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm (14 breaths per minute) before fading out completely once full.\n\nProjects are containers. Ideas move between them."
+      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm before fading out completely once full.\n\nProjects are containers. Ideas move between them."
     },
     {
       "id": "standing-inside-the-system",
@@ -250,7 +250,7 @@
       "category": "Technical discoveries",
       "date": "August 2025",
       "summary": "Slashing latency by ~800× on an 18-volume historical RAG system using semantic Redis caching.",
-      "content": "Built a RAG system over 18 volumes of the Mahabharata to support a live storytelling and dialogue-based workshop. Querying the full pipeline initially caused 3–5s latency and unbounded API costs.\n\nAnalyzing user patterns showed that 60% of participant questions clustered around identical semantic themes. We built a dual-layer Redis semantic cache with a strict 0.92 cosine similarity gate.\n\nAchieved ~800× latency reduction (<15ms cache response vs 3,500ms API roundtrip) on repeated queries and 100% cost savings on recurring topics.\n\nThe fastest and cheapest LLM call is the one you never make. Caching is a core intelligence layer."
+      "content": "Built a RAG system over 18 volumes of the Mahabharata to support a live storytelling and dialogue-based workshop. Querying the full pipeline initially caused unpredictable latency and high compute costs.\n\nAnalyzing user patterns showed that the majority of participant questions clustered around recurring semantic themes. We built a dual-layer Redis semantic cache with a strict cosine similarity gate.\n\nAchieved ~800× latency reduction on repeated queries and 100% compute savings on recurring topics.\n\nThe fastest and cheapest LLM call is the one you never make. Caching is a core intelligence layer."
     },
     {
       "id": "affordance-is-the-manual",
