@@ -5,34 +5,91 @@
     "location": "Bangalore, India",
     "email": "iamgowrishankar05@gmail.com",
     "tagline": "I build products across AI, software, hardware, and the physical world.",
-    "intro_paragraph": "I work on ambiguous problems, figure out what matters, and turn ideas into working products. My background crosses mechanical engineering, product design, interactive technology, software, and AI. I like being close to the details—whether that's tuning voice interaction, fixing tooling friction on an injection mold, or deciding what belongs on a tiny screen."
+    "intro_paragraph": "I work on ambiguous problems, figure out what matters, and turn ideas into working products. My background crosses mechanical engineering, product design, interactive technology, software, and AI. I like being close to the details\u2014whether that's tuning voice interaction, fixing tooling friction on an injection mold, or deciding what belongs on a tiny screen."
   },
   "projects": [
     {
       "id": "cheeko",
       "name": "Cheeko",
       "tagline": "AI companion for kids",
-      "category_tags": "AI · Hardware · Product",
-      "period": "2025 – Present",
+      "category_tags": "AI \u00b7 Hardware \u00b7 Product",
+      "period": "2025 \u2013 Present",
       "featured": true,
       "image": "assets/images/device_bare.png",
       "image_alt": "Cheeko AI hardware companion",
       "summary": "An AI-first physical consumer device that brings conversational intelligence and storytelling to kids without addictive screen time.",
-      "long_description": "Cheeko is an AI consumer hardware companion designed from the ground up to replace passive screen time with tactile, conversational engagement. Instead of an open tablet or smartphone screen, Cheeko pairs a purposeful 320×240 embedded display with physical controls (stepped rotary knob, tactile buttons) and voice AI.",
+      "long_description": "Cheeko is an AI consumer hardware companion designed from the ground up to replace passive screen time with tactile, conversational engagement. Instead of an open tablet or smartphone screen, Cheeko pairs a purposeful 320\u00d7240 embedded display with physical controls (stepped rotary knob, tactile buttons) and voice AI.",
       "my_role": "Product & Hardware Lead (Cross-functional: AI, DFM, Embedded UX, Packaging)",
       "specs": [
-        { "label": "Format", "value": "Handheld AI Hardware" },
-        { "label": "Interface", "value": "Stepped Knob + Dual Button + 320×240 Screen" },
-        { "label": "Audio", "value": "Decoupled MEMS Mic + Speaker" },
-        { "label": "Enclosure", "value": "Custom Injection Molded ABS/PC" }
+        {
+          "label": "Format",
+          "value": "Handheld AI Hardware"
+        },
+        {
+          "label": "Interface",
+          "value": "Stepped Knob + Dual Button + 320\u00d7240 Screen"
+        },
+        {
+          "label": "Audio",
+          "value": "Decoupled MEMS Mic + Speaker"
+        },
+        {
+          "label": "Enclosure",
+          "value": "Custom Injection Molded ABS/PC"
+        }
       ]
+    },
+    {
+      "id": "openclaw-assistant",
+      "name": "Tabletop AI Assistant (OpenClaw)",
+      "tagline": "Dedicated tabletop hardware interface for OpenClaw AI execution",
+      "category_tags": "Hardware \u00b7 AI Agents \u00b7 Physical OS",
+      "period": "2026",
+      "featured": false,
+      "image": "assets/images/openclaw_tabletop.png",
+      "image_alt": "Building a Tabletop AI Assistant Powered by OpenClaw",
+      "summary": "A dedicated tabletop hardware system that acts as a physical OS layer for OpenClaw, turning ambient voice intent into deterministic computer actions.",
+      "long_description": "Most AI assistants live buried inside phone screens or smart speakers without context for nearby workstations. We repurposed the Cheeko hardware platform to explore a different paradigm: a dedicated tabletop computer assistant that translates spoken commands into deterministic OpenClaw executions on a connected workstation.",
+      "my_role": "Product, AI & Hardware Prototyping",
+      "links": [
+        {
+          "label": "Read Technical Case Study on Hashnode",
+          "url": "https://webdesignandbeyond.hashnode.dev/building-a-tabletop-ai-assistant-powered-by-openclaw"
+        },
+        {
+          "label": "Watch Working Hardware Demo (YouTube)",
+          "url": "https://youtube.com/shorts/EBInKekyxrE?feature=share"
+        }
+      ],
+      "specs": [
+        {
+          "label": "Hardware Surface",
+          "value": "Far-field MEMS Mic + Tactile Switch + Pixel Display"
+        },
+        {
+          "label": "Execution Engine",
+          "value": "Intent Detection \u2192 OpenClaw Structured Actions"
+        },
+        {
+          "label": "Architecture",
+          "value": "3-Layer: Physical Surface \u2192 OS Command Layer \u2192 Host Execution"
+        },
+        {
+          "label": "Interaction Model",
+          "value": "Screen-free ambient command terminal"
+        }
+      ],
+      "context": "Most AI assistants today live inside phones, laptops, or smart speakers. But in real life, users often want a dedicated nearby presence that understands spoken intent and executes tasks on a connected computer without demanding visual attention or app switching.",
+      "scope": "Architected the end-to-end concept, prototyped the physical hardware integration using the Cheeko platform, designed the 3-layer architecture (Hardware Surface \u2192 OpenClaw OS Layer \u2192 Execution Terminal), and documented the build and live video demo.",
+      "thinking": "Because OpenClaw-style systems are built around deterministic command execution rather than open-ended chatbot conversation, hardware becomes a natural trigger and confirmation surface. The hardware doesn't need to do the heavy computing\u2014it acts as an ambient physical OS layer that bridges voice intent with desktop workstation automation.",
+      "outcome": "Successfully built and demonstrated a functioning tabletop hardware prototype executing real workstation tasks with voice trigger and tactile confirmation. Documented the full architecture in a published technical case study and video demonstration."
     },
     {
       "id": "insol",
       "name": "Insol",
       "tagline": "AI language-learning product",
-      "category_tags": "AI · Voice · Software",
-      "period": "2025 – 2026",
+      "category_tags": "AI \u00b7 Voice \u00b7 Software",
+      "period": "2025 \u2013 2026",
       "featured": false,
       "image": "assets/images/bedtime.png",
       "image_alt": "Insol AI conversational interface",
@@ -40,17 +97,26 @@
       "long_description": "Insol reframes language acquisition from mechanical flashcards into spoken situational dialogue. We architected a streaming conversational audio loop to make practice feel fluid and conversational rather than like an exam.",
       "my_role": "Product & Technical Lead",
       "specs": [
-        { "label": "Core Engine", "value": "Streaming ASR → LLM → Low-Latency TTS" },
-        { "label": "Architecture", "value": "Full-duplex audio streaming" },
-        { "label": "Focus", "value": "Conversational pacing & hesitation tolerance" }
+        {
+          "label": "Core Engine",
+          "value": "Streaming ASR \u2192 LLM \u2192 Low-Latency TTS"
+        },
+        {
+          "label": "Architecture",
+          "value": "Full-duplex audio streaming"
+        },
+        {
+          "label": "Focus",
+          "value": "Conversational pacing & hesitation tolerance"
+        }
       ]
     },
     {
       "id": "onstrays",
       "name": "OnStrays",
       "tagline": "Real-time social communication & debate platform",
-      "category_tags": "Software · Systems · Interaction",
-      "period": "2024 – 2025",
+      "category_tags": "Software \u00b7 Systems \u00b7 Interaction",
+      "period": "2024 \u2013 2025",
       "featured": false,
       "image": "assets/images/sprint.png",
       "image_alt": "Onstrays and H.I Systems architecture",
@@ -62,17 +128,26 @@
       "thinking": "Instead of designing for engagement, I designed for judgment. Reactions were reframed as signals of reasoning rather than emotion. Debate was structured to require an explicit stance before participation, reducing noise and encouraging intent.",
       "outcome": "Delivered a coherent MVP interface that operationalized the product's philosophy through interaction design. The system enabled clearer feedback on ideas, visible alignment or disagreement, and structured discourse.",
       "specs": [
-        { "label": "Architecture", "value": "Semantic Caching & Grounded RAG" },
-        { "label": "Interaction", "value": "Reasoned stances over emotional likes" },
-        { "label": "Research", "value": "Last-mile systems field immersion" }
+        {
+          "label": "Architecture",
+          "value": "Semantic Caching & Grounded RAG"
+        },
+        {
+          "label": "Interaction",
+          "value": "Reasoned stances over emotional likes"
+        },
+        {
+          "label": "Research",
+          "value": "Last-mile systems field immersion"
+        }
       ]
     },
     {
       "id": "science-centre",
       "name": "Param Science Experience Centre",
       "tagline": "Interactive physical experiences",
-      "category_tags": "Engineering · Product · Experiences",
-      "period": "2022 – 2024",
+      "category_tags": "Engineering \u00b7 Product \u00b7 Experiences",
+      "period": "2022 \u2013 2024",
       "featured": false,
       "image": "assets/images/news.png",
       "image_alt": "Param Science Centre interactive installation",
@@ -81,45 +156,69 @@
       "my_role": "Curator & Experience Lead (Product Owner)",
       "context": "Science concepts like optics and light are often taught abstractly, making them difficult to internalize for students. Param Science Experience Centre aimed to create a large-scale, hands-on learning environment that could translate complex optical principles into intuitive, memorable experiences.",
       "scope": "Led the end-to-end curation and design of the House of Glass gallery from concept to execution. Defined learning goals, designed user journeys across zones, prototyped interactive exhibits (including GyroLens), and collaborated with fabricators, optical engineers, and educators.",
-      "thinking": "I treated the gallery as a product platform rather than a collection of exhibits. Each installation demonstrated a specific behavior of light—reflection, refraction, dispersion—while contributing to an overall narrative flow.",
+      "thinking": "I treated the gallery as a product platform rather than a collection of exhibits. Each installation demonstrated a specific behavior of light\u2014reflection, refraction, dispersion\u2014while contributing to an overall narrative flow.",
       "outcome": "Delivered a permanent, scalable learning environment experienced by 10,000+ monthly visitors. GyroLens became a standout flagship exhibit, visually demonstrating the relationship between motion and light through direct touch.",
       "specs": [
-        { "label": "Scale", "value": "Permanent museum gallery" },
-        { "label": "Audience", "value": "10,000+ monthly visitors" },
-        { "label": "Key Exhibit", "value": "GyroLens (Rotational momentum + optics)" }
+        {
+          "label": "Scale",
+          "value": "Permanent museum gallery"
+        },
+        {
+          "label": "Audience",
+          "value": "10,000+ monthly visitors"
+        },
+        {
+          "label": "Key Exhibit",
+          "value": "GyroLens (Rotational momentum + optics)"
+        }
       ]
     },
     {
       "id": "wish-a-bavathi",
       "name": "Wish-a-bavathi",
       "tagline": "Designing a public system for awareness & engagement",
-      "category_tags": "Experience · Systems Design",
+      "category_tags": "Experience \u00b7 Systems Design",
       "period": "2024",
       "featured": false,
       "image": "assets/images/news.png",
       "image_alt": "Wish-a-bavathi installation feature in Deccan Herald and Indian Express",
       "summary": "A three-act public installation combining a handcrafted mechanical bioscope, interactive TouchDesigner IoT media, and speculative VR.",
-      "long_description": "Bangalore’s river Vrishabhavathi has largely disappeared from public memory despite its ecological and cultural significance. As part of the Lost in Bangalore residency by Sensistan (2024), we created a collective civic experience reintroducing the river’s story.",
+      "long_description": "Bangalore\u2019s river Vrishabhavathi has largely disappeared from public memory despite its ecological and cultural significance. As part of the Lost in Bangalore residency by Sensistan (2024), we created a collective civic experience reintroducing the river\u2019s story.",
       "my_role": "Co-creator, mentor, and systems lead",
       "context": "Public awareness projects often fail by lecturing. The challenge was to reintroduce Bangalore's forgotten river through participatory, reflective storytelling under real-world constraints.",
       "scope": "Co-led conception and delivery of a three-act public installation combining a handcrafted mechanical bioscope, an interactive media system built in TouchDesigner with IoT inputs, and a speculative VR environment in Mozilla Hubs. Mentored collaborators and ensured system reliability in a live public setting.",
       "thinking": "Approached the installation as a system rather than an artwork. Each act represented a state of the river (past, present, future), connected through audience flow, interaction design, and narrative continuity. Physical craft, digital interaction, and immersive tech were treated as equal layers.",
       "outcome": "Successfully delivered a fully functional public installation experienced by a diverse audience. Received featured coverage from The New Indian Express and Deccan Herald, validating civic engagement.",
       "links": [
-        { "label": "The New Indian Express", "url": "https://www.newindianexpress.com/cities/bengaluru/2024/Mar/12/a-tech-art-odyssey" },
-        { "label": "Deccan Herald", "url": "https://www.deccanherald.com/india/karnataka/bengaluru/b-luru-themed-immersive-exhibition-on-till-april-7-2957056" }
+        {
+          "label": "The New Indian Express",
+          "url": "https://www.newindianexpress.com/cities/bengaluru/2024/Mar/12/a-tech-art-odyssey"
+        },
+        {
+          "label": "Deccan Herald",
+          "url": "https://www.deccanherald.com/india/karnataka/bengaluru/b-luru-themed-immersive-exhibition-on-till-april-7-2957056"
+        }
       ],
       "specs": [
-        { "label": "Format", "value": "Mechanical Bioscope + TouchDesigner + VR" },
-        { "label": "Recognition", "value": "Covered in Indian Express & Deccan Herald" },
-        { "label": "Setting", "value": "Lost in Bangalore Residency (Sensistan)" }
+        {
+          "label": "Format",
+          "value": "Mechanical Bioscope + TouchDesigner + VR"
+        },
+        {
+          "label": "Recognition",
+          "value": "Covered in Indian Express & Deccan Herald"
+        },
+        {
+          "label": "Setting",
+          "value": "Lost in Bangalore Residency (Sensistan)"
+        }
       ]
     },
     {
       "id": "urban-waste-systems",
       "name": "Urban Waste Systems",
       "tagline": "Reimagining waste flows and economic incentives",
-      "category_tags": "Product · Service Systems",
+      "category_tags": "Product \u00b7 Service Systems",
       "period": "2023",
       "featured": false,
       "image": "assets/images/news.png",
@@ -130,11 +229,20 @@
       "context": "Urban waste systems often break down due to fragmented incentives, low visibility into flows, and misalignment between citizens, informal waste workers, and municipal bodies.",
       "scope": "Conducted ground immersion with waste pickers and municipal staff, mapped the waste journey, and designed a localized service + product system to enable localized waste repurposing under tight constraints.",
       "thinking": "Reframed waste from a logistics issue into an incentive design challenge. By aligning economic and behavioral incentives across stakeholders, the system encouraged source segregation and local circular reuse.",
-      "outcome": "Secured 3rd place at the NSRCEL hackathon and received ₹50,000 in seed grant funding.",
+      "outcome": "Secured 3rd place at the NSRCEL hackathon and received \u20b950,000 in seed grant funding.",
       "specs": [
-        { "label": "Host", "value": "NSRCEL, IIM Bangalore" },
-        { "label": "Award", "value": "3rd Place & Seed Grant Funding" },
-        { "label": "Method", "value": "Field Research & Incentive Design" }
+        {
+          "label": "Host",
+          "value": "NSRCEL, IIM Bangalore"
+        },
+        {
+          "label": "Award",
+          "value": "3rd Place & Seed Grant Funding"
+        },
+        {
+          "label": "Method",
+          "value": "Field Research & Incentive Design"
+        }
       ]
     }
   ],
@@ -142,7 +250,7 @@
     {
       "id": "mould-didnt-want-to-let-go",
       "title": "The mould didn't want to let go",
-      "category": "Manufacturing · Injection Molding",
+      "category": "Manufacturing \u00b7 Injection Molding",
       "date": "March 2026",
       "image": "assets/images/device_bare.png",
       "image_caption": "First trial test shots of the handheld enclosure.",
@@ -155,7 +263,7 @@
     {
       "id": "why-physical-knob",
       "title": "Why the product needed a physical knob",
-      "category": "Product · Interaction",
+      "category": "Product \u00b7 Interaction",
       "date": "January 2026",
       "image": "assets/images/device_cut.png",
       "image_caption": "Cross-section showing physical rotary knob and actuation assembly.",
@@ -167,21 +275,21 @@
     },
     {
       "id": "designing-around-320x240-screen",
-      "title": "Designing around a 320×240 screen",
-      "category": "AI Product · Interface",
+      "title": "Designing around a 320\u00d7240 screen",
+      "category": "AI Product \u00b7 Interface",
       "date": "February 2026",
       "image": "assets/images/bedtime.png",
       "image_caption": "Visual hierarchy and state transitions on the 2.4-inch display.",
-      "what_happened": "When we tried standard mobile UI patterns on a 320×240 embedded display, everything felt cluttered, text was cramped, and the screen distracted from the core voice conversation.",
+      "what_happened": "When we tried standard mobile UI patterns on a 320\u00d7240 embedded display, everything felt cluttered, text was cramped, and the screen distracted from the core voice conversation.",
       "what_i_did": "I stripped the interface down to absolute essentials: high-contrast geometric states for Listening, Thinking, and Expressing, paired with bitmap-optimized typography and strict grid spacing.",
       "why_it_mattered": "Cheeko is intentionally not an iPad. The display exists to acknowledge voice intent and anchor physical knob navigation, not to become an endless content scroll.",
       "result": "The screen became immediately glanceable for children without distracting from the voice companion experience. Frame rendering stayed responsive without buffer lag.",
-      "what_i_learned": "The screen was 320×240. Apparently, that is enough space to question every design decision. Extreme constraint forces product honesty."
+      "what_i_learned": "The screen was 320\u00d7240. Apparently, that is enough space to question every design decision. Extreme constraint forces product honesty."
     },
     {
       "id": "making-voice-ai-work-in-physical-product",
       "title": "Making voice AI work inside a physical product",
-      "category": "AI · Hardware",
+      "category": "AI \u00b7 Hardware",
       "date": "February 2026",
       "image": "assets/images/hero.png",
       "image_caption": "Acoustic chamber separation and microphone isolation.",
@@ -194,7 +302,7 @@
     {
       "id": "packaging-became-part-of-product",
       "title": "Packaging became part of the product",
-      "category": "Packaging · Product",
+      "category": "Packaging \u00b7 Product",
       "date": "March 2026",
       "image": "assets/images/card_adventure.jpg",
       "image_caption": "Heavyweight CMYK story cards and unboxing tray.",
@@ -207,7 +315,7 @@
     {
       "id": "from-prototype-to-production",
       "title": "From prototype to production",
-      "category": "Hardware · Manufacturing",
+      "category": "Hardware \u00b7 Manufacturing",
       "date": "March 2026",
       "image": "assets/images/colourway.jpg",
       "image_caption": "T1 tooling validation and tolerance alignment.",
@@ -220,6 +328,17 @@
   ],
   "builder_notes": [
     {
+      "id": "physical-terminals-for-ai-agents",
+      "title": "Why AI agents need physical tabletop terminals",
+      "category": "AI Systems \u00b7 Physical Interfaces",
+      "date": "March 2026",
+      "summary": "AI assistants buried inside phone apps suffer from context friction. A dedicated tabletop terminal makes agent execution ambient, tactile, and deterministic.",
+      "content": "Most AI assistants today live inside phones, laptops, or smart speakers. But in real life, users often want something different: a nearby dedicated assistant that understands commands and acts directly on a connected computer.\n\nVoice assistants on phones suffer from two core problems: they require unlocking a screen, and they lack context with the user's active workstation. By putting a physical device on the desk with microphone input, tactile buttons, a small pixel display, and speaker feedback, the interaction changes completely.\n\nBecause OpenClaw systems are built to execute instructions deterministically, the hardware simply becomes a physical trigger and feedback interface: Voice Captured \u2192 Intent Parsed \u2192 OpenClaw Structured Action \u2192 Workstation Execution \u2192 Audio/Display Confirmation.\n\nNot every AI interaction belongs on glass. As agentic execution gets faster, dedicated tabletop hardware gives software agents an ambient physical presence.",
+      "image": "assets/images/openclaw_tabletop.png",
+      "related_project": "Tabletop AI Assistant (OpenClaw)",
+      "related_link": "#/project/openclaw-assistant"
+    },
+    {
       "id": "onstrays-to-cheeko-heartbeat",
       "title": "From OnStrays to Cheeko: What a distributed software heartbeat taught me about hardware charging",
       "category": "Cross-project ideas",
@@ -227,7 +346,7 @@
       "related_project": "Cheeko",
       "related_link": "#/cheeko",
       "summary": "How a health-check signal from a distributed messaging system changed the way I thought about a hardware charging LED.",
-      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm (14 breaths per minute) before fading out completely once full.\n\nProjects are containers. Ideas move between them."
+      "content": "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous\u2014like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm (14 breaths per minute) before fading out completely once full.\n\nProjects are containers. Ideas move between them."
     },
     {
       "id": "standing-inside-the-system",
@@ -238,7 +357,7 @@
       "related_project": "Wish-a-bavathi",
       "related_link": "#/project/wish-a-bavathi",
       "summary": "There is a photograph of me in a newspaper standing inside a public installation. It looked like visibility. In reality, it was about accountability.",
-      "content": "There is a photograph of me standing at the center of a public installation in a newspaper. On the surface, it looks like a moment of visibility. In reality, it represents something very different—accountability.\n\nWhen the installation opened to the public, the work stopped being an idea and became a living system. There was no staging area, no controlled environment, and no way to pause the experience. Every interaction unfolded in real time, shaped by people, space, and unpredictability.\n\n## When Work Leaves the Studio\n\nPeople don’t follow intended flows. They interpret, hesitate, skip steps, or engage emotionally in ways you can’t fully anticipate. Designing for a public audience forced me to abandon assumptions and respond to real behavior instead of ideal users.\n\n## Systems Are Invisible Until They Fail\n\nFrom the outside, the installation appeared seamless. Inside, it was a network of dependencies—physical mechanisms, digital interactions, facilitators, and environmental constraints. Small failures compound quickly in public-facing work. Recovery, clarity, and adaptability matter more than perfection.\n\n## Final Thought\n\nWhether it’s a public installation, a hardware product, or an organization, if you’re not willing to stand inside the system you design—to face its friction, failures, and human responses—then you’re not truly responsible for it."
+      "content": "There is a photograph of me standing at the center of a public installation in a newspaper. On the surface, it looks like a moment of visibility. In reality, it represents something very different\u2014accountability.\n\nWhen the installation opened to the public, the work stopped being an idea and became a living system. There was no staging area, no controlled environment, and no way to pause the experience. Every interaction unfolded in real time, shaped by people, space, and unpredictability.\n\n## When Work Leaves the Studio\n\nPeople don\u2019t follow intended flows. They interpret, hesitate, skip steps, or engage emotionally in ways you can\u2019t fully anticipate. Designing for a public audience forced me to abandon assumptions and respond to real behavior instead of ideal users.\n\n## Systems Are Invisible Until They Fail\n\nFrom the outside, the installation appeared seamless. Inside, it was a network of dependencies\u2014physical mechanisms, digital interactions, facilitators, and environmental constraints. Small failures compound quickly in public-facing work. Recovery, clarity, and adaptability matter more than perfection.\n\n## Final Thought\n\nWhether it\u2019s a public installation, a hardware product, or an organization, if you\u2019re not willing to stand inside the system you design\u2014to face its friction, failures, and human responses\u2014then you\u2019re not truly responsible for it."
     },
     {
       "id": "zomato-last-mile",
@@ -248,7 +367,7 @@
       "related_project": "OnStrays",
       "related_link": "#/project/onstrays",
       "summary": "Why I spent a week working as a food delivery partner in Bangalore, and what it revealed about operations gamification.",
-      "content": "Zomato operates one of India's largest on-demand logistics platforms. While customers see a simple food-ordering interface, the real complexity lies in coordinating delivery partners, restaurants, incentives, safety, and trust at scale.\n\nI worked as a Zomato delivery partner for one week to study the system from the inside. Observed onboarding, task flows, incentives, gamification, customer behavior, restaurant operations, and safety touchpoints across the delivery lifecycle.\n\nInstead of starting with UI redesign, I focused on understanding the underlying system—incentives, feedback loops, trust mechanisms, and human behavior. The app revealed itself as a gamified operations engine where UX decisions directly influence efficiency, motivation, and compliance. Design here is not about screens, but about shaping behavior at scale.\n\nYou cannot design systems you refuse to stand inside. Proximity sharpens product judgment faster than analytics dashboards."
+      "content": "Zomato operates one of India's largest on-demand logistics platforms. While customers see a simple food-ordering interface, the real complexity lies in coordinating delivery partners, restaurants, incentives, safety, and trust at scale.\n\nI worked as a Zomato delivery partner for one week to study the system from the inside. Observed onboarding, task flows, incentives, gamification, customer behavior, restaurant operations, and safety touchpoints across the delivery lifecycle.\n\nInstead of starting with UI redesign, I focused on understanding the underlying system\u2014incentives, feedback loops, trust mechanisms, and human behavior. The app revealed itself as a gamified operations engine where UX decisions directly influence efficiency, motivation, and compliance. Design here is not about screens, but about shaping behavior at scale.\n\nYou cannot design systems you refuse to stand inside. Proximity sharpens product judgment faster than analytics dashboards."
     },
     {
       "id": "cheapest-llm-call",
@@ -257,8 +376,8 @@
       "date": "August 2025",
       "related_project": "OnStrays",
       "related_link": "#/project/onstrays",
-      "summary": "Slashing latency by ~800× on an 18-volume historical RAG system using semantic Redis caching.",
-      "content": "Built a RAG system over 18 volumes of the Mahabharata to support a live storytelling and dialogue-based workshop. Querying the full pipeline initially caused unpredictable latency and high compute costs.\n\nAnalyzing user patterns showed that the majority of participant questions clustered around recurring semantic themes. We built a dual-layer Redis semantic cache with a strict cosine similarity gate.\n\nAchieved ~800× latency reduction on repeated queries and 100% compute savings on recurring topics.\n\nThe fastest and cheapest LLM call is the one you never make. Caching is a core intelligence layer."
+      "summary": "Slashing latency by ~800\u00d7 on an 18-volume historical RAG system using semantic Redis caching.",
+      "content": "Built a RAG system over 18 volumes of the Mahabharata to support a live storytelling and dialogue-based workshop. Querying the full pipeline initially caused unpredictable latency and high compute costs.\n\nAnalyzing user patterns showed that the majority of participant questions clustered around recurring semantic themes. We built a dual-layer Redis semantic cache with a strict cosine similarity gate.\n\nAchieved ~800\u00d7 latency reduction on repeated queries and 100% compute savings on recurring topics.\n\nThe fastest and cheapest LLM call is the one you never make. Caching is a core intelligence layer."
     },
     {
       "id": "affordance-is-the-manual",
@@ -268,11 +387,11 @@
       "related_project": "Param Science Experience Centre",
       "related_link": "#/project/science-centre",
       "summary": "Making motion and light intuitively visible with the GyroLens flagship exhibit.",
-      "content": "Abstract concepts in physics like rotational motion and optical convergence are difficult to grasp through static diagrams. Within the House of Glass gallery at Param Science Experience Centre, the challenge was to design a single exhibit that visually encoded these ideas into an immediately understandable experience.\n\nRather than explaining the science, the goal was to let users discover it. By coupling rotational motion with optical convergence, the exhibit translates invisible principles into a visible pattern—an infinity form emerging through hand interaction.\n\nAffordance is the user manual. In physical products, software, and public installations: make the primary interaction inevitable."
+      "content": "Abstract concepts in physics like rotational motion and optical convergence are difficult to grasp through static diagrams. Within the House of Glass gallery at Param Science Experience Centre, the challenge was to design a single exhibit that visually encoded these ideas into an immediately understandable experience.\n\nRather than explaining the science, the goal was to let users discover it. By coupling rotational motion with optical convergence, the exhibit translates invisible principles into a visible pattern\u2014an infinity form emerging through hand interaction.\n\nAffordance is the user manual. In physical products, software, and public installations: make the primary interaction inevitable."
     },
     {
       "id": "digital-marketing-nit",
-      "title": "Digital Marketing — The NIT Way: Visibility to Value",
+      "title": "Digital Marketing \u2014 The NIT Way: Visibility to Value",
       "category": "Product thinking",
       "date": "March 2025",
       "image": "assets/images/nit.jpeg",
@@ -285,9 +404,12 @@
       "id": "aalto-radical-creativity",
       "title": "Radical Creativity & Visual Studies",
       "date": "2026",
-      "context_label": "Aalto University · Radical Creativity",
+      "context_label": "Aalto University \u00b7 Radical Creativity",
       "image": "assets/images/exhibit_1.png",
-      "images": ["assets/images/exhibit_1.png", "assets/images/exhibit_2.png"],
+      "images": [
+        "assets/images/exhibit_1.png",
+        "assets/images/exhibit_2.png"
+      ],
       "description": "Visual thinking, lateral problem framing, and tactile media experiments explored during the Radical Creativity program at Aalto University.",
       "what_i_explored": "How intentional friction and unfamiliar physical media disrupt linear product development assumptions. Exploring non-verbal communication, material constraints, and speculative forms.",
       "what_i_learned": "Creativity isn't an isolated sprint or an aesthetic coat of paint. It is the discipline of noticing connections where others see separate domains.",
@@ -299,9 +421,12 @@
       "id": "light-refraction-studies",
       "title": "Light, Shadow & Optical Forms",
       "date": "2024",
-      "context_label": "Physical Systems · Optical Studies",
+      "context_label": "Physical Systems \u00b7 Optical Studies",
       "image": "assets/images/exhibit_3.png",
-      "images": ["assets/images/exhibit_3.png", "assets/images/exhibit_4.png"],
+      "images": [
+        "assets/images/exhibit_3.png",
+        "assets/images/exhibit_4.png"
+      ],
       "description": "Studies on optical convergence, refractive glass curvatures, and emergent geometric patterns created by physical light beams.",
       "what_i_explored": "Designing tangible physical interfaces where material properties dictate the visual output without software interpolation.",
       "what_i_learned": "Physical light reveals geometric truths that CAD simulations frequently smooth over. When light interacts with real glass, micro-imperfections create life.",
@@ -313,9 +438,12 @@
       "id": "handheld-ergonomics-clay-foam",
       "title": "Tactile Enclosure & Handheld Ergonomics",
       "date": "2025",
-      "context_label": "Physical Prototyping · Form Studies",
+      "context_label": "Physical Prototyping \u00b7 Form Studies",
       "image": "assets/images/product_1.png",
-      "images": ["assets/images/product_1.png", "assets/images/device_bare.png"],
+      "images": [
+        "assets/images/product_1.png",
+        "assets/images/device_bare.png"
+      ],
       "description": "Foam, resin, and 3D print form studies examining palm curvature, grip retention, and thumb reach for non-screen physical companions.",
       "what_i_explored": "Balancing child motor ergonomics with internal PCB volume, speaker back-volume, and battery mass distribution.",
       "what_i_learned": "A one-millimeter change in corner fillet radius completely alters whether a physical object feels friendly or industrial to a child's hand.",
@@ -327,9 +455,12 @@
       "id": "street-systems-photography",
       "title": "Street Systems & Observational Photography",
       "date": "2025",
-      "context_label": "Field Documentation · Bangalore",
+      "context_label": "Field Documentation \u00b7 Bangalore",
       "image": "assets/images/nit.jpeg",
-      "images": ["assets/images/nit.jpeg", "assets/images/news.png"],
+      "images": [
+        "assets/images/nit.jpeg",
+        "assets/images/news.png"
+      ],
       "description": "Visual field documentation of urban logistics, informal human coordination, and street-level operations across Bangalore.",
       "what_i_explored": "Documenting cognitive strain, ambient noise environments, and informal coordination patterns that digital platform dashboards never capture.",
       "what_i_learned": "People develop ingenious physical workarounds whenever digital interfaces fail to reflect street reality. Observation must precede abstraction.",

@@ -1009,6 +1009,51 @@
       ]
     },
     {
+      "id": "openclaw-assistant",
+      "name": "Tabletop AI Assistant (OpenClaw)",
+      "tagline": "Dedicated tabletop hardware interface for OpenClaw AI execution",
+      "category_tags": "Hardware \u00b7 AI Agents \u00b7 Physical OS",
+      "period": "2026",
+      "featured": false,
+      "image": "assets/images/openclaw_tabletop.png",
+      "image_alt": "Building a Tabletop AI Assistant Powered by OpenClaw",
+      "summary": "A dedicated tabletop hardware system that acts as a physical OS layer for OpenClaw, turning ambient voice intent into deterministic computer actions.",
+      "long_description": "Most AI assistants live buried inside phone screens or smart speakers without context for nearby workstations. We repurposed the Cheeko hardware platform to explore a different paradigm: a dedicated tabletop computer assistant that translates spoken commands into deterministic OpenClaw executions on a connected workstation.",
+      "my_role": "Product, AI & Hardware Prototyping",
+      "links": [
+        {
+          "label": "Read Technical Case Study on Hashnode",
+          "url": "https://webdesignandbeyond.hashnode.dev/building-a-tabletop-ai-assistant-powered-by-openclaw"
+        },
+        {
+          "label": "Watch Working Hardware Demo (YouTube)",
+          "url": "https://youtube.com/shorts/EBInKekyxrE?feature=share"
+        }
+      ],
+      "specs": [
+        {
+          "label": "Hardware Surface",
+          "value": "Far-field MEMS Mic + Tactile Switch + Pixel Display"
+        },
+        {
+          "label": "Execution Engine",
+          "value": "Intent Detection \u2192 OpenClaw Structured Actions"
+        },
+        {
+          "label": "Architecture",
+          "value": "3-Layer: Physical Surface \u2192 OS Command Layer \u2192 Host Execution"
+        },
+        {
+          "label": "Interaction Model",
+          "value": "Screen-free ambient command terminal"
+        }
+      ],
+      "context": "Most AI assistants today live inside phones, laptops, or smart speakers. But in real life, users often want a dedicated nearby presence that understands spoken intent and executes tasks on a connected computer without demanding visual attention or app switching.",
+      "scope": "Architected the end-to-end concept, prototyped the physical hardware integration using the Cheeko platform, designed the 3-layer architecture (Hardware Surface \u2192 OpenClaw OS Layer \u2192 Execution Terminal), and documented the build and live video demo.",
+      "thinking": "Because OpenClaw-style systems are built around deterministic command execution rather than open-ended chatbot conversation, hardware becomes a natural trigger and confirmation surface. The hardware doesn't need to do the heavy computing\u2014it acts as an ambient physical OS layer that bridges voice intent with desktop workstation automation.",
+      "outcome": "Successfully built and demonstrated a functioning tabletop hardware prototype executing real workstation tasks with voice trigger and tactile confirmation. Documented the full architecture in a published technical case study and video demonstration."
+    },
+    {
       "id": "insol",
       "name": "Insol",
       "tagline": "AI language-learning product",
@@ -1251,6 +1296,17 @@
     }
   ],
   "builder_notes": [
+    {
+      "id": "physical-terminals-for-ai-agents",
+      "title": "Why AI agents need physical tabletop terminals",
+      "category": "AI Systems \u00b7 Physical Interfaces",
+      "date": "March 2026",
+      "summary": "AI assistants buried inside phone apps suffer from context friction. A dedicated tabletop terminal makes agent execution ambient, tactile, and deterministic.",
+      "content": "Most AI assistants today live inside phones, laptops, or smart speakers. But in real life, users often want something different: a nearby dedicated assistant that understands commands and acts directly on a connected computer.\n\nVoice assistants on phones suffer from two core problems: they require unlocking a screen, and they lack context with the user's active workstation. By putting a physical device on the desk with microphone input, tactile buttons, a small pixel display, and speaker feedback, the interaction changes completely.\n\nBecause OpenClaw systems are built to execute instructions deterministically, the hardware simply becomes a physical trigger and feedback interface: Voice Captured \u2192 Intent Parsed \u2192 OpenClaw Structured Action \u2192 Workstation Execution \u2192 Audio/Display Confirmation.\n\nNot every AI interaction belongs on glass. As agentic execution gets faster, dedicated tabletop hardware gives software agents an ambient physical presence.",
+      "image": "assets/images/openclaw_tabletop.png",
+      "related_project": "Tabletop AI Assistant (OpenClaw)",
+      "related_link": "#/project/openclaw-assistant"
+    },
     {
       "id": "onstrays-to-cheeko-heartbeat",
       "title": "From OnStrays to Cheeko: What a distributed software heartbeat taught me about hardware charging",
@@ -1684,6 +1740,22 @@
             </a>
           `).join('')}
         </div>
+
+        <div class="pane-header" style="margin-top: 48px;">
+          <span class="pane-title">Platform Extensions & Prototypes</span>
+        </div>
+        <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-top: 16px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 8px;">Hardware OS Layer · 2026</div>
+          <h3 style="font-family: var(--font-sans); font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Tabletop AI Assistant (OpenClaw)</h3>
+          <p style="font-family: var(--font-sans); font-size: 14px; line-height: 1.6; color: var(--text-secondary); margin-bottom: 16px;">
+            Repurposed the Cheeko hardware platform as a dedicated tabletop physical OS layer for OpenClaw-style deterministic AI agents. Voice input triggers structured actions on connected workstations with tactile confirmation.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#/project/openclaw-assistant" style="font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none;">View Project Details →</a>
+            <a href="https://webdesignandbeyond.hashnode.dev/building-a-tabletop-ai-assistant-powered-by-openclaw" target="_blank" rel="noopener" style="font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none;">↗ Read Technical Article on Hashnode</a>
+            <a href="https://youtube.com/shorts/EBInKekyxrE?feature=share" target="_blank" rel="noopener" style="font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none;">↗ Watch Video Demo</a>
+          </div>
+        </div>
       `;
     }
 
@@ -1730,6 +1802,12 @@
             </div>
           ` : ''}
         </div>
+
+        ${proj.image ? `
+          <div class="project-hero-media" style="margin: 28px 0 36px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
+            <img src="${proj.image}" alt="${proj.image_alt || proj.name}" style="width: 100%; height: auto; display: block; max-height: 480px; object-fit: cover;">
+          </div>
+        ` : ''}
 
         ${proj.context ? `
           <div class="project-narrative-block">
