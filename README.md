@@ -1,76 +1,55 @@
 # Gowrishankar — AI Product Builder
 
-> **"I build products at the intersection of AI, software, hardware, and design."**
+> **"I build products across AI, software, hardware, and the physical world."**
 
 A personal working archive and portfolio built for clarity, editorial elegance, and longevity.
 
 ---
 
-### Core Structure
+### Architecture: BUILD · THINK · CREATE
+
+- **BUILD (Work)**: Production hardware & software projects shipped into the real world:
+  - **Cheeko**: Consumer AI companion device (6 deep build stories: chassis evolution, 320×240 display bezel, single tactile rotary control, RAG audio caching pipeline, thermal envelope, unboxing flow).
+  - **Insol**: 10-camera optical inspection rig for solar cells (₹50,000 NSRCEL seed grant).
+  - **OnStrays**: Real-time dog health tracking hardware collar & civic app.
+  - **Param Science Experience Centre**: 10,000+ monthly visitor interactive science exhibits.
+  - **Wish-a-bavathi & Urban Waste Systems**: Grounded physical and community engineering systems.
+- **THINK (Thinking / Builder Notes)**: Cross-project engineering principles, latency discoveries, and manufacturing lessons (CAD vs. plastic tolerances, voice UI latency cliffs, display resolution paradoxes).
+- **CREATE (Studio / Creative Practice)**: Image-led visual notebook connecting creative practice to product building (Aalto University Radical Creativity 2026, optical dispersion studies, tactile foam/clay prototyping, street systems photography).
+
+---
+
+### Repository Structure
 
 ```
 ├── data/
-│   └── content.json      # Simple, single source of truth (profile, projects, articles, notes)
+│   └── content.json      # Master data store (profile, projects, articles, notes, studio items)
 ├── assets/
 │   └── images/           # High-resolution project photography & diagrams
-├── index.html            # Ultra-clean, fast, dependency-free web portfolio
+├── index.html            # Fast, dependency-free responsive portfolio application (with offline fallback)
+├── vercel.json           # Vercel configuration for SPA routing & static asset delivery
 └── README.md
 ```
 
 ---
 
-### Pages & Sections
+### Local Development
 
-1. **HOME (`#/`)**
-   - Clean, confident hero introducing identity: **Gowrishankar · AI Product Builder**.
-   - **Cheeko** featured prominently as the flagship consumer AI hardware product.
-   - Secondary project cards: **Insol**, **Param Science Experience Centre**, and **Onstrays**.
-   - Curated preview of **Builder Notes** (cross-project connections & technical discoveries).
+Double-click `index.html` to open directly in any browser (fully offline compatible with embedded fallback data), or run a lightweight local server:
 
-2. **CHEEKO (`#/cheeko`)**
-   - Dedicated project page with hardware specs and overview.
-   - **What I Worked On**: Collection of grounded build notes / articles:
-     - *The mould didn't want to let go* (Manufacturing · Injection Molding)
-     - *Why the product needed a physical knob* (Product · Interaction)
-     - *Designing around a 320×240 screen* (AI Product · Interface)
-     - *Making voice AI work inside a physical product* (AI · Hardware)
-     - *Packaging became part of the product* (Packaging · Product)
-     - *From prototype to production* (Hardware · Manufacturing)
+```bash
+# Python
+python -m http.server 8000
 
-3. **ARTICLE READING VIEW (`#/cheeko/:id`)**
-   - Dedicated reading layout for each build note:
-     - What happened
-     - What I did / how I approached it
-     - Why the decision mattered
-     - Result
-     - What I learned
-
-4. **BUILDER NOTES (`#/notes`)**
-   - For ideas, principles, and connections that move across projects:
-     - *"Projects are containers. Ideas can move between them."*
-     - E.g., software heartbeats influencing hardware charging LEDs, RAG semantic caching, and last-mile operations field immersion.
-
-5. **ABOUT (`#/about`)**
-   - Concise statement communicating comfortable movement into unfamiliar territory, cross-disciplinary fluency, and first-principles execution.
+# Node.js
+npx serve .
+```
 
 ---
 
-### Adding New Content
+### Deploying to Vercel
 
-To add a new build note or cross-project note, simply append an entry to `cheeko_articles` or `builder_notes` inside `data/content.json`:
-
-```json
-{
-  "id": "slug-name",
-  "title": "Clear, specific title",
-  "category": "Discipline · Focus Area",
-  "date": "Month Year",
-  "image": "assets/images/filename.jpg",
-  "image_caption": "Optional caption",
-  "what_happened": "...",
-  "what_i_did": "...",
-  "why_it_mattered": "...",
-  "result": "...",
-  "what_i_learned": "..."
-}
-```
+1. Import this repository into [Vercel](https://vercel.com/new).
+2. Framework Preset: **Other** (Static Site).
+3. Root Directory: `./` (leave default).
+4. Click **Deploy**. Vercel will build and deploy the portfolio in seconds with automatic global CDN and SSL.

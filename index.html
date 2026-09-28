@@ -1410,7 +1410,10 @@
 
     // Router
     function parseRoute() {
-      const hash = window.location.hash.replace(/^#\/?/, '');
+      let hash = window.location.hash.replace(/^#\/?/, '');
+      if (!hash && window.location.pathname && window.location.pathname !== '/' && !window.location.pathname.endsWith('.html')) {
+        hash = window.location.pathname.replace(/^\//, '');
+      }
       if (!hash) {
         state.route = { page: 'home', id: null };
       } else if (hash.startsWith('cheeko/')) {
