@@ -339,6 +339,18 @@
       "related_link": "#/project/openclaw-assistant"
     },
     {
+      "id": "designing-ai-products-responsibly",
+      "title": "Designing AI Products Responsibly",
+      "category": "Product Philosophy \u00b7 Responsible AI",
+      "publication": "Medium",
+      "date": "2025",
+      "summary": "Building AI products isn't just about maximizing model capability\u2014it's about designing for human predictability, mental models, transparency, and safety.",
+      "content": "Most discussions around AI focus heavily on raw model capability: benchmark scores, parameter counts, and inference speed. But building products at the intersection of AI and human users demands a different set of priorities: responsibility, transparency, and intentional guardrails.\n\n## 1. Capabilities vs. Human Mental Models\nUsers don't interact with models; they interact with products. When a system is probabilistic, unpredictable behavior damages user trust immediately. Designing responsibly means establishing clear mental models: what the system knows, where it can fail, and how users can override or recover from mistakes.\n\n## 2. Guardrails as Core Product Features\nIn physical products like Cheeko\u2014designed for children and families\u2014safety and guardrails cannot be an afterthought or a generic system prompt patch. Content boundaries, privacy by design, and predictable conversational limits must be architected into the hardware and software pipeline from day one.\n\n## 3. Human Control & Determinism\nResponsible AI design prioritizes user agency. Whether on a screen or a tabletop terminal, AI should act as an intent amplifier with human oversight\u2014not an opaque black box that makes irreversible decisions silently.",
+      "external_url": "https://medium.com/@iamgowrishankar05/designing-ai-products-responsibly-6d5ebc6db823",
+      "related_project": "Cheeko (AI Consumer Hardware)",
+      "related_link": "#/cheeko"
+    },
+    {
       "id": "onstrays-to-cheeko-heartbeat",
       "title": "From OnStrays to Cheeko: What a distributed software heartbeat taught me about hardware charging",
       "category": "Cross-project ideas",
