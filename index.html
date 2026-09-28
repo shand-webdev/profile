@@ -3,56 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gowri Shankar — AI Product Builder</title>
+  <title>Gowrishankar — AI Product Builder</title>
+  <meta name="description" content="I build products at the intersection of AI, software, hardware, and design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #ffffff;
-      --bg-alt: #f7f7f8;
+      --bg-subtle: #f8f8fa;
       --bg-card: #ffffff;
-      --border: #e6e6e8;
-      --border-subtle: #f0f0f2;
-      --text: #111113;
-      --text-muted: #5d5d66;
-      --text-faint: #8e8e99;
-      --accent: #111113;
-      --accent-tint: #f0f0f4;
-      --tag-bg: #f2f2f5;
-      --tag-text: #333338;
-      --badge-pub-bg: #e6f4ea;
-      --badge-pub-text: #137333;
-      --badge-port-bg: #e8f0fe;
-      --badge-port-text: #1a73e8;
-      --badge-priv-bg: #fce8e6;
-      --badge-priv-text: #c5221f;
-      --font-sans: 'Archivo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-serif: 'Lora', Georgia, serif;
+      --border: #e8e8ed;
+      --border-subtle: #f1f1f5;
+      --text: #121214;
+      --text-secondary: #585863;
+      --text-muted: #8a8a96;
+      --accent: #121214;
+      --accent-tint: #f2f2f6;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
-      --container-max: 1120px;
-      --radius: 10px;
+      --max-width: 960px;
+      --reading-width: 720px;
     }
 
     [data-theme="dark"] {
-      --bg: #0d0d0f;
-      --bg-alt: #141418;
-      --bg-card: #18181d;
-      --border: #26262e;
-      --border-subtle: #1c1c22;
-      --text: #f0f0f4;
-      --text-muted: #a0a0ab;
-      --text-faint: #6c6c77;
-      --accent: #f0f0f4;
-      --accent-tint: #202028;
-      --tag-bg: #22222b;
-      --tag-text: #d0d0d9;
-      --badge-pub-bg: #0f2e1b;
-      --badge-pub-text: #5bb974;
-      --badge-port-bg: #142845;
-      --badge-port-text: #8ab4f8;
-      --badge-priv-bg: #371413;
-      --badge-priv-text: #f28b82;
+      --bg: #0c0c0e;
+      --bg-subtle: #141418;
+      --bg-card: #141418;
+      --border: #222228;
+      --border-subtle: #1b1b20;
+      --text: #ededf2;
+      --text-secondary: #9e9ea8;
+      --text-muted: #64646e;
+      --accent: #ededf2;
+      --accent-tint: #1c1c22;
     }
 
     * {
@@ -65,8 +50,8 @@
       font-family: var(--font-sans);
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      font-size: 15px;
+      line-height: 1.65;
+      font-size: 15.5px;
       -webkit-font-smoothing: antialiased;
       transition: background-color 0.2s ease, color 0.2s ease;
     }
@@ -74,6 +59,11 @@
     a {
       color: inherit;
       text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    a:hover {
+      opacity: 0.75;
     }
 
     button {
@@ -84,894 +74,596 @@
     }
 
     .container {
-      max-width: var(--container-max);
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
 
-    /* TOP NAVBAR */
-    .navbar {
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      backdrop-filter: blur(12px);
-      z-index: 99;
-      transition: background-color 0.2s;
+    .reading-container {
+      max-width: var(--reading-width);
+      margin: 0 auto;
+      padding: 0 28px;
     }
 
-    .navbar-inner {
+    /* HEADER & NAV */
+    .site-header {
+      padding: 32px 0 28px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header-inner {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      height: 64px;
+      align-items: baseline;
     }
 
-    .brand {
+    .brand-group {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 12px;
     }
 
-    .brand-title {
-      font-family: var(--font-serif);
-      font-size: 18px;
+    .brand-name {
+      font-family: var(--font-sans);
+      font-size: 15px;
       font-weight: 600;
       letter-spacing: -0.01em;
+      color: var(--text);
     }
 
-    .brand-badge {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      background: var(--accent-tint);
+    .brand-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
       color: var(--text-muted);
-      border-radius: 4px;
+      letter-spacing: 0.02em;
     }
 
-    .nav-links {
+    .nav-group {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 22px;
+      font-size: 14px;
     }
 
-    .nav-btn {
-      padding: 8px 14px;
-      font-size: 13.5px;
+    .nav-link {
+      color: var(--text-secondary);
+      font-weight: 400;
+      padding: 4px 0;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      opacity: 1;
+    }
+
+    .nav-link.active {
+      color: var(--text);
       font-weight: 500;
+    }
+
+    .theme-btn {
       color: var(--text-muted);
-      border-radius: 6px;
-      transition: all 0.15s ease;
-    }
-
-    .nav-btn:hover {
-      color: var(--text);
-      background: var(--bg-alt);
-    }
-
-    .nav-btn.active {
-      color: var(--text);
-      background: var(--accent-tint);
-      font-weight: 600;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .theme-toggle {
-      padding: 8px 10px;
-      border-radius: 6px;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
       font-size: 13px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .theme-toggle:hover {
-      color: var(--text);
-      border-color: var(--text-muted);
-    }
-
-    /* LENS SELECTOR BANNER */
-    .lens-banner {
-      background: var(--bg-alt);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 0;
-    }
-
-    .lens-inner {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .lens-inner::-webkit-scrollbar {
-      display: none;
-    }
-
-    .lens-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-faint);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .lens-tabs {
-      display: flex;
-      gap: 6px;
-    }
-
-    .lens-tab {
-      padding: 6px 12px;
-      font-size: 12.5px;
-      font-weight: 500;
-      border-radius: 20px;
-      color: var(--text-muted);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      white-space: nowrap;
-      transition: all 0.15s;
-    }
-
-    .lens-tab:hover {
-      border-color: var(--text-muted);
-      color: var(--text);
-    }
-
-    .lens-tab.active {
-      background: var(--accent);
-      color: var(--bg);
-      border-color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* LENS EXPLANATION CARD */
-    .lens-explainer {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      padding: 14px 20px;
-      border-radius: 0 var(--radius) var(--radius) 0;
-      margin: 24px 0 32px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13.5px;
-    }
-
-    .lens-explainer-text strong {
-      color: var(--text);
-    }
-
-    .lens-explainer-text span {
-      color: var(--text-muted);
+      padding: 4px 8px;
+      border-radius: 4px;
       margin-left: 8px;
     }
 
-    /* HERO SECTION */
+    .theme-btn:hover {
+      color: var(--text);
+      background: var(--bg-subtle);
+    }
+
+    /* HERO */
     .hero {
-      padding: 56px 0 40px 0;
-      border-bottom: 1px solid var(--border);
+      padding: 72px 0 60px 0;
     }
 
-    .hero-meta {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-faint);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .hero-name {
-      font-family: var(--font-serif);
-      font-size: 44px;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-
-    .hero-statement {
-      font-size: 22px;
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--text-muted);
-      line-height: 1.4;
-      max-width: 760px;
-      margin-bottom: 28px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .hero-item-title {
-      font-size: 11.5px;
-      font-weight: 600;
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--text-faint);
-      margin-bottom: 6px;
-    }
-
-    .hero-item-content {
-      font-size: 14.5px;
       color: var(--text-muted);
-      line-height: 1.5;
+      margin-bottom: 20px;
     }
 
-    .hero-item-content strong {
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 38px;
+      line-height: 1.25;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      max-width: 820px;
+      margin-bottom: 24px;
       color: var(--text);
     }
 
-    /* SECTION TITLE */
-    .section-header {
+    .hero-title em {
+      font-style: italic;
+    }
+
+    .hero-intro {
+      font-size: 16.5px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      max-width: 720px;
+      font-weight: 400;
+    }
+
+    /* SECTION HEADERS */
+    .section-head {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      margin: 48px 0 24px 0;
+      align-items: baseline;
+      padding: 48px 0 24px 0;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 24px;
     }
 
     .section-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
-    .section-subtitle {
-      font-size: 13.5px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       color: var(--text-muted);
-      margin-top: 4px;
+      font-weight: 500;
     }
 
-    /* PROJECT CARDS */
+    .section-action {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    .section-action:hover {
+      color: var(--text);
+    }
+
+    /* CHEEKO FLAGSHIP FEATURE */
+    .cheeko-flagship {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 36px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .cheeko-flagship:hover {
+      border-color: var(--text-secondary);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.04);
+    }
+
+    .flagship-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .flagship-title {
+      font-family: var(--font-serif);
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      margin-bottom: 12px;
+    }
+
+    .flagship-summary {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .flagship-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      border-bottom: 1.5px solid var(--text);
+      padding-bottom: 2px;
+      transition: gap 0.2s;
+    }
+
+    .cheeko-flagship:hover .flagship-btn {
+      gap: 12px;
+    }
+
+    .flagship-image-wrap {
+      width: 100%;
+      height: 280px;
+      background: var(--bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .flagship-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .cheeko-flagship:hover .flagship-image-wrap img {
+      transform: scale(1.02);
+    }
+
+    /* SECONDARY PROJECTS GRID */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      margin-bottom: 64px;
+      margin-bottom: 56px;
     }
 
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.06);
-      border-color: var(--accent);
-    }
-
-    .project-image-box {
-      height: 220px;
-      background: var(--bg-alt);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid var(--border-subtle);
-      position: relative;
-    }
-
-    .project-image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 16px;
-      transition: transform 0.3s;
-    }
-
-    .project-card:hover .project-image-box img {
-      transform: scale(1.03);
-    }
-
-    .project-badge-num {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
-      backdrop-filter: blur(4px);
-    }
-
-    .project-body {
+      border-radius: 10px;
       padding: 24px;
       display: flex;
       flex-direction: column;
-      flex: 1;
-    }
-
-    .project-header-row {
-      display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 6px;
+      min-height: 250px;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
-    .project-title {
-      font-family: var(--font-serif);
-      font-size: 20px;
-      font-weight: 600;
+    .project-card:hover {
+      border-color: var(--text-secondary);
+      transform: translateY(-2px);
     }
 
-    .project-period {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--text-faint);
-    }
-
-    .project-tagline {
-      font-size: 13px;
-      color: var(--text-faint);
-      font-weight: 500;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .project-summary {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 18px;
-      flex: 1;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+    .project-card-top {
       margin-bottom: 20px;
     }
 
-    .tag {
-      font-size: 11.5px;
-      padding: 3px 8px;
-      background: var(--tag-bg);
-      color: var(--tag-text);
-      border-radius: 4px;
-      font-weight: 500;
+    .project-tagline-small {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
     }
 
-    .project-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .project-card-title {
+      font-family: var(--font-serif);
+      font-size: 21px;
+      line-height: 1.25;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .project-card-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .project-card-footer {
       padding-top: 16px;
       border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-muted);
     }
 
-    .project-link-btn {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    /* BUILDER NOTES FEED */
+    .notes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 64px;
     }
 
-    .project-link-btn:hover {
-      text-decoration: underline;
-    }
-
-    /* GROUNDED PRINCIPLES STRIP */
-    .principles-section {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      margin: 40px 0 64px 0;
-    }
-
-    .principles-title {
-      font-family: var(--font-serif);
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-
-    .principles-grid {
+    .note-row {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-subtle);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: 140px 1fr 40px;
+      gap: 20px;
+      align-items: baseline;
+      transition: background 0.15s;
     }
 
-    .principle-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
+    .note-row:hover {
+      opacity: 0.85;
     }
 
-    .principle-quote {
+    .note-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .note-content-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .note-title {
       font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 15px;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-
-    .principle-source {
-      font-size: 12px;
-      color: var(--text-faint);
+      font-size: 19px;
+      line-height: 1.35;
       font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      color: var(--text);
     }
 
-    /* CASE STUDY STYLING */
-    .case-study-hero {
-      padding: 48px 0 32px 0;
-      border-bottom: 1px solid var(--border);
+    .note-summary {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.55;
     }
 
-    .cs-label {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-faint);
-      margin-bottom: 12px;
+    .note-arrow {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--text-muted);
+      text-align: right;
     }
 
-    .cs-title {
+    /* CHEEKO PAGE SPECIFICS */
+    .cheeko-hero {
+      padding: 60px 0 40px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .cheeko-tagline {
       font-family: var(--font-serif);
       font-size: 38px;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 16px;
+      line-height: 1.25;
+      font-weight: 400;
+      margin: 12px 0 20px 0;
     }
 
-    .cs-subtitle {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 800px;
-      line-height: 1.5;
+    .cheeko-lead {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 720px;
       margin-bottom: 32px;
     }
 
-    .cs-spec-grid {
+    .specs-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       padding: 20px;
-      background: var(--bg-alt);
-      border-radius: var(--radius);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
-      margin-bottom: 32px;
-    }
-
-    .cs-spec-item {
-      font-size: 13px;
-    }
-
-    .cs-spec-label {
-      font-size: 11px;
-      color: var(--text-faint);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .cs-spec-val {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .story-list {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin: 48px 0;
-    }
-
-    .story-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .story-header {
-      padding: 24px 32px;
-      border-bottom: 1px solid var(--border-subtle);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--bg-alt);
-    }
-
-    .story-num-title {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .story-index {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-faint);
-    }
-
-    .story-title {
-      font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    .story-category-tag {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 4px 10px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-    }
-
-    .story-body {
-      padding: 32px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
-    }
-
-    .story-narrative {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .story-block h4 {
-      font-size: 11.5px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-faint);
-      margin-bottom: 6px;
-    }
-
-    .story-block p {
-      font-size: 14.5px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .story-sidebar {
-      background: var(--bg-alt);
       border-radius: 8px;
-      padding: 24px;
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
     }
 
-    .takeaway-quote {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 16px;
-      color: var(--text);
-      line-height: 1.4;
-      border-left: 3px solid var(--accent);
-      padding-left: 14px;
-    }
-
-    .story-evidence-pill {
-      font-size: 12.5px;
-      padding: 10px 14px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      line-height: 1.4;
-    }
-
-    .story-evidence-pill strong {
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-faint);
-      margin-bottom: 2px;
-    }
-
-    /* BUILDER LOG & DATABASE VIEW */
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 24px 0;
-      align-items: center;
-      background: var(--bg-alt);
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    .search-input {
-      flex: 1;
-      min-width: 220px;
-      padding: 9px 14px;
-      font-size: 13.5px;
-      font-family: inherit;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .search-input:focus {
-      outline: none;
-      border-color: var(--accent);
-    }
-
-    .filter-select {
-      padding: 9px 14px;
+    .spec-item {
       font-size: 13px;
-      font-family: inherit;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--bg);
-      color: var(--text);
     }
 
-    .visibility-toggle {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
-      color: var(--text-muted);
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .visibility-toggle input {
-      cursor: pointer;
-    }
-
-    /* LOG ENTRY TABLE / LIST */
-    .log-list {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin-bottom: 64px;
-    }
-
-    .log-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-
-    .log-card:hover {
-      border-color: var(--text-muted);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-    }
-
-    .log-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 8px;
-    }
-
-    .log-meta-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .log-date {
+    .spec-label {
       font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--text-faint);
-    }
-
-    .log-project-pill {
       font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 2px 7px;
-      border-radius: 4px;
-      background: var(--accent-tint);
-      color: var(--text);
-    }
-
-    .badge-vis {
-      font-size: 10.5px;
-      font-weight: 600;
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      padding: 2px 7px;
-      border-radius: 4px;
-    }
-
-    .badge-public { background: var(--badge-pub-bg); color: var(--badge-pub-text); }
-    .badge-portfolio { background: var(--badge-port-bg); color: var(--badge-port-text); }
-    .badge-private { background: var(--badge-priv-bg); color: var(--badge-priv-text); }
-
-    .log-title {
-      font-family: var(--font-serif);
-      font-size: 19px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .log-takeaway-bar {
-      background: var(--bg-alt);
-      border-left: 3px solid var(--accent);
-      padding: 8px 14px;
-      font-size: 13.5px;
-      font-style: italic;
-      color: var(--text);
-      margin: 12px 0 16px 0;
-      border-radius: 0 4px 4px 0;
-    }
-
-    .log-details-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      font-size: 13px;
-      margin-bottom: 16px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .log-detail-col strong {
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-faint);
       margin-bottom: 4px;
     }
 
-    .log-detail-col p {
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .log-action-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .btn-text {
-      font-size: 12.5px;
-      font-weight: 600;
+    .spec-val {
+      font-weight: 500;
       color: var(--text);
-      display: inline-flex;
+    }
+
+    /* ARTICLES LIST (CHEEKO) */
+    .articles-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 40px 0 64px 0;
+    }
+
+    .article-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 28px;
       align-items: center;
-      gap: 4px;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
-    .btn-text:hover {
-      text-decoration: underline;
+    .article-item-card:hover {
+      border-color: var(--text-secondary);
+      transform: translateY(-2px);
     }
 
-    /* MODAL FOR DEEP INSPECTION */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
-      z-index: 999;
+    .article-card-meta {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .article-card-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1.3;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .article-card-summary {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .article-card-image {
+      width: 100%;
+      height: 140px;
+      background: var(--bg-subtle);
+      border-radius: 6px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 12px;
+      border: 1px solid var(--border-subtle);
     }
 
-    .modal-content {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      max-width: 840px;
+    .article-card-image img {
       width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 32px;
-      box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+      height: 100%;
+      object-fit: contain;
     }
 
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 16px;
+    .article-read-btn {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .modal-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 600;
+    /* ARTICLE READING PAGE */
+    .article-reading {
+      padding: 56px 0 80px 0;
     }
 
-    .modal-close-btn {
-      font-size: 20px;
-      color: var(--text-faint);
-      padding: 4px;
+    .back-btn {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 36px;
     }
 
-    .modal-close-btn:hover {
+    .back-btn:hover {
       color: var(--text);
     }
 
-    .problem-solving-breakdown {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+    .reading-meta {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
     }
 
-    .ps-block {
-      background: var(--bg-alt);
-      border: 1px solid var(--border-subtle);
+    .reading-title {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      line-height: 1.2;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .reading-image-box {
+      margin: 32px 0 40px 0;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 16px 20px;
+      padding: 32px;
+      text-align: center;
     }
 
-    .ps-label {
-      font-size: 11px;
-      font-weight: 700;
+    .reading-image-box img {
+      max-width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .reading-image-caption {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+
+    .reading-section {
+      margin-bottom: 32px;
+    }
+
+    .reading-label {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--text-faint);
-      margin-bottom: 6px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
     }
 
-    .ps-content {
-      font-size: 14.5px;
+    .reading-body {
+      font-size: 16.5px;
+      line-height: 1.75;
       color: var(--text);
-      line-height: 1.6;
+    }
+
+    .reading-quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 21px;
+      line-height: 1.45;
+      color: var(--text);
+      border-left: 2px solid var(--text);
+      padding-left: 20px;
+      margin: 40px 0;
+    }
+
+    /* ABOUT PAGE */
+    .about-page {
+      padding: 60px 0 80px 0;
+    }
+
+    .about-lead {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      line-height: 1.35;
+      font-weight: 400;
+      margin-bottom: 32px;
+    }
+
+    .about-body p {
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .about-body p strong {
+      color: var(--text);
     }
 
     /* FOOTER */
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 48px 0;
-      margin-top: 80px;
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0;
+      margin-top: 60px;
       font-size: 13.5px;
       color: var(--text-muted);
     }
@@ -982,24 +674,48 @@
       align-items: center;
     }
 
-    @media (max-width: 860px) {
-      .projects-grid, .hero-grid, .story-body, .principles-grid, .cs-spec-grid {
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .cheeko-flagship {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+      .flagship-image-wrap {
+        height: 220px;
+      }
+      .projects-grid {
         grid-template-columns: 1fr;
       }
-      .log-details-grid {
+      .note-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .note-arrow {
+        display: none;
+      }
+      .article-item-card {
         grid-template-columns: 1fr;
       }
-      .hero-name {
-        font-size: 34px;
+      .article-card-image {
+        order: -1;
       }
-      .hero-statement {
-        font-size: 18px;
+      .specs-grid {
+        grid-template-columns: 1fr 1fr;
       }
-      .navbar-inner {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 12px 0;
-        gap: 12px;
+      .hero-title, .reading-title {
+        font-size: 30px;
+      }
+      .cheeko-tagline {
+        font-size: 28px;
       }
     }
   </style>
@@ -1009,533 +725,210 @@
 
   <script>
     // ==========================================
-    // INITIAL DATA STORES & LENSES
+    // DATA STORE (Embedded fallback + fetched)
     // ==========================================
-
-    const LENSES = [
-      {
-        id: "general",
-        name: "General Portfolio",
-        short: "General",
-        desc: "Balanced, high-signal overview of cross-functional product execution.",
-        prioritize: ["Product", "AI", "Hardware", "UX", "Manufacturing"],
-        takeaway_focus: "Execution breadth with engineering & design depth"
+    const DEFAULT_DATA = {
+      profile: {
+        name: "Gowrishankar",
+        title: "AI Product Builder",
+        email: "iamgowrishankar05@gmail.com",
+        tagline: "I build products at the intersection of AI, software, hardware, and design.",
+        intro_paragraph: "I work on ambiguous problems, figure out what matters, and turn ideas into working products. My background crosses mechanical engineering, product design, interactive technology, software, and AI. I like being close to the details—whether that's tuning voice latency, fixing tooling friction on an injection mold, or deciding what belongs on a tiny screen."
       },
-      {
-        id: "ai_pm",
-        name: "AI Product Manager",
-        short: "AI PM",
-        desc: "Focus on voice latency budgets, model evaluation, prompt boundaries, and AI interaction UX.",
-        prioritize: ["AI", "Voice", "Product", "Testing"],
-        takeaway_focus: "Treating latency, acoustics, and caching as core product features"
-      },
-      {
-        id: "pm_lead",
-        name: "Product Manager / Lead",
-        short: "PM / Lead",
-        desc: "Focus on 0→1 execution, resolving ambiguity, cross-functional orchestration, and business impact.",
-        prioritize: ["Product", "Operations", "Cross-Functional", "Growth"],
-        takeaway_focus: "Turning ambiguous constraints into shippable hardware & software"
-      },
-      {
-        id: "mba",
-        name: "MBA Applications",
-        short: "MBA",
-        desc: "Highlighting cross-functional leadership, resource constraints, systems thinking, and learning velocity.",
-        prioritize: ["Operations", "Systems", "Vendors", "Product"],
-        takeaway_focus: "Proving accountability: standing inside the systems you build"
-      },
-      {
-        id: "ai_tech",
-        name: "AI / Technology",
-        short: "AI Tech",
-        desc: "Deep dive into WebSocket streaming, ASR/TTS pipelines, RAG caching, and audio signal processing.",
-        prioritize: ["AI", "Architecture", "Engineering"],
-        takeaway_focus: "Understanding technical trade-offs deeply enough to make right product decisions"
-      },
-      {
-        id: "hardware_deeptech",
-        name: "Hardware / Deep Tech",
-        short: "Hardware",
-        desc: "Focus on DFM, injection molding kinematics, tooling diamond polish, acoustic isolation, and BOM.",
-        prioritize: ["Manufacturing", "DFM", "Hardware", "Industrial Design"],
-        takeaway_focus: "Respecting physical physics: plastic kinematics, tolerances, and acoustics"
-      },
-      {
-        id: "ux_design",
-        name: "UX / Interaction Design",
-        short: "UX / Interaction",
-        desc: "Focus on 320×240 embedded display constraints, tactile knobs vs touchscreens, and tangible card onboarding.",
-        prioritize: ["UX", "UI", "Industrial Design", "Packaging"],
-        takeaway_focus: "Subtractive design: keeping users present in reality with honest tactile affordances"
-      }
-    ];
+      projects: [
+        {
+          id: "cheeko",
+          name: "CHEEKO",
+          tagline: "AI companion for kids",
+          category_tags: "AI · Hardware · Product",
+          period: "2025 – Present",
+          featured: true,
+          image: "assets/images/device_bare.png",
+          summary: "An AI-first physical consumer device that brings conversational intelligence and storytelling to kids without addictive screen time.",
+          long_description: "Cheeko is an AI consumer hardware companion designed from the ground up to replace passive screen time with tactile, conversational engagement. Instead of a smartphone or tablet screen, Cheeko pairs a purposeful 320×240 embedded display with physical controls (stepped rotary knob, tactile buttons) and low-latency voice AI.",
+          my_role: "Product & Hardware Lead (Cross-functional: AI, DFM, Embedded UX, Packaging)",
+          specs: [
+            { label: "Format", value: "Handheld AI Hardware" },
+            { label: "Interface", value: "Stepped Knob + Dual Button + 320×240 Screen" },
+            { label: "Audio", value: "Decoupled MEMS Mic + Speaker" },
+            { label: "Enclosure", value: "Custom Injection Molded ABS/PC" }
+          ]
+        },
+        {
+          id: "insol",
+          name: "INSOL",
+          tagline: "AI language-learning product",
+          category_tags: "AI · Voice · Software",
+          period: "2025 – 2026",
+          featured: false,
+          image: "assets/images/bedtime.png",
+          summary: "A conversational voice AI product designed for spoken language immersion, real-time feedback, and natural dialogue pacing.",
+          long_description: "Insol reframes language acquisition from mechanical flashcards into spoken situational dialogue. We architected a low-latency conversational audio loop to make practice feel fluid and conversational rather than like an exam.",
+          my_role: "Product & Technical Lead",
+          specs: [
+            { label: "Core Engine", value: "Streaming ASR → LLM → Low-Latency TTS" },
+            { label: "Turn Latency", value: "Sub-800ms end-to-end loop" },
+            { label: "Focus", value: "Conversational pacing & hesitation tolerance" }
+          ]
+        },
+        {
+          id: "science-centre",
+          name: "PARAM SCIENCE EXPERIENCE CENTRE",
+          tagline: "Interactive physical experiences",
+          category_tags: "Engineering · Product · Experiences",
+          period: "2022 – 2024",
+          featured: false,
+          image: "assets/images/news.png",
+          summary: "Large-scale physical and interactive installations translating complex optical physics and system dynamics into tangible experiences.",
+          long_description: "Curated and engineered the House of Glass gallery and designed the GyroLens flagship exhibit. We treated physical spaces like software platforms: exhibits had to be durable, intuitive without reading plaques, and resilient to hundreds of thousands of hands.",
+          my_role: "Curator & Experience Lead (Product Owner)",
+          specs: [
+            { label: "Scale", value: "Permanent museum gallery" },
+            { label: "Audience", value: "10,000+ monthly visitors" },
+            { label: "Key Exhibit", value: "GyroLens (Rotational momentum + optics)" }
+          ]
+        },
+        {
+          id: "onstrays",
+          name: "ONSTRAYS",
+          tagline: "Real-time social communication product",
+          category_tags: "Software · Systems · Interaction",
+          period: "2024 – 2025",
+          featured: false,
+          image: "assets/images/sprint.png",
+          summary: "Platforms exploring nuanced social interaction, structured debate mechanics, and high-performance knowledge retrieval systems.",
+          long_description: "Explored structured digital interaction patterns designed for thoughtful debate rather than dopamine-driven engagement loops. Built alongside high-performance vector retrieval architectures and semantic caching systems.",
+          my_role: "Product & Systems Lead",
+          specs: [
+            { label: "Architecture", value: "Semantic Caching & Grounded RAG" },
+            { label: "Interaction", value: "Reasoned stances over emotional likes" },
+            { label: "Research", value: "Last-mile systems field immersion" }
+          ]
+        }
+      ],
+      cheeko_articles: [
+        {
+          id: "mould-didnt-want-to-let-go",
+          title: "The mould didn't want to let go",
+          category: "Manufacturing · Injection Molding",
+          date: "March 2026",
+          image: "assets/images/device_bare.png",
+          image_caption: "First trial test shots of the handheld enclosure.",
+          what_happened: "During early trial shots for the enclosure, the molded ABS/PC parts were sticking inside the tool cavity. When the ejector pins fired, the part dragged along the cavity wall, leaving visible scuff marks and pin stress whitening on the rear surface.",
+          what_i_did: "I worked directly with the tooling engineer at the shop floor. Instead of cutting deeper draft angles into the steel—which would have altered the external industrial design silhouette—we investigated the surface friction. We tested progressive diamond polishing (#800 to #1200 grit) along the exact draw direction in the high-friction cavity zones.",
+          why_it_mattered: "Tool steel changes are permanent. Modifying draft angles would have softened the crisp industrial design lines and delayed the tooling milestone by weeks. Fixing the friction preserved both the aesthetic and the delivery timeline.",
+          result: "The molded parts began demolding smoothly with minimal ejection force. Drag marks disappeared, cycle times stabilized, and the exterior surface met cosmetic A-surface requirements without altering the CAD geometry.",
+          what_i_learned: "Mold surface finish directly alters mechanical kinematics, not just aesthetic appearance. A CAD model is very obedient. Plastic isn't."
+        },
+        {
+          id: "why-physical-knob",
+          title: "Why the product needed a physical knob",
+          category: "Product · Interaction",
+          date: "January 2026",
+          image: "assets/images/device_cut.png",
+          image_caption: "Cross-section showing physical rotary knob and actuation assembly.",
+          what_happened: "Early concepts explored touch-sensitive pads and capacitive navigation. But in testing, touch controls caused constant accidental selections, greasy smudges, and forced children to keep their eyes glued to the glass to confirm whether an action had registered.",
+          what_i_did: "I replaced the touch approach with a stepped incremental rotary encoder paired with a custom knurled outer grip, accompanied by two distinct silicone dome buttons with intentional actuation resistance.",
+          why_it_mattered: "For a young child, physical resistance and muscular feedback are intuitive. A mechanical detent click provides unambiguous confirmation through the fingertips without requiring visual verification.",
+          result: "During usability testing, kids immediately grabbed the dial and turned it. One physical click equaled one item shifted on screen. The learning curve dropped to zero, and navigation happened naturally even while looking around the room.",
+          what_i_learned: "Tactile affordances make technology disappear. Physical friction can be a feature, not a bug."
+        },
+        {
+          id: "designing-around-320x240-screen",
+          title: "Designing around a 320×240 screen",
+          category: "AI Product · Interface",
+          date: "February 2026",
+          image: "assets/images/bedtime.png",
+          image_caption: "Visual hierarchy and state transitions on the 2.4-inch display.",
+          what_happened: "When we ported standard mobile UI patterns to a 2.4-inch 320×240 embedded display, everything fell apart. Text was cramped, menus felt claustrophobic, and the screen distracted from the core voice conversation.",
+          what_i_did: "I stripped the interface down to absolute essentials. We defined three primary product states: Listening, Thinking, and Expressing. I established strict 8-pixel grid rules, high-contrast geometric glyphs, and bitmap-optimized typography where every single pixel had an explicit functional purpose.",
+          why_it_mattered: "Cheeko is intentionally not an iPad. The display exists to acknowledge intent, reflect emotional states, and support physical knob navigation—not to become an endless content scroll.",
+          result: "The UI became immediately glanceable for children. Firmware frame rendering stayed locked at a crisp 30fps without microcontroller buffer lag, and battery consumption dropped measurably.",
+          what_i_learned: "The screen was only 320×240. Apparently, that was enough space to question every design decision. Extreme constraint forces product honesty."
+        },
+        {
+          id: "making-voice-ai-work-in-physical-product",
+          title: "Making voice AI work inside a physical product",
+          category: "AI · Hardware",
+          date: "February 2026",
+          image: "assets/images/hero.png",
+          image_caption: "Acoustic chamber separation and microphone isolation.",
+          what_happened: "When the speaker played audio responses, the microphone picked up internal casing vibrations through the plastic chassis. This caused the acoustic echo cancellation to fail, making the voice AI interrupt itself or miss the child's voice completely.",
+          what_i_did: "I worked with our acoustic and hardware engineering team to isolate the vibration paths. We designed a custom silicone rubber boot that mechanically decoupled the MEMS microphone from the PCB and enclosure, and ultrasonically sealed the speaker cavity.",
+          why_it_mattered: "Voice AI does not live purely in cloud inference; it lives in the acoustic reality of plastic, air chambers, and rubber gaskets. No prompt engineering can fix a physically deafened microphone.",
+          result: "Acoustic coupling between the speaker and microphone dropped significantly. Wake-word detection and conversational barge-in became reliable, even when the device was playing loud stories or songs.",
+          what_i_learned: "Voice AI doesn't live in the cloud. It lives in the acoustic reality of plastic, air, and rubber gaskets."
+        },
+        {
+          id: "packaging-became-part-of-product",
+          title: "Packaging became part of the product",
+          category: "Packaging · Product",
+          date: "March 2026",
+          image: "assets/images/card_adventure.jpg",
+          image_caption: "Heavyweight CMYK story cards and unboxing tray.",
+          what_happened: "Typical tech onboarding is cold: download an app, scan a QR code, connect Wi-Fi, read fine print. While parents fiddle with their phones, children wait impatiently and lose the magic of the moment.",
+          what_i_did: "I integrated physical story cards into the packaging architecture. We produced durable 400gsm matte-laminated cards printed in vivid CMYK that act as tangible adventure prompts. The rigid box was engineered so the device greets the child upright the moment the lid is lifted.",
+          why_it_mattered: "The unboxing moment establishes the emotional relationship with the product. Setup should feel like opening a storybook, not configuring network equipment.",
+          result: "Children immediately engaged with the cards and device as physical play objects before setup was even completed. Initial setup friction dropped from minutes to under 90 seconds.",
+          what_i_learned: "The box basically became another interface. Physical packaging is the first chapter of the product experience."
+        },
+        {
+          id: "from-prototype-to-production",
+          title: "From prototype to production",
+          category: "Hardware · Manufacturing",
+          date: "March 2026",
+          image: "assets/images/colourway.jpg",
+          image_caption: "T1 tooling validation and tolerance alignment.",
+          what_happened: "Transitioning from 3D-printed SLA prototypes to hardened steel injection molds exposed tiny tolerance gaps between the button keycaps, the silicone membrane travel, and the PCB switch actuation height.",
+          what_i_did: "I built an integrated tolerance stack-up map connecting the mold maker's shrinkage rates, the silicone durometer specs, and the firmware debounce timings before approving the final tool cut.",
+          why_it_mattered: "Once steel is cut, modifying button travel distance costs weeks of downtime and substantial rework expenses. Catching misalignment early protects both budget and timeline.",
+          result: "The first molded T1 parts produced a crisp, reliable tactile click on the very first shot. Firmware debounce matched physical mechanics with zero tooling rework.",
+          what_i_learned: "Small part. Surprisingly large conversation. Cross-functional leadership is about catching misalignment before it gets hardened into steel."
+        }
+      ],
+      builder_notes: [
+        {
+          id: "onstrays-to-cheeko-heartbeat",
+          title: "From OnStrays to Cheeko: What a distributed software heartbeat taught me about hardware charging",
+          category: "Cross-Project · Systems to Hardware",
+          date: "April 2026",
+          summary: "How a health-check signal from a distributed messaging system changed the way I thought about a hardware charging LED.",
+          content: "In distributed software, a heartbeat is not an alert. It is a quiet, continuous signal that says: *the node is alive, healthy, and processing work.* It does not demand user attention; it simply exists as background truth.\n\nMonths later, while working on Cheeko's charging indication, we initially had an LED that pulsed when plugged in. But watching it on a child's bedside table at night, it felt nervous—like an alarm demanding you look at it.\n\nI remembered the heartbeat loop. Hardware charging shouldn't be an alert. It should be a biological resting state. We softened the duty cycle curve so the light slowly breathes at a human resting rhythm (14 breaths per minute) before fading out completely once full.\n\nProjects are containers. Ideas move between them."
+        },
+        {
+          id: "cheapest-llm-call",
+          title: "The cheapest and fastest LLM call is the one you never make",
+          category: "AI Architecture · Product Thinking",
+          date: "August 2025",
+          summary: "Why semantic caching and boundary evaluation belong in the product layer, not just infrastructure.",
+          content: "When building an interactive knowledge system over an 18-volume historical dataset, every user query initially hit a full embedding search and LLM generation. Response latency sat between 3 and 5 seconds, and cost scaled directly with curiosity.\n\nAnalyzing user logs revealed that 60% of questions were semantic variations of core themes. Instead of treating every prompt as a new computation, we built a dual-layer Redis semantic cache with a strict 0.92 cosine similarity gate.\n\nRepeated queries dropped from 3,500ms to under 15ms with 100% compute savings. The takeaway was clear: caching isn't just a database technique. In AI products, caching is an intelligence and economics layer that protects user experience."
+        },
+        {
+          id: "standing-inside-the-system",
+          title: "Standing inside the system you build",
+          category: "Field Research · Systems Thinking",
+          date: "May 2025",
+          summary: "Why I spent a week working as a food delivery partner in Bangalore, and what it taught me about platform design.",
+          content: "Product teams sitting in air-conditioned offices look at dashboards and assume delivery drivers behave according to clean algorithmic incentives.\n\nI spent a week delivering food across Bangalore to understand the system from the inside. What I saw on the road was completely different from what a dashboard shows: sudden sound cue confusion while navigating traffic, asymmetric accountability where drivers are penalized for kitchen delays, and intense cognitive strain.\n\nYou cannot design systems you refuse to stand inside. Proximity to the friction sharpens product judgment faster than analytics dashboards."
+        },
+        {
+          id: "affordance-is-the-manual",
+          title: "If an interface requires an instruction plaque, the design hasn't finished yet",
+          category: "Physical Interaction · Product Design",
+          date: "November 2024",
+          summary: "Lessons from building the GyroLens exhibit at Param Science Experience Centre.",
+          content: "At the science centre, exhibits are touched by thousands of people every week—from eight-year-olds to grandparents. Nobody reads the instructional wall text. If someone has to read a three-step instruction paragraph to understand how to interact with an object, the physical affordance has failed.\n\nWhen we designed GyroLens (coupling a spinning gyroscope with a centered convex lens), the mechanical form itself had to invite rotation. A balanced wheel invites a hand. A beam of light invites a glance. When the user spun it, an infinity convergence pattern emerged organically.\n\nAffordance is the manual. In hardware, software, and physical experiences: make the primary interaction inevitable."
+        }
+      ]
+    };
 
     // State
     const state = {
       theme: localStorage.getItem('theme') || 'light',
-      currentLens: 'general',
-      currentPage: 'home',
-      searchQuery: '',
-      filterCategory: 'ALL',
-      filterProject: 'ALL',
-      showPrivate: false,
-      selectedLog: null,
-      projects: [
-  {
-    "id": "cheeko",
-    "number": "01",
-    "name": "CHEEKO",
-    "tagline": "AI Consumer Hardware",
-    "period": "2025 – Present",
-    "status": "Active / In Production Preparation",
-    "summary": "Building an AI-first physical consumer device that brings interactive conversational intelligence to kids without addictive screen-time.",
-    "role": "Product Builder & Lead (Cross-functional: AI, Hardware, DFM, UX)",
-    "tags": ["Product", "AI", "Hardware", "UX", "Manufacturing"],
-    "hero_image": "assets/images/device_bare.png",
-    "accent_color": "#ff6b4a",
-    "meta": {
-      "display": "320×240 IPS Display",
-      "interaction": "Physical Knob + Dual Button + Voice AI",
-      "manufacturing": "Injection Molded Enclosure (ABS/PC), Custom DFM Tooling",
-      "packaging": "CMYK Box + Interactive Card System"
-    },
-    "overview": "Cheeko is an AI consumer hardware device designed from the ground up to turn digital conversational AI into a safe, tactile physical companion. Instead of an open tablet or smartphone screen, Cheeko utilizes a purposeful 320×240 interface, robust physical controls (rotary knob, tactile buttons), and low-latency voice AI interaction.",
-    "key_contributions": [
-      "Orchestrated cross-functional product development bridging industrial design, mechanical tooling, firmware, and AI conversational pipelines.",
-      "Defined the 320×240 UX constraints, ensuring glanceable interactions and purposeful non-distracting visual feedback.",
-      "Resolved critical injection molding and ejection issues directly with tooling partners, balancing surface texture, draft angles, and diamond polishing.",
-      "Engineered packaging as a physical onboarding interface, integrating custom-printed CMYK cards that trigger physical-to-digital interactions."
-    ],
-    "links": [
-      { "label": "Case Study", "url": "#/cheeko" },
-      { "label": "Builder Logs (Cheeko)", "url": "#/logs?project=Cheeko" }
-    ]
-  },
-  {
-    "id": "insol",
-    "number": "02",
-    "name": "INSOL",
-    "tagline": "AI Language-Learning Product",
-    "period": "2025 – 2026",
-    "status": "Shipped / Live System",
-    "summary": "Conversational AI platform designed for immersive spoken language practice with real-time feedback and dynamic conversation trees.",
-    "role": "Product & Technical Lead",
-    "tags": ["AI", "Voice", "Product", "Software"],
-    "hero_image": "assets/images/bedtime.png",
-    "accent_color": "#3b82f6",
-    "meta": {
-      "pipeline": "Speech-to-Text → LLM Intent Engine → Low-Latency TTS",
-      "stack": "FastAPI, Python, WebSocket Audio Streaming, Evaluation Framework",
-      "core_metric": "Sub-800ms conversational turn latency"
-    },
-    "overview": "Insol reframes language acquisition from rote grammar drills into situational spoken dialogue. By engineering low-latency conversational audio loops and pedagogical prompting boundaries, Insol simulates real-world spoken interactions with non-judgmental conversational pacing.",
-    "key_contributions": [
-      "Architected conversational voice loop balancing ASR token streaming, LLM first-token generation, and streaming audio synthesis.",
-      "Designed prompt eval suites to guard against language drift, hallucinated idioms, and premature turn-taking.",
-      "Conducted usability testing with non-native speakers to tune voice interruptibility and silence detection thresholds."
-    ],
-    "links": [
-      { "label": "Builder Logs", "url": "#/logs?project=Insol" }
-    ]
-  },
-  {
-    "id": "science-experience-centre",
-    "number": "03",
-    "name": "PARAM SCIENCE EXPERIENCE CENTRE",
-    "tagline": "Interactive Technology Experiences",
-    "period": "2022 – 2024",
-    "status": "Publicly Deployed (Bangalore)",
-    "summary": "Curated and engineered large-scale physical and interactive installations translating complex optical physics and system dynamics into tangible experiences.",
-    "role": "Curator & Experience Lead (Product Owner)",
-    "tags": ["Engineering", "Product", "Interaction", "Systems"],
-    "hero_image": "assets/images/news.png",
-    "accent_color": "#10b981",
-    "meta": {
-      "footprint": "Multi-zone permanent museum gallery ('House of Glass')",
-      "flagship": "GyroLens (Rotational motion + optical convergence exhibit)",
-      "audience": "10,000+ monthly visitors across diverse age groups"
-    },
-    "overview": "Led the end-to-end design, mechanical prototyping, and execution of the House of Glass gallery and GyroLens exhibit. Treated physical exhibition spaces as software platforms—where exhibits operate as modular features designed for intuitive discoverability without dense instructional text.",
-    "key_contributions": [
-      "Conceptualized, prototyped, and deployed the GyroLens flagship exhibit combining a motorized gyroscope and convex optics.",
-      "Managed multidisciplinary teams of fabricators, optical engineers, architects, and educators over a 2-year lifecycle.",
-      "Designed for physical fault tolerance, extreme wear-and-tear, and zero-instruction user affordances."
-    ],
-    "links": [
-      { "label": "Builder Logs", "url": "#/logs?project=Science%20Experience%20Centre" }
-    ]
-  },
-  {
-    "id": "onstrays",
-    "number": "04",
-    "name": "ONSTRAYS & H.I SYSTEMS",
-    "tagline": "Real-Time Social & Expression Platforms",
-    "period": "2024 – 2025",
-    "status": "MVP / Research System",
-    "summary": "Platforms exploring nuanced social interaction, structured debate mechanics, and high-performance knowledge retrieval systems.",
-    "role": "Product & Systems Designer",
-    "tags": ["Software", "UX", "Systems", "AI"],
-    "hero_image": "assets/images/sprint.png",
-    "accent_color": "#8b5cf6",
-    "meta": {
-      "debate_system": "H.I Expression Framework (Reasoning-based endorsements over likes)",
-      "knowledge_system": "18-Volume Mahabharata RAG Pipeline with Redis Caching (~800x latency reduction)",
-      "field_research": "Zomato last-mile logistics immersion"
-    },
-    "overview": "Explored structured digital systems designed for thoughtful human deliberation rather than dopamine-driven virality. Designed interaction patterns that require explicit stance declaration, paired with high-performance vector retrieval architectures.",
-    "key_contributions": [
-      "Engineered an 18-volume RAG knowledge retrieval system utilizing semantic chunking and Redis caching to eliminate repeated LLM compute costs.",
-      "Designed UI interaction patterns that substituted emotional reactions (likes) with structured intellectual endorsements and reasoned counter-arguments.",
-      "Embedded in last-mile logistics operations to analyze behavioral gamification and incentive loops from first principles."
-    ],
-    "links": [
-      { "label": "Builder Logs", "url": "#/logs?project=Onstrays" }
-    ]
-  }
-]
-,
-      database: [
-  {
-    "id": "cheeko-mold-ejection-polishing",
-    "date": "2026-03-12",
-    "title": "Resolving Tooling Ejection Friction via Diamond Mold Polishing",
-    "project": "Cheeko",
-    "category": "Manufacturing",
-    "subcategory": "Tooling & DFM",
-    "my_role": "I investigated the ejection drag marks with the tooling engineer and coordinated the surface polish adjustment.",
-    "problem": "The injection-molded enclosure was sticking inside the tool cavity and not ejecting cleanly, causing minor surface dragging and pin stress marks on trial test shots.",
-    "context": "Cheeko's enclosure has deep sidewalls with minimal draft angles to maintain a compact, friendly silhouette. If ejection force is too high, parts deform, cycle times spike, and cosmetic reject rates climb.",
-    "investigation": "Looked into friction between the molded ABS/PC blend and the tool steel cavity wall. Examined draft angle measurements on the CAD model versus real steel, and checked ejector pin distribution balance.",
-    "people": "I worked closely with our tooling partner and mechanical engineering lead.",
-    "hypotheses": [
-      "Draft angle is slightly undersized on the rear cavity walls.",
-      "EDM spark erosion texture on tool surface created micro-undercuts causing vacuum drag during demolding.",
-      "Cooling cycle duration is uneven across thick-to-thin transitions."
-    ],
-    "action": "Rather than modifying the steel geometry or cutting deeper draft angles (which would alter the external industrial design profile), we specified progressive diamond polishing (#800 to #1200 grit) along the ejection vector in the critical drag zones.",
-    "result": "The molded parts demolded effortlessly without sticking or pin deformation. Cycle time stabilized and surface finish met cosmetic A-surface specifications.",
-    "principle": "Mold surface finish can directly alter production kinematics, not just aesthetic appearance. A CAD model is very obedient; plastic isn't.",
-    "next_time": "Specify draw polishing along the ejection direction in early DFM review notes prior to first tool cut.",
-    "why_decision_made": "Polishing the existing steel avoided costly tooling re-machining and preserved the exact industrial design silhouette without delaying delivery milestones.",
-    "technical_depth": "Deep dive into tool steel surface roughness (Ra values), micro-undercut friction, draft tolerance margins in ABS/PC, and mold release dynamics.",
-    "product_thinking": "Protected the physical feel and compact proportions of the handheld device rather than compromising industrial design when manufacturing friction appeared.",
-    "business_impact": "Avoided a 3-week tooling modification cycle and thousands of dollars in mold re-cutting costs.",
-    "cross_functional_work": "Bridged industrial design expectations with tooling shop realities to reach an actionable mechanical compromise.",
-    "skills": ["DFM", "Injection Molding", "Tooling", "Manufacturing", "Root Cause Analysis"],
-    "tags": ["manufacturing", "tooling", "dfm", "injection-molding", "enclosure", "cheeko"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/device_bare.png",
-    "links": [],
-    "one_line_takeaway": "A CAD model is very obedient. Plastic isn't. Surface polish is a mechanical lever, not just a cosmetic one."
-  },
-  {
-    "id": "cheeko-320x240-display-ux",
-    "date": "2026-02-18",
-    "title": "Designing for Extreme Constraint: The 320×240 Screen Interface",
-    "project": "Cheeko",
-    "category": "UX",
-    "subcategory": "Embedded UI & Interaction Design",
-    "my_role": "I designed the visual hierarchy, typographic rules, and state transitions for the display.",
-    "problem": "Modern mobile design patterns failed completely on a 2.4-inch 320×240 embedded display. Text was unreadable, multi-button navigation felt cluttered, and children were overwhelmed by visual noise.",
-    "context": "Cheeko is intentionally not an iPad. The screen exists solely to confirm voice intent, provide emotional feedback, and anchor physical knob interaction—not to consume continuous screen time.",
-    "investigation": "Tested various pixel densities, font sizes, color contrasts, and animation frame rates on physical TFT/IPS hardware under direct ambient sunlight and bedside lighting.",
-    "people": "I worked with our embedded firmware engineer and conducted quick observation sessions with kids and parents.",
-    "hypotheses": [
-      "Standard responsive mobile UI frameworks contain too much layout overhead for low-power microcontrollers.",
-      "Kids need glanceable character feedback (eyes, states, icons) rather than textual paragraphs.",
-      "High refresh animations cause SPI bus bandwidth bottlenecks and battery drain."
-    ],
-    "action": "Stripped the interface down to high-contrast, bold geometry and 3 primary states: Listening, Thinking, and Expressing. Created a custom bitmap-optimized typography hierarchy and strict 8-pixel grid rules where every UI element serves an explicit function.",
-    "result": "Memory footprint on the MCU dropped by 64%, frame rendering remained locked at smooth 30fps without tearing, and child usability tests showed immediate comprehension without reading assistance.",
-    "principle": "The screen was only 320×240, so every element had to earn its space. True screen constraint forces product honesty.",
-    "next_time": "Test typography rendering directly on raw hardware panels on day one rather than designing in high-res Figma first.",
-    "why_decision_made": "Ensured the product remained a voice-and-tactile companion rather than morphing into another passive entertainment screen.",
-    "technical_depth": "Optimized frame buffer sizes, SPI display transfer bandwidth, color palettes (16-bit RGB565), and micro-animation keyframing.",
-    "product_thinking": "Subtractive product design: keeping kids present in the real room while giving them just enough digital reassurance.",
-    "business_impact": "Enabled use of an ultra-cost-effective, durable embedded display while significantly extending device battery life.",
-    "cross_functional_work": "Translated high-level child psychology principles into exact byte-budgeted sprite sheets for firmware implementation.",
-    "skills": ["Embedded UX", "Micro-interaction", "Design Systems", "Hardware Constraints", "User Testing"],
-    "tags": ["ux", "ui", "display", "embedded", "320x240", "hardware", "cheeko"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/bedtime.png",
-    "links": [],
-    "one_line_takeaway": "The screen was only 320×240, so every element had to earn its space."
-  },
-  {
-    "id": "cheeko-tactile-knob-controls",
-    "date": "2026-01-24",
-    "title": "Physical Controls: Selecting Rotary Encoders over Touchscreens",
-    "project": "Cheeko",
-    "category": "Hardware",
-    "subcategory": "Industrial Design & Interaction",
-    "my_role": "I evaluated interaction ergonomics and finalized the physical control architecture.",
-    "problem": "Early feedback indicated touchscreen navigation induced accidental touches, greasy screen smudges, and fragile glass failure risks in young hands.",
-    "context": "For a child, turning a solid mechanical knob offers instant physical feedback and muscular intuition that a flat glass screen cannot match.",
-    "investigation": "Tested continuous rotary potentiometers versus stepped incremental rotary encoders with integrated push-click switches across 10 prototype housings.",
-    "people": "I worked with our industrial designer and mechanical prototyping vendor.",
-    "hypotheses": [
-      "A stepped detent encoder gives clear tactile 'clicks' per item, preventing overshooting in menus.",
-      "A knurled rubberized outer ring provides superior grip for small hands with varying motor skills."
-    ],
-    "action": "Selected a 20-detent incremental rotary encoder with custom knurled silicone overmold. Paired it with two oversized silicone dome buttons with distinct actuation forces (300g vs 150g) to prevent accidental activation.",
-    "result": "Zero learning curve during user testing. Children immediately turned the dial and understood 1 click = 1 choice without looking directly at their fingers.",
-    "principle": "Tactile affordances make software invisible. Physical friction can be a feature, not a bug.",
-    "next_time": "Audit encoder shaft wobble tolerances earlier to avoid custom stabilization bushings.",
-    "why_decision_made": "Physical dials are indestructible compared to capacitive touch panels and reinforce screen-free intentionality.",
-    "technical_depth": "Debounce algorithm timing in microcontroller interrupts, rotary encoder detent torque curves, silicone durometer selection (60 Shore A).",
-    "product_thinking": "Interaction design is not just visual; it's acoustic and haptic. The sound of a click builds trust.",
-    "business_impact": "Reduced touch-sensor BOM costs and lowered field failure rates from cracked glass screens.",
-    "cross_functional_work": "Coordinated between firmware debounce logic and mechanical shaft tolerance to ensure smooth tactile response.",
-    "skills": ["Hardware Architecture", "Haptics", "Industrial Design", "Ergonomics", "Component Selection"],
-    "tags": ["hardware", "industrial-design", "controls", "knob", "ergonomics", "cheeko"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/device_cut.png",
-    "links": [],
-    "one_line_takeaway": "Small mechanical click. Massive leap in usability. Tactile controls make technology feel honest."
-  },
-  {
-    "id": "cheeko-acoustic-isolation-voice-ai",
-    "date": "2026-02-04",
-    "title": "Voice AI in the Physical Room: Acoustic Isolation & Speaker Vibration",
-    "project": "Cheeko",
-    "category": "AI",
-    "subcategory": "Audio Hardware & Voice UX",
-    "my_role": "I tested audio cancellation artifacts and coordinated microphone silicone baffling with engineering.",
-    "problem": "When the device speaker played audio responses, the microphone picked up internal casing vibrations, causing the voice AI to interrupt itself or misinterpret its own audio as user speech.",
-    "context": "Voice AI hardware is fundamentally constrained by acoustics. If the microphone hears the internal speaker vibration through the plastic chassis, acoustic echo cancellation (AEC) algorithms fail.",
-    "investigation": "Analyzed microphone frequency response graphs during speaker playback at 70dB SPL. Dissected the enclosure to track acoustic leakage paths through screw bosses and split lines.",
-    "people": "I worked with our acoustic consultant and hardware engineering team.",
-    "hypotheses": [
-      "Vibration is conducting through the rigid plastic chassis directly into the MEMS microphone solder pads.",
-      "Acoustic port seal on the microphone boot is leaking sound from inside the enclosure chamber."
-    ],
-    "action": "Designed a custom dual-cavity silicone rubber boot that physically decouples the MEMS mic from the PCB and plastic housing. Separated the speaker chamber with an airtight ultrasonic gasket.",
-    "result": "Speaker-to-mic mechanical coupling dropped by 24dB. Acoustic echo cancellation locked in reliably, enabling clean barge-in and wake-word detection even during energetic storytelling.",
-    "principle": "Voice AI does not live in the cloud; it lives in the physical acoustics of plastic, air, and rubber gaskets.",
-    "next_time": "Enforce sealed acoustic chamber architecture in the primary CAD master model before any PCB layout begins.",
-    "why_decision_made": "Essential for natural conversational voice UX: a conversational companion that talks over you or can't hear you is unusable.",
-    "technical_depth": "MEMS microphone sealing, acoustic impedance, silicone durometer vibration dampening, SPL measurement, and digital signal processing (AEC/beamforming).",
-    "product_thinking": "High-level AI prompts mean nothing if the physical microphone is deafened by plastic vibrations.",
-    "business_impact": "Avoided having to add expensive dual-mic DSP co-processors by solving the problem mechanically.",
-    "cross_functional_work": "Aligned acoustic physics with industrial design aesthetics to keep microphone pinholes clean and unobtrusive.",
-    "skills": ["Acoustics", "Voice AI", "Hardware Debugging", "Audio Engineering", "Cross-Functional"],
-    "tags": ["ai", "voice-ai", "hardware", "acoustics", "mems", "cheeko"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/hero.png",
-    "links": [],
-    "one_line_takeaway": "Voice AI does not live in the cloud; it lives in the acoustic reality of plastic, air, and rubber."
-  },
-  {
-    "id": "cheeko-packaging-as-interface",
-    "date": "2026-03-01",
-    "title": "Packaging as an Interface: CMYK Story Cards & Physical Onboarding",
-    "project": "Cheeko",
-    "category": "Packaging",
-    "subcategory": "Unboxing & Physical-to-Digital UX",
-    "my_role": "I designed the onboarding flow and directed the card-based interaction system.",
-    "problem": "Traditional hardware onboarding requires parents to download an app, scan QR codes, and read paper manuals while kids wait impatiently and lose interest.",
-    "context": "The unboxing moment sets the emotional baseline for a child's relationship with the product. If setup feels like tech support, the magic disappears.",
-    "investigation": "Observed family unboxings across multiple competitors. Evaluated card stock thicknesses, matte vs gloss laminations, CMYK color reproduction, and NFC/RFID card integration.",
-    "people": "I worked with our print vendor and graphic designer.",
-    "hypotheses": [
-      "Physical cards acting as 'content cartridges' bridge the physical and digital worlds for kids without screens.",
-      "Rigid unboxing trays that hold the device upright create an immediate 'first awakening' moment."
-    ],
-    "action": "Turned the packaging into an active component of the product. Included durable, heavyweight 400gsm matte-laminated story cards printed in vivid CMYK that act as tangible adventure prompts. Structured the box opening so the device greets the child the moment the lid lifts.",
-    "result": "First-time setup time dropped to under 90 seconds. Children immediately engaged with the cards as tangible toys before the device was even turned on.",
-    "principle": "The box basically became another interface. Packaging is not just protection; it is the first chapter of the product experience.",
-    "next_time": "Finalize card die-lines earlier to avoid rush proofing charges with packaging printers.",
-    "why_decision_made": "Elevated the perceived value of the product and eliminated parental friction during initial setup.",
-    "technical_depth": "Paper grain orientation, CMYK color profiles, die-cutting tolerances, matte velvet lamination scuff-resistance, and structural cardboard drop-test testing.",
-    "product_thinking": "Physical onboarding creates emotional attachment. Making content tangible makes software feel valuable.",
-    "business_impact": "Significantly reduced return rates during initial trial cohorts by eliminating setup abandonment.",
-    "cross_functional_work": "Managed print vendor color proofs, die-cut tolerances, and packaging assembly lines simultaneously.",
-    "skills": ["Packaging Design", "CMYK Printing", "Onboarding UX", "Vendor Coordination", "Physical Product"],
-    "tags": ["packaging", "cmyk", "unboxing", "ux", "cards", "cheeko"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/card_adventure.jpg",
-    "links": [],
-    "one_line_takeaway": "The box basically became another interface. Physical cards turn abstract AI into tangible play."
-  },
-  {
-    "id": "cheeko-vendor-coordination-tooling",
-    "date": "2026-03-20",
-    "title": "Orchestrating Tooling Vendors & Firmware Under Manufacturing Deadlines",
-    "project": "Cheeko",
-    "category": "Operations",
-    "subcategory": "Vendor Management & Cross-Functional Orchestration",
-    "my_role": "I acted as the central hub connecting industrial design, tooling shop, and firmware engineers.",
-    "problem": "Tooling fabricators needed final button travel clearances locked in steel, while the firmware team was still calibrating tactile switch debounce timings.",
-    "context": "Once injection mold steel is cut, modifying button travel distance costs weeks of downtime. Miscommunication between mechanical and software teams leads to sticky buttons or missed clicks.",
-    "investigation": "Created an integrated tolerance stack-up sheet mapping switch actuation height, silicone membrane travel, and outer plastic keycap clearance.",
-    "people": "I worked directly between the mold maker, firmware developer, and mechanical designer.",
-    "hypotheses": [
-      "A shared 0.15mm tolerance buffer will accommodate batch-to-batch switch variation without requiring steel re-work."
-    ],
-    "action": "Set up a unified physical-digital spec sheet. Organized a real-time alignment review with physical test jigs before authorizing T1 mold trials.",
-    "result": "T1 prototype buttons actuated with crisp, reliable clicks on the first shot. Firmware debounce parameters matched physical tolerances with zero steel modifications.",
-    "principle": "Small part. Surprisingly large conversation. Cross-functional leadership is about catching misalignment before it gets hardened into steel.",
-    "next_time": "Establish the tolerance stack-up template as a required milestone before initial tooling kickoff.",
-    "why_decision_made": "Prevented costly tooling rework and kept production timeline on schedule.",
-    "technical_depth": "Tolerance stack-up analysis, injection molding shrinkage factors, silicone keypad durometer consistency, and firmware interrupt timing.",
-    "product_thinking": "The user only feels 'quality' when mechanical travel and software response are perfectly synchronized.",
-    "business_impact": "Kept the production schedule on track and protected project capital from scrap tooling iterations.",
-    "cross_functional_work": "Translated firmware latency constraints into mechanical millimeters for toolmakers.",
-    "skills": ["Cross-Functional Leadership", "Vendor Management", "Tolerance Analysis", "Operations", "Product Execution"],
-    "tags": ["operations", "vendors", "tooling", "cross-functional", "leadership", "cheeko"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/colourway.jpg",
-    "links": [],
-    "one_line_takeaway": "Small part. Surprisingly large conversation. Alignment is cheap; cutting steel twice is expensive."
-  },
-  {
-    "id": "insol-voice-latency-architecture",
-    "date": "2025-11-15",
-    "title": "Architecting Sub-800ms Voice Latency for Conversational Language Practice",
-    "project": "Insol",
-    "category": "AI",
-    "subcategory": "Voice AI Architecture & Latency Budgeting",
-    "my_role": "I architected the conversational pipeline and benchmarked latency bottlenecks.",
-    "problem": "Early prototypes had a 2.4-second response lag between user speech end and AI voice output, destroying conversational immersion and making language learners self-conscious.",
-    "context": "Human conversational turn-taking happens in 200–500ms. In language learning, any pause longer than 1 second causes users to assume the system failed or broke.",
-    "investigation": "Instrumented end-to-end telemetry across every pipeline phase: Voice Activity Detection (VAD) silence threshold, ASR transcription streaming, LLM Time-to-First-Token (TTFT), and Text-to-Speech (TTS) first-chunk synthesis.",
-    "people": "I led the technical architecture and worked with backend engineers.",
-    "hypotheses": [
-      "Waiting for complete sentences before sending text to TTS creates unnecessary compounding latency.",
-      "Aggressive VAD silence windows (300ms vs 800ms) can cut response initiation without cutting off hesitant speakers."
-    ],
-    "action": "Replaced batch REST endpoints with full-duplex WebSocket streaming. Implemented clause-boundary token chunking so TTS synthesis starts on the very first 4-5 words of the LLM response while generation continues.",
-    "result": "Turn latency plummeted from 2,400ms to ~780ms. Usability ratings surged as conversation flowed with natural rhythm.",
-    "principle": "Latency is a product feature, not an infrastructure detail. When you stream the beginning, the middle takes care of itself.",
-    "next_time": "Build real-time latency telemetry dashboards into the internal test harness from day one.",
-    "why_decision_made": "A conversational partner must respond quickly to build psychological safety for hesitant language learners.",
-    "technical_depth": "WebSocket streaming, VAD energy thresholding, LLM streaming output buffers, audio codec transcoding (Opus), and distributed TTS pipelines.",
-    "product_thinking": "Optimizing for perceptual latency over complete computational completion.",
-    "business_impact": "Directly unlocked student retention and enabled viable commercial pilot conversations.",
-    "cross_functional_work": "Synthesized pedagogical requirements with low-level network protocol optimizations.",
-    "skills": ["Voice AI", "System Architecture", "Latency Optimization", "LLMs", "Streaming Protocols"],
-    "tags": ["ai", "voice-ai", "latency", "streaming", "llm", "insol"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/bedtime.png",
-    "links": [],
-    "one_line_takeaway": "Latency is the primary UX of voice AI. Stream early words; human brains forgive minor pauses later."
-  },
-  {
-    "id": "rag-redis-caching-system",
-    "date": "2025-08-10",
-    "title": "RAG Knowledge System: Slashing Latency by ~800× with Semantic Redis Caching",
-    "project": "Onstrays",
-    "category": "AI",
-    "subcategory": "RAG Architecture & Cost Optimization",
-    "my_role": "I designed the end-to-end RAG pipeline and caching strategy.",
-    "problem": "Querying an 18-volume historical text dataset during live storytelling workshops was generating high API costs and unpredictable response latency (3–6 seconds per query).",
-    "context": "In live workshop settings, participants ask overlapping semantic questions. Paying for repeated vector search and full LLM generation is financially wasteful and ruins pacing.",
-    "investigation": "Analyzed query distribution patterns and noticed that ~60% of participant questions clustered around identical themes and character relationships.",
-    "people": "I built the system and tested it in live dialogue sessions.",
-    "hypotheses": [
-      "Embedding-based semantic caching can intercept near-duplicate queries before touching the LLM.",
-      "Tiered caching (exact hash + vector cosine similarity threshold) can preserve factual grounding while eliminating redundant inference."
-    ],
-    "action": "Implemented a dual-layer caching architecture using Redis. Stored pre-computed response embeddings with a strict 0.92 cosine similarity gate for cache hits, falling back to grounded vector search only on novel queries.",
-    "result": "Achieved ~800× latency reduction (<15ms cache response vs 3,500ms API roundtrip) on repeated queries and eliminated 100% of LLM inference costs for recurring topics.",
-    "principle": "The fastest and cheapest LLM call is the one you never make. Caching is a core intelligence layer.",
-    "next_time": "Add proactive cache warming for predictable event themes prior to live sessions.",
-    "why_decision_made": "Made the application financially sustainable and rock-solid during high-concurrency live demonstrations.",
-    "technical_depth": "Vector embeddings, Redis caching, cosine similarity metrics, chunking heuristics, and grounded generation guardrails.",
-    "product_thinking": "High-tier engineering should serve financial viability and operational reliability.",
-    "business_impact": "Eliminated server cost spikes and enabled real-time conversational workshop performance.",
-    "cross_functional_work": "Bridged literary humanities research with high-performance database engineering.",
-    "skills": ["RAG", "Redis", "Vector DBs", "LLM Cost Optimization", "System Design"],
-    "tags": ["rag", "redis", "ai", "caching", "architecture", "onstrays"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/sprint.png",
-    "links": [
-      { "label": "Technical Writeup", "url": "https://www.linkedin.com/posts/gowrishankar-03_rag-aiengineering-redis-activity-7417087642720288768-14db" }
-    ],
-    "one_line_takeaway": "The cheapest and fastest LLM call is the one you never make. Caching is an intelligence layer."
-  },
-  {
-    "id": "science-centre-gyrolens",
-    "date": "2024-04-14",
-    "title": "GyroLens: Physicalizing Motion and Optical Convergence into Pure Discovery",
-    "project": "Science Experience Centre",
-    "category": "Industrial Design",
-    "subcategory": "Physical Exhibits & Systems Design",
-    "my_role": "I conceptualized the physical exhibit, prototyped the optics, and led fabrication.",
-    "problem": "Rotational mechanics and optical focal convergence are taught as dry formulas in textbooks. Students struggle to develop physical intuition for how light behaves through moving media.",
-    "context": "At Param Science Experience Centre, exhibits must survive hundreds of thousands of hands while communicating profound physics without walls of instructional text.",
-    "investigation": "Tested different convex lens curvatures, focal lengths, rotational bearing types, and motorized vs hand-spun momentum systems.",
-    "people": "I worked with mechanical fabricators, optical specialists, and science educators.",
-    "hypotheses": [
-      "Coupling rotational motion with a centered convex lens creates an emergent 'infinity' pattern that sparks curiosity immediately.",
-      "The exhibit must be self-explanatory: the physical affordance alone should invite spinning."
-    ],
-    "action": "Designed and built GyroLens—a custom physical installation combining a precision-balanced rotating gyroscope with a centrally mounted optical lens and aligned directional beam.",
-    "result": "Became the flagship installation of the House of Glass gallery. Visitors intuitively engaged without reading manuals, repeatedly experimenting with angular speed to watch focal patterns shift.",
-    "principle": "Rather than explaining the science, let users discover it. If an interface requires an instruction plaque, the design hasn't finished yet.",
-    "next_time": "Design modular bearing replacement cartridges into the base assembly to simplify ongoing facility maintenance.",
-    "why_decision_made": "Created lasting educational retention through kinesthetic and visual delight rather than didactic explanation.",
-    "technical_depth": "Optical focal length calculations, gyroscope precession physics, bearing load ratings, and public-grade durability engineering.",
-    "product_thinking": "Zero-manual onboarding in the physical world. Affordance is the user manual.",
-    "business_impact": "Consistently ranked as the highest-dwell-time exhibit in the gallery, generating extensive organic visitor word-of-mouth.",
-    "cross_functional_work": "Orchestrated precision machinists, glass blowers, electrical lighting contractors, and pedagogical consultants.",
-    "skills": ["Industrial Design", "Prototyping", "Optics", "Physical Systems", "Exhibition Design"],
-    "tags": ["interaction", "optics", "physics", "hardware", "prototyping", "science-centre"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/news.png",
-    "links": [],
-    "one_line_takeaway": "If a physical interface requires an instruction plaque, the design hasn't finished yet."
-  },
-  {
-    "id": "zomato-last-mile-immersion",
-    "date": "2025-05-18",
-    "title": "Inside the Algorithm: A One-Week Delivery Immersion in Last-Mile Logistics",
-    "project": "Onstrays",
-    "category": "UX",
-    "subcategory": "Field Immersion & Systems Research",
-    "my_role": "I worked as a registered delivery partner on the ground to research system mechanics firsthand.",
-    "problem": "Product teams sitting in air-conditioned offices design delivery apps assuming ideal conditions, missing the real stress, safety hazards, and micro-incentive gaming that happen in the street.",
-    "context": "Platforms like Zomato manage millions of human nodes. UX decisions directly dictate road safety, partner earnings, restaurant delays, and customer trust.",
-    "investigation": "Logged 40+ delivery shifts across peak lunch and dinner hours in Bangalore. Documented every system touchpoint: order stacking, restaurant wait times, GPS drift, gamification badges, and payout logic.",
-    "people": "Interviewed fellow delivery partners, restaurant dispatchers, and apartment security guards.",
-    "hypotheses": [
-      "The app acts less like a delivery tool and more like an operations gamification engine.",
-      "Asymmetry exists: delivery workers are heavily rated and audited, but restaurant hygiene and preparation delays are largely opaque to the system."
-    ],
-    "action": "Synthesized field observations into a comprehensive systems analysis highlighting cognitive load during driving, sound cue recognition, and structural trust gaps between restaurants and delivery workers.",
-    "result": "Published a widely shared systems case study outlining actionable improvements: restaurant hygiene verification signals, audio-only driving mode, and fair wait-time compensations.",
-    "principle": "You cannot design systems you refuse to stand inside. Proximity sharpens product judgment faster than analytics dashboards.",
-    "next_time": "Wear a body camera to capture real-time ambient noise levels during peak traffic navigation.",
-    "why_decision_made": "Direct field immersion destroys comfortable product assumptions and exposes raw operational truth.",
-    "technical_depth": "Algorithmic dispatch logic, incentive feedback loops, telemetry accuracy under GPS shadow, and behavioral economics.",
-    "product_thinking": "Every metric optimized on a dashboard has a human consequence at the end of the line.",
-    "business_impact": "Demonstrated how grounded field research uncovers high-leverage product opportunities that automated analytics miss.",
-    "cross_functional_work": "Connected software platform algorithms with human behavioral street realities.",
-    "skills": ["Field Research", "Systems Thinking", "Behavioral Economics", "Product Discovery", "UX Research"],
-    "tags": ["systems-thinking", "field-research", "ux-research", "logistics", "zomato"],
-    "visibility": "PUBLIC",
-    "confidentiality_level": "PUBLIC",
-    "image": "assets/images/nit.jpeg",
-    "links": [
-      { "label": "Full LinkedIn Case Study", "url": "https://www.linkedin.com/posts/gowrishankar-03_experience-design-case-study-activity-7322100136354963456-_gcj" }
-    ],
-    "one_line_takeaway": "You cannot design systems you refuse to stand inside. Proximity sharpens product judgment."
-  }
-]
-
+      route: { page: 'home', id: null },
+      data: DEFAULT_DATA
     };
 
-    // Apply theme
     function applyTheme() {
       document.documentElement.setAttribute('data-theme', state.theme);
       localStorage.setItem('theme', state.theme);
@@ -1548,626 +941,344 @@
       render();
     }
 
-    // Load data
-    async function loadData() {
-      try {
-        const [projRes, dbRes] = await Promise.all([
-          fetch('data/projects.json'),
-          fetch('data/builder-database.json')
-        ]);
-        if (projRes.ok && dbRes.ok) {
-          state.projects = await projRes.json();
-          state.database = await dbRes.json();
-        }
-      } catch (err) {
-        console.warn("Fetch failed, relying on embedded data", err);
-      }
-      // Handle hash routing
-      handleHash();
-      render();
-    }
-
-    function handleHash() {
-      const hash = window.location.hash.replace('#/', '').split('?')[0];
-      if (['home', 'cheeko', 'logs', 'database', 'ai-learning'].includes(hash)) {
-        state.currentPage = hash;
+    // Router
+    function parseRoute() {
+      const hash = window.location.hash.replace(/^#\/?/, '');
+      if (!hash) {
+        state.route = { page: 'home', id: null };
+      } else if (hash.startsWith('cheeko/')) {
+        const id = hash.replace('cheeko/', '');
+        state.route = { page: 'cheeko-article', id: id };
+      } else if (hash === 'cheeko') {
+        state.route = { page: 'cheeko', id: null };
+      } else if (hash.startsWith('note/')) {
+        const id = hash.replace('note/', '');
+        state.route = { page: 'note-reading', id: id };
+      } else if (hash === 'notes') {
+        state.route = { page: 'notes', id: null };
+      } else if (hash === 'about') {
+        state.route = { page: 'about', id: null };
       } else {
-        state.currentPage = 'home';
+        state.route = { page: 'home', id: null };
       }
     }
 
     window.addEventListener('hashchange', () => {
-      handleHash();
+      parseRoute();
       render();
       window.scrollTo(0, 0);
     });
 
-    function navigate(page) {
-      window.location.hash = '#/' + page;
+    function navigate(url) {
+      window.location.hash = '#/' + url.replace(/^#\/?/, '');
     }
 
-    function setLens(lensId) {
-      state.currentLens = lensId;
+    // Load data from file if available
+    async function initData() {
+      try {
+        const res = await fetch('data/content.json');
+        if (res.ok) {
+          const json = await res.json();
+          state.data = json;
+        }
+      } catch (e) {
+        console.log('Using local embedded content data');
+      }
+      parseRoute();
       render();
     }
 
     // ==========================================
-    // RENDER FUNCTIONS
+    // COMPONENTS & VIEWS
     // ==========================================
 
-    function renderNavbar() {
+    function renderHeader() {
+      const p = state.route.page;
       return `
-        <header class="navbar">
-          <div class="container navbar-inner">
-            <div class="brand">
-              <a href="#/home" onclick="navigate('home'); return false;">
-                <span class="brand-title">Gowri Shankar</span>
-              </a>
-              <span class="brand-badge">AI Product Builder</span>
+        <header class="site-header">
+          <div class="container header-inner">
+            <div class="brand-group">
+              <a href="#/" class="brand-name">Gowrishankar</a>
+              <span class="brand-label">AI Product Builder</span>
             </div>
-            <nav class="nav-links">
-              <button class="nav-btn ${state.currentPage === 'home' ? 'active' : ''}" onclick="navigate('home')">Overview</button>
-              <button class="nav-btn ${state.currentPage === 'cheeko' ? 'active' : ''}" onclick="navigate('cheeko')">Cheeko Case Study</button>
-              <button class="nav-btn ${state.currentPage === 'logs' ? 'active' : ''}" onclick="navigate('logs')">Cheeko Builder Log</button>
-              <button class="nav-btn ${state.currentPage === 'database' ? 'active' : ''}" onclick="navigate('database')">Builder Database</button>
-            </nav>
-            <div class="nav-actions">
-              <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-                ${state.theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+            <nav class="nav-group">
+              <a href="#/" class="nav-link ${p === 'home' ? 'active' : ''}">Work</a>
+              <a href="#/cheeko" class="nav-link ${p.startsWith('cheeko') ? 'active' : ''}">Cheeko</a>
+              <a href="#/notes" class="nav-link ${p.startsWith('note') ? 'active' : ''}">Builder Notes</a>
+              <a href="#/about" class="nav-link ${p === 'about' ? 'active' : ''}">About</a>
+              <button class="theme-btn" onclick="toggleTheme()" title="Toggle appearance">
+                ${state.theme === 'light' ? 'Dark' : 'Light'}
               </button>
-            </div>
+            </nav>
           </div>
         </header>
       `;
     }
 
-    function renderLensBanner() {
-      const current = LENSES.find(l => l.id === state.currentLens) || LENSES[0];
-      return `
-        <div class="lens-banner">
-          <div class="container lens-inner">
-            <span class="lens-label">Audience Lens:</span>
-            <div class="lens-tabs">
-              ${LENSES.map(l => `
-                <button class="lens-tab ${state.currentLens === l.id ? 'active' : ''}" onclick="setLens('${l.id}')">
-                  ${l.short}
-                </button>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    function renderLensExplainer() {
-      const current = LENSES.find(l => l.id === state.currentLens) || LENSES[0];
-      return `
-        <div class="lens-explainer">
-          <div class="lens-explainer-text">
-            <strong>Viewing as ${current.name}:</strong>
-            <span>${current.desc}</span>
-          </div>
-          <span style="font-family: var(--font-mono); font-size: 11.5px; color: var(--text-faint); white-space: nowrap;">
-            Single Source of Truth
-          </span>
-        </div>
-      `;
-    }
-
     // HOME PAGE
     function renderHome() {
-      const currentLensObj = LENSES.find(l => l.id === state.currentLens) || LENSES[0];
+      const { profile, projects, builder_notes } = state.data;
+      const cheeko = projects.find(p => p.id === 'cheeko');
+      const otherProjects = projects.filter(p => p.id !== 'cheeko');
+      const recentNotes = builder_notes.slice(0, 3);
+
       return `
-        <div class="hero">
-          <div class="hero-meta">Product · AI · Technology · Leadership</div>
-          <h1 class="hero-name">Gowri Shankar</h1>
-          <p class="hero-statement">
-            "I build products at the intersection of AI, technology and the physical world."
+        <section class="hero">
+          <div class="hero-eyebrow">Product · AI · Technology · Hardware</div>
+          <h1 class="hero-title">
+            "I build products at the intersection of AI, software, hardware, and design."
+          </h1>
+          <p class="hero-intro">
+            ${profile.intro_paragraph}
           </p>
+        </section>
 
-          <div class="hero-grid">
-            <div>
-              <div class="hero-item-title">Current Focus</div>
-              <div class="hero-item-content">
-                <strong>Building consumer AI hardware at Cheeko.</strong> Turning conversational intelligence into a tactile, screen-conscious physical companion.
-              </div>
-            </div>
-            <div>
-              <div class="hero-item-title">Background & Core Strength</div>
-              <div class="hero-item-content">
-                Mechanical Engineering · Product Design · Interactive Tech · AI.<br>
-                <strong>Strength:</strong> Turning ambiguous problems into products by working across technology, design, engineering and execution.
-              </div>
-            </div>
-          </div>
+        <!-- CHEEKO FLAGSHIP -->
+        <div class="section-head">
+          <span class="section-title">Selected Work</span>
+          <span class="section-action" style="color: var(--text-muted);">01 / 04</span>
         </div>
 
-        ${renderLensExplainer()}
-
-        <div class="section-header">
+        <a href="#/cheeko" class="cheeko-flagship" style="text-decoration: none;">
           <div>
-            <h2 class="section-title">Selected Work</h2>
-            <div class="section-subtitle">Core initiatives spanning AI hardware, conversational systems, and physical platforms.</div>
+            <div class="flagship-meta">${cheeko.category_tags} · Flagship</div>
+            <h2 class="flagship-title">${cheeko.name}</h2>
+            <p class="flagship-summary">${cheeko.summary}</p>
+            <span class="flagship-btn">Explore Cheeko Project & Build Notes →</span>
           </div>
-          <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-faint);">
-            Lens emphasis: ${currentLensObj.name}
-          </span>
-        </div>
+          <div class="flagship-image-wrap">
+            <img src="${cheeko.image}" alt="${cheeko.image_alt}" onerror="this.style.display='none'">
+          </div>
+        </a>
 
+        <!-- OTHER PROJECTS GRID -->
         <div class="projects-grid">
-          ${state.projects.map((p, idx) => `
+          ${otherProjects.map(p => `
             <div class="project-card">
-              <div class="project-image-box">
-                <span class="project-badge-num">${p.number}</span>
-                <img src="${p.hero_image}" alt="${p.name}" onerror="this.src='assets/images/device_bare.png'">
+              <div class="project-card-top">
+                <div class="project-tagline-small">${p.category_tags}</div>
+                <h3 class="project-card-title">${p.name}</h3>
+                <p class="project-card-desc">${p.summary}</p>
               </div>
-              <div class="project-body">
-                <div class="project-header-row">
-                  <h3 class="project-title">${p.name}</h3>
-                  <span class="project-period">${p.period}</span>
-                </div>
-                <div class="project-tagline">${p.tagline}</div>
-                <p class="project-summary">${p.summary}</p>
-                <div class="project-tags">
-                  ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-                </div>
-                <div class="project-footer">
-                  <span style="font-size: 12px; color: var(--text-faint); font-weight: 500;">${p.role}</span>
-                  ${p.id === 'cheeko' 
-                    ? `<a href="#/cheeko" class="project-link-btn" onclick="navigate('cheeko'); return false;">View Case Study →</a>`
-                    : `<a href="#/logs" class="project-link-btn" onclick="state.filterProject='${p.name.includes('CHEEKO')?'Cheeko':p.name.includes('INSOL')?'Insol':p.name.includes('PARAM')?'Science Experience Centre':'Onstrays'}'; navigate('database'); return false;">View Logs →</a>`
-                  }
-                </div>
+              <div class="project-card-footer">
+                ${p.period}
               </div>
             </div>
           `).join('')}
         </div>
 
-        <div class="principles-section">
-          <h3 class="principles-title">Ground Truths from the Field</h3>
-          <div class="principles-grid">
-            <div class="principle-card">
-              <div class="principle-quote">"A CAD model is very obedient. Plastic isn't."</div>
-              <div class="principle-source">Tooling & Injection Molding · Cheeko</div>
-            </div>
-            <div class="principle-card">
-              <div class="principle-quote">"The screen was only 320×240, so every element had to earn its space."</div>
-              <div class="principle-source">Constraint-Driven Embedded UX · Cheeko</div>
-            </div>
-            <div class="principle-card">
-              <div class="principle-quote">"The box basically became another interface."</div>
-              <div class="principle-source">Unboxing & Card-Based Play · Cheeko</div>
-            </div>
-            <div class="principle-card">
-              <div class="principle-quote">"Small part. Surprisingly large conversation."</div>
-              <div class="principle-source">Cross-Functional Tooling Coordination · Cheeko</div>
-            </div>
-            <div class="principle-card">
-              <div class="principle-quote">"The cheapest and fastest LLM call is the one you never make."</div>
-              <div class="principle-source">Semantic Redis Caching · RAG Architecture</div>
-            </div>
-            <div class="principle-card">
-              <div class="principle-quote">"You cannot design systems you refuse to stand inside."</div>
-              <div class="principle-source">Last-Mile Immersion · Zomato Operations</div>
-            </div>
-          </div>
+        <!-- BUILDER NOTES PREVIEW -->
+        <div class="section-head">
+          <span class="section-title">Builder Notes</span>
+          <a href="#/notes" class="section-action">All notes & connections (${builder_notes.length}) →</a>
+        </div>
+
+        <div class="notes-list">
+          ${recentNotes.map(n => `
+            <a href="#/note/${n.id}" class="note-row">
+              <span class="note-meta">${n.date}</span>
+              <div class="note-content-col">
+                <h4 class="note-title">${n.title}</h4>
+                <p class="note-summary">${n.summary}</p>
+              </div>
+              <span class="note-arrow">→</span>
+            </a>
+          `).join('')}
         </div>
       `;
     }
 
-    // CHEEKO CASE STUDY PAGE
-    function renderCheekoCaseStudy() {
-      const cheekoLogs = state.database.filter(e => e.project === 'Cheeko' && (state.showPrivate || e.visibility !== 'PRIVATE'));
+    // CHEEKO PROJECT PAGE
+    function renderCheekoPage() {
+      const { projects, cheeko_articles } = state.data;
+      const cheeko = projects.find(p => p.id === 'cheeko');
+
       return `
-        <div class="case-study-hero">
-          <div class="cs-label">Flagship Project · In-Depth Case Study</div>
-          <h1 class="cs-title">CHEEKO: Building an AI Consumer Hardware Companion</h1>
-          <p class="cs-subtitle">
-            A comprehensive look at the product decisions, manufacturing reality, acoustic physics, and constrained interaction design required to bring conversational AI into physical form.
+        <section class="cheeko-hero">
+          <div class="hero-eyebrow">Project · AI Consumer Hardware</div>
+          <h1 class="cheeko-tagline">${cheeko.name}: Building an AI companion for kids.</h1>
+          <p class="cheeko-lead">
+            ${cheeko.long_description}
           </p>
 
-          <div class="cs-spec-grid">
-            <div class="cs-spec-item">
-              <div class="cs-spec-label">Display</div>
-              <div class="cs-spec-val">320×240 IPS Panel</div>
-            </div>
-            <div class="cs-spec-item">
-              <div class="cs-spec-label">Interaction</div>
-              <div class="cs-spec-val">Knob + Dual Button + Voice AI</div>
-            </div>
-            <div class="cs-spec-item">
-              <div class="cs-spec-label">Enclosure & DFM</div>
-              <div class="cs-spec-val">ABS/PC Tooling (#1200 Diamond Polish)</div>
-            </div>
-            <div class="cs-spec-item">
-              <div class="cs-spec-label">Physical Interface</div>
-              <div class="cs-spec-val">CMYK Story Cards & Tray</div>
-            </div>
+          <div class="specs-grid">
+            ${cheeko.specs.map(s => `
+              <div class="spec-item">
+                <div class="spec-label">${s.label}</div>
+                <div class="spec-val">${s.value}</div>
+              </div>
+            `).join('')}
           </div>
+        </section>
+
+        <div class="section-head" style="margin-top: 36px;">
+          <span class="section-title">What I Worked On</span>
+          <span class="section-action" style="color: var(--text-muted);">${cheeko_articles.length} Build Notes</span>
         </div>
 
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Deep Technical & Product Stories</h2>
-            <div class="section-subtitle">Real evidence of problem-solving across manufacturing, firmware, UX, and acoustics.</div>
-          </div>
-          <a href="#/logs" class="btn-text" onclick="navigate('logs'); return false;">Explore Chronological Builder Log →</a>
-        </div>
-
-        <div class="story-list">
-          ${cheekoLogs.map((item, idx) => `
-            <div class="story-card">
-              <div class="story-header">
-                <div class="story-num-title">
-                  <span class="story-index">STORY 0${idx + 1}</span>
-                  <h3 class="story-title">${item.title}</h3>
-                </div>
-                <span class="story-category-tag">${item.category}</span>
-              </div>
-              <div class="story-body">
-                <div class="story-narrative">
-                  <div class="story-block">
-                    <h4>The Problem</h4>
-                    <p>${item.problem}</p>
-                  </div>
-                  <div class="story-block">
-                    <h4>Investigation & Hypotheses</h4>
-                    <p>${item.investigation} ${item.hypotheses ? item.hypotheses.join(' ') : ''}</p>
-                  </div>
-                  <div class="story-block">
-                    <h4>What We Tested & Changed</h4>
-                    <p>${item.action}</p>
-                  </div>
-                  <div class="story-block">
-                    <h4>Measurable Result</h4>
-                    <p>${item.result}</p>
-                  </div>
-                </div>
-
-                <div class="story-sidebar">
-                  <div class="takeaway-quote">
-                    "${item.one_line_takeaway || item.principle}"
-                  </div>
-
-                  <div class="story-evidence-pill">
-                    <strong>Technical Depth</strong>
-                    ${item.technical_depth || 'In-depth engineering & physical tolerance analysis.'}
-                  </div>
-
-                  <div class="story-evidence-pill">
-                    <strong>Product Thinking</strong>
-                    ${item.product_thinking || 'Subtractive, human-centered hardware constraint design.'}
-                  </div>
-
-                  <div class="story-evidence-pill">
-                    <strong>Cross-Functional Reality</strong>
-                    ${item.cross_functional_work || 'Bridging industrial design, tooling makers, and firmware.'}
-                  </div>
-                </div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
-    }
-
-    // BUILDER LOG PAGE (CHEEKO FOCUSED)
-    function renderLogs() {
-      const logs = state.database.filter(item => {
-        const matchesProject = item.project === 'Cheeko';
-        const matchesCat = state.filterCategory === 'ALL' || item.category === state.filterCategory;
-        const matchesSearch = !state.searchQuery || 
-          item.title.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-          item.problem.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-          item.action.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-          (item.tags && item.tags.some(t => t.toLowerCase().includes(state.searchQuery.toLowerCase())));
-        const matchesVis = state.showPrivate || item.visibility !== 'PRIVATE';
-        return matchesProject && matchesCat && matchesSearch && matchesVis;
-      });
-
-      return `
-        <div class="section-header" style="margin-top: 24px;">
-          <div>
-            <h1 class="section-title">Cheeko Builder Log</h1>
-            <div class="section-subtitle">Chronological, unvarnished record of daily decisions, manufacturing adjustments, and AI experiments.</div>
-          </div>
-          <span style="font-family: var(--font-mono); font-size: 13px; color: var(--text-faint);">
-            ${logs.length} Logged Entries
-          </span>
-        </div>
-
-        <div class="filter-bar">
-          <input 
-            type="text" 
-            class="search-input" 
-            placeholder="Search problems, decisions, tooling, tags..." 
-            value="${state.searchQuery}"
-            oninput="state.searchQuery = this.value; render();"
-          >
-
-          <select class="filter-select" onchange="state.filterCategory = this.value; render();">
-            <option value="ALL">All Categories</option>
-            <option value="Manufacturing" ${state.filterCategory === 'Manufacturing' ? 'selected' : ''}>Manufacturing & DFM</option>
-            <option value="Hardware" ${state.filterCategory === 'Hardware' ? 'selected' : ''}>Hardware & Controls</option>
-            <option value="AI" ${state.filterCategory === 'AI' ? 'selected' : ''}>AI & Acoustics</option>
-            <option value="UX" ${state.filterCategory === 'UX' ? 'selected' : ''}>UX & Display</option>
-            <option value="Packaging" ${state.filterCategory === 'Packaging' ? 'selected' : ''}>Packaging & Cards</option>
-            <option value="Operations" ${state.filterCategory === 'Operations' ? 'selected' : ''}>Operations & Vendors</option>
-          </select>
-
-          <label class="visibility-toggle">
-            <input 
-              type="checkbox" 
-              ${state.showPrivate ? 'checked' : ''} 
-              onchange="state.showPrivate = this.checked; render();"
-            >
-            Show Internal/Private Notes
-          </label>
-        </div>
-
-        <div class="log-list">
-          ${logs.map(log => `
-            <div class="log-card">
-              <div class="log-top-row">
-                <div class="log-meta-left">
-                  <span class="log-date">${log.date}</span>
-                  <span class="log-project-pill">${log.project}</span>
-                  <span class="tag">${log.category}</span>
-                </div>
-                <span class="badge-vis ${log.visibility === 'PUBLIC' ? 'badge-public' : log.visibility === 'PORTFOLIO' ? 'badge-portfolio' : 'badge-private'}">
-                  ${log.visibility}
-                </span>
-              </div>
-
-              <h3 class="log-title">${log.title}</h3>
-              
-              <div class="log-takeaway-bar">
-                "${log.one_line_takeaway || log.principle}"
-              </div>
-
-              <div class="log-details-grid">
-                <div class="log-detail-col">
-                  <strong>Problem Encountered</strong>
-                  <p>${log.problem}</p>
-                </div>
-                <div class="log-detail-col">
-                  <strong>Action Taken</strong>
-                  <p>${log.action}</p>
-                </div>
-                <div class="log-detail-col">
-                  <strong>Principle / Learning</strong>
-                  <p>${log.principle}</p>
-                </div>
-              </div>
-
-              <div class="log-action-bar">
-                <div class="project-tags">
-                  ${log.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
-                </div>
-                <button class="btn-text" onclick="openModal('${log.id}')">Inspect Full Problem-Solving Record →</button>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
-    }
-
-    // MASTER BUILDER DATABASE (ALL PROJECTS)
-    function renderDatabase() {
-      const logs = state.database.filter(item => {
-        const matchesProj = state.filterProject === 'ALL' || item.project === state.filterProject;
-        const matchesCat = state.filterCategory === 'ALL' || item.category === state.filterCategory;
-        const matchesSearch = !state.searchQuery || 
-          item.title.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-          item.problem.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-          item.action.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-          (item.tags && item.tags.some(t => t.toLowerCase().includes(state.searchQuery.toLowerCase())));
-        const matchesVis = state.showPrivate || item.visibility !== 'PRIVATE';
-        return matchesProj && matchesCat && matchesSearch && matchesVis;
-      });
-
-      return `
-        <div class="section-header" style="margin-top: 24px;">
-          <div>
-            <h1 class="section-title">Master Builder Database</h1>
-            <div class="section-subtitle">The single source of truth across Cheeko, Insol, Science Experience Centre, Onstrays, and Systems.</div>
-          </div>
-          <span style="font-family: var(--font-mono); font-size: 13px; color: var(--text-faint);">
-            ${logs.length} Total Verified Entries
-          </span>
-        </div>
-
-        <div class="filter-bar">
-          <input 
-            type="text" 
-            class="search-input" 
-            placeholder="Search across all projects, technical depths, tags..." 
-            value="${state.searchQuery}"
-            oninput="state.searchQuery = this.value; render();"
-          >
-
-          <select class="filter-select" onchange="state.filterProject = this.value; render();">
-            <option value="ALL">All Projects</option>
-            <option value="Cheeko" ${state.filterProject === 'Cheeko' ? 'selected' : ''}>Cheeko (Hardware AI)</option>
-            <option value="Insol" ${state.filterProject === 'Insol' ? 'selected' : ''}>Insol (Voice AI)</option>
-            <option value="Science Experience Centre" ${state.filterProject === 'Science Experience Centre' ? 'selected' : ''}>Science Experience Centre</option>
-            <option value="Onstrays" ${state.filterProject === 'Onstrays' ? 'selected' : ''}>Onstrays & Systems</option>
-          </select>
-
-          <select class="filter-select" onchange="state.filterCategory = this.value; render();">
-            <option value="ALL">All Categories</option>
-            <option value="Product">Product</option>
-            <option value="AI">AI & Systems</option>
-            <option value="Hardware">Hardware</option>
-            <option value="Manufacturing">Manufacturing</option>
-            <option value="UX">UX & Research</option>
-            <option value="Industrial Design">Industrial Design</option>
-            <option value="Packaging">Packaging</option>
-            <option value="Operations">Operations</option>
-          </select>
-
-          <label class="visibility-toggle">
-            <input 
-              type="checkbox" 
-              ${state.showPrivate ? 'checked' : ''} 
-              onchange="state.showPrivate = this.checked; render();"
-            >
-            Show Private
-          </label>
-        </div>
-
-        <div class="log-list">
-          ${logs.map(log => `
-            <div class="log-card">
-              <div class="log-top-row">
-                <div class="log-meta-left">
-                  <span class="log-date">${log.date}</span>
-                  <span class="log-project-pill">${log.project}</span>
-                  <span class="tag">${log.category}</span>
-                </div>
-                <span class="badge-vis ${log.visibility === 'PUBLIC' ? 'badge-public' : log.visibility === 'PORTFOLIO' ? 'badge-portfolio' : 'badge-private'}">
-                  ${log.visibility}
-                </span>
-              </div>
-
-              <h3 class="log-title">${log.title}</h3>
-              
-              <div class="log-takeaway-bar">
-                "${log.one_line_takeaway || log.principle}"
-              </div>
-
-              <div class="log-details-grid">
-                <div class="log-detail-col">
-                  <strong>Problem Encountered</strong>
-                  <p>${log.problem}</p>
-                </div>
-                <div class="log-detail-col">
-                  <strong>Action Taken</strong>
-                  <p>${log.action}</p>
-                </div>
-                <div class="log-detail-col">
-                  <strong>Principle / Learning</strong>
-                  <p>${log.principle}</p>
-                </div>
-              </div>
-
-              <div class="log-action-bar">
-                <div class="project-tags">
-                  ${log.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
-                </div>
-                <button class="btn-text" onclick="openModal('${log.id}')">Inspect Full Problem-Solving Record →</button>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
-    }
-
-    // MODAL
-    function openModal(id) {
-      state.selectedLog = state.database.find(e => e.id === id);
-      render();
-    }
-
-    function closeModal() {
-      state.selectedLog = null;
-      render();
-    }
-
-    function renderModal() {
-      if (!state.selectedLog) return '';
-      const log = state.selectedLog;
-      return `
-        <div class="modal-backdrop" onclick="closeModal()">
-          <div class="modal-content" onclick="event.stopPropagation()">
-            <div class="modal-header">
+        <div class="articles-feed">
+          ${cheeko_articles.map(art => `
+            <a href="#/cheeko/${art.id}" class="article-item-card">
               <div>
-                <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); margin-bottom: 4px;">
-                  ${log.date} · ${log.project} · ${log.category}
-                </div>
-                <h2 class="modal-title">${log.title}</h2>
+                <div class="article-card-meta">${art.category} · ${art.date}</div>
+                <h3 class="article-card-title">${art.title}</h3>
+                <p class="article-card-summary">${art.what_happened}</p>
+                <span class="article-read-btn">Read Note →</span>
               </div>
-              <button class="modal-close-btn" onclick="closeModal()">✕</button>
-            </div>
-
-            <div class="log-takeaway-bar" style="margin-bottom: 24px; font-size: 15px;">
-              "${log.one_line_takeaway || log.principle}"
-            </div>
-
-            <div class="problem-solving-breakdown">
-              <div class="ps-block">
-                <div class="ps-label">01. Problem</div>
-                <div class="ps-content">${log.problem}</div>
+              <div class="article-card-image">
+                <img src="${art.image}" alt="${art.title}" onerror="this.style.display='none'">
               </div>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    }
 
-              <div class="ps-block">
-                <div class="ps-label">02. Context (Why it mattered)</div>
-                <div class="ps-content">${log.context}</div>
+    // CHEEKO ARTICLE READING VIEW
+    function renderCheekoArticle(id) {
+      const art = state.data.cheeko_articles.find(a => a.id === id);
+      if (!art) {
+        return `
+          <div class="reading-container" style="padding: 60px 0;">
+            <p>Article not found.</p>
+            <a href="#/cheeko" class="back-btn">← Back to Cheeko</a>
+          </div>
+        `;
+      }
+
+      return `
+        <article class="reading-container article-reading">
+          <a href="#/cheeko" class="back-btn">← Back to Cheeko build notes</a>
+          
+          <div class="reading-meta">${art.category} · ${art.date}</div>
+          <h1 class="reading-title">${art.title}</h1>
+
+          <div class="reading-image-box">
+            <img src="${art.image}" alt="${art.title}">
+            ${art.image_caption ? `<div class="reading-image-caption">${art.image_caption}</div>` : ''}
+          </div>
+
+          <div class="reading-section">
+            <div class="reading-label">What Happened</div>
+            <p class="reading-body">${art.what_happened}</p>
+          </div>
+
+          <div class="reading-section">
+            <div class="reading-label">What I Did / How I Approached It</div>
+            <p class="reading-body">${art.what_i_did}</p>
+          </div>
+
+          <div class="reading-section">
+            <div class="reading-label">Why the Decision Mattered</div>
+            <p class="reading-body">${art.why_it_mattered}</p>
+          </div>
+
+          <div class="reading-section">
+            <div class="reading-label">Result</div>
+            <p class="reading-body">${art.result}</p>
+          </div>
+
+          <div class="reading-quote">
+            "${art.what_i_learned}"
+          </div>
+
+          <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between;">
+            <a href="#/cheeko" class="back-btn">← Back to Cheeko</a>
+            <a href="#/notes" class="back-btn">Read Builder Notes →</a>
+          </div>
+        </article>
+      `;
+    }
+
+    // BUILDER NOTES DIRECTORY
+    function renderNotesDirectory() {
+      const { builder_notes } = state.data;
+      return `
+        <section class="cheeko-hero">
+          <div class="hero-eyebrow">Working Archive</div>
+          <h1 class="cheeko-tagline">Builder Notes</h1>
+          <p class="cheeko-lead">
+            Ideas, experiments, technical discoveries, principles, and cross-project connections.<br>
+            <em>Projects are containers. Ideas can move between them.</em>
+          </p>
+        </section>
+
+        <div class="notes-list" style="margin-top: 36px;">
+          ${builder_notes.map(n => `
+            <a href="#/note/${n.id}" class="note-row">
+              <span class="note-meta">${n.date}</span>
+              <div class="note-content-col">
+                <h4 class="note-title">${n.title}</h4>
+                <p class="note-summary">${n.summary}</p>
               </div>
+              <span class="note-arrow">→</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    }
 
-              <div class="ps-block">
-                <div class="ps-label">03. Investigation</div>
-                <div class="ps-content">${log.investigation}</div>
-              </div>
+    // NOTE READING VIEW
+    function renderNoteReading(id) {
+      const note = state.data.builder_notes.find(n => n.id === id);
+      if (!note) {
+        return `
+          <div class="reading-container" style="padding: 60px 0;">
+            <p>Note not found.</p>
+            <a href="#/notes" class="back-btn">← Back to Builder Notes</a>
+          </div>
+        `;
+      }
 
-              <div class="ps-block">
-                <div class="ps-label">04. People & Collaboration</div>
-                <div class="ps-content">${log.people} (Role: ${log.my_role})</div>
-              </div>
+      // Convert newlines to paragraphs
+      const paragraphs = note.content.split('\n\n').map(p => {
+        // Simple italics replacement
+        const formatted = p.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        return `<p class="reading-body" style="margin-bottom: 20px;">${formatted}</p>`;
+      }).join('');
 
-              ${log.hypotheses ? `
-                <div class="ps-block">
-                  <div class="ps-label">05. Hypotheses Tested</div>
-                  <div class="ps-content">
-                    <ul style="padding-left: 18px;">
-                      ${log.hypotheses.map(h => `<li>${h}</li>`).join('')}
-                    </ul>
-                  </div>
-                </div>
-              ` : ''}
+      return `
+        <article class="reading-container article-reading">
+          <a href="#/notes" class="back-btn">← Back to Builder Notes</a>
+          
+          <div class="reading-meta">${note.category} · ${note.date}</div>
+          <h1 class="reading-title">${note.title}</h1>
 
-              <div class="ps-block">
-                <div class="ps-label">06. Experiment & Action (What I / We Did)</div>
-                <div class="ps-content">${log.action}</div>
-              </div>
+          <div style="margin: 36px 0;">
+            ${paragraphs}
+          </div>
 
-              <div class="ps-block">
-                <div class="ps-label">07. Observable Result</div>
-                <div class="ps-content">${log.result}</div>
-              </div>
+          <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between;">
+            <a href="#/notes" class="back-btn">← Back to Builder Notes</a>
+            <a href="#/cheeko" class="back-btn">View Cheeko Build Notes →</a>
+          </div>
+        </article>
+      `;
+    }
 
-              <div class="ps-block">
-                <div class="ps-label">08. Core Principle Learned</div>
-                <div class="ps-content"><strong>${log.principle}</strong></div>
-              </div>
+    // ABOUT PAGE
+    function renderAbout() {
+      const { profile } = state.data;
+      return `
+        <div class="reading-container about-page">
+          <div class="hero-eyebrow">Background</div>
+          <h1 class="about-lead">
+            I’m comfortable entering unfamiliar territory, understanding the problem, working with specialists, and figuring out how to get the product built.
+          </h1>
 
-              ${log.next_time ? `
-                <div class="ps-block">
-                  <div class="ps-label">09. Next Time (What I'd do differently)</div>
-                  <div class="ps-content">${log.next_time}</div>
-                </div>
-              ` : ''}
-
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;">
-                <div class="ps-block">
-                  <div class="ps-label">Technical Depth</div>
-                  <div class="ps-content" style="font-size: 13.5px;">${log.technical_depth || 'N/A'}</div>
-                </div>
-                <div class="ps-block">
-                  <div class="ps-label">Product Thinking</div>
-                  <div class="ps-content" style="font-size: 13.5px;">${log.product_thinking || 'N/A'}</div>
-                </div>
-              </div>
-            </div>
-
-            <div style="margin-top: 24px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 16px;">
-              <span style="font-size: 12px; color: var(--text-faint);">
-                Confidentiality Level: <strong>${log.confidentiality_level}</strong>
-              </span>
-              <button class="lens-tab" onclick="navigator.clipboard.writeText('${(log.one_line_takeaway || log.principle).replace(/'/g, "\\'")}'); alert('One-line takeaway copied to clipboard!');">
-                Copy One-Line Takeaway
-              </button>
-            </div>
+          <div class="about-body">
+            <p>
+              My background moves across <strong>mechanical engineering</strong>, <strong>product design</strong>, <strong>interactive experiences</strong>, <strong>software</strong>, <strong>AI</strong>, and <strong>physical hardware</strong>.
+            </p>
+            <p>
+              Rather than treating these as separate disciplines, I view them as supporting capabilities for building products that actually ship. I like working on ambiguous problems from first principles—whether that means running tolerance stack-ups for an injection tool, designing high-contrast graphics for a 320×240 embedded screen, tuning streaming voice AI latency, or working alongside delivery partners on the ground to understand operations.
+            </p>
+            <p>
+              Currently building consumer AI hardware at <strong>Cheeko</strong> in Bangalore.
+            </p>
+            <p style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+              Get in touch: <a href="mailto:${profile.email}" style="font-weight: 500; text-decoration: underline;">${profile.email}</a>
+            </p>
           </div>
         </div>
       `;
@@ -2175,16 +1286,14 @@
 
     function renderFooter() {
       return `
-        <footer class="footer">
+        <footer class="site-footer">
           <div class="container footer-inner">
             <div>
-              <strong>Gowri Shankar</strong> — AI Product Builder<br>
-              <span style="font-size: 12.5px; color: var(--text-faint);">
-                Personal Product Development Memory · One Source of Truth
-              </span>
+              <strong>Gowrishankar</strong> · AI Product Builder
             </div>
-            <div style="text-align: right; font-size: 12.5px;">
-              Bangalore, India · <a href="mailto:iamgowrishankar05@gmail.com" style="text-decoration: underline;">iamgowrishankar05@gmail.com</a>
+            <div class="footer-links">
+              <a href="mailto:${state.data.profile.email}">${state.data.profile.email}</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
         </footer>
@@ -2192,30 +1301,34 @@
     }
 
     function render() {
-      let pageContent = '';
-      if (state.currentPage === 'home') {
-        pageContent = renderHome();
-      } else if (state.currentPage === 'cheeko') {
-        pageContent = renderCheekoCaseStudy();
-      } else if (state.currentPage === 'logs') {
-        pageContent = renderLogs();
-      } else if (state.currentPage === 'database') {
-        pageContent = renderDatabase();
+      const p = state.route.page;
+      let bodyHtml = '';
+
+      if (p === 'home') {
+        bodyHtml = `<div class="container">${renderHome()}</div>`;
+      } else if (p === 'cheeko') {
+        bodyHtml = `<div class="container">${renderCheekoPage()}</div>`;
+      } else if (p === 'cheeko-article') {
+        bodyHtml = renderCheekoArticle(state.route.id);
+      } else if (p === 'notes') {
+        bodyHtml = `<div class="container">${renderNotesDirectory()}</div>`;
+      } else if (p === 'note-reading') {
+        bodyHtml = renderNoteReading(state.route.id);
+      } else if (p === 'about') {
+        bodyHtml = renderAbout();
       }
 
       document.getElementById('app').innerHTML = `
-        ${renderNavbar()}
-        ${renderLensBanner()}
-        <main class="container">
-          ${pageContent}
+        ${renderHeader()}
+        <main>
+          ${bodyHtml}
         </main>
-        ${renderModal()}
         ${renderFooter()}
       `;
     }
 
-    // Initialize
-    loadData();
+    // Start
+    initData();
   </script>
 </body>
 </html>

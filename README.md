@@ -1,87 +1,76 @@
-# Gowri Shankar — AI Product Builder
-## Personal Product Development Memory & Knowledge Archive
+# Gowrishankar — AI Product Builder
 
-> **"I build products at the intersection of AI, technology and the physical world."**
+> **"I build products at the intersection of AI, software, hardware, and design."**
 
-This repository is Gowri Shankar's **single source of truth** knowledge archive and public portfolio.
-
----
-
-### Core Philosophy: One Body of Work, Many Possible Lenses
-
-You do **not** need to manually maintain separate portfolios for AI PM roles, general PM, MBA applications, or hardware engineering. 
-
-Every problem, experiment, and decision you make is entered **once** into the **`BUILDER DATABASE`**. The frontend automatically organizes, filters, and emphasizes evidence based on the audience:
-
-- **General Portfolio:** High-signal recruiter view of end-to-end execution.
-- **AI Product Manager:** Focus on voice latency budgets, token streaming, prompt evaluation, and AI UX constraints.
-- **Product Manager / Product Lead:** Focus on 0→1 execution, ambiguity reduction, cross-functional orchestration, and business impact.
-- **MBA Applications:** Focus on leadership under high uncertainty, resource trade-offs, and behavioral field immersion.
-- **AI / Technology:** Deep dive into WebSocket streaming, ASR/TTS pipelines, RAG caching, and audio signal processing.
-- **Hardware / Deep Tech:** Deep dive into DFM, injection molding kinematics, tooling diamond polish, acoustic isolation, and BOM constraints.
-- **UX / Interaction Design:** Subtractive design for extreme constraints (320×240 embedded screens, physical knobs vs touchscreens, tactile story cards).
+A personal working archive and portfolio built for clarity, editorial elegance, and longevity.
 
 ---
 
-### Repository Structure
+### Core Structure
 
 ```
 ├── data/
-│   ├── builder-database.json   # The MASTER Single Source of Truth
-│   └── projects.json           # Master metadata for the 4 featured projects
+│   └── content.json      # Simple, single source of truth (profile, projects, articles, notes)
 ├── assets/
-│   └── images/                 # Real device photos, exhibits, and diagrams
-├── scripts/
-│   └── add_entry.py            # CLI helper to add, validate, and preserve entries
-├── index.html                  # Lightning-fast, self-contained web application
-└── README.md                   # System documentation & operating manual
+│   └── images/           # High-resolution project photography & diagrams
+├── index.html            # Ultra-clean, fast, dependency-free web portfolio
+└── README.md
 ```
 
 ---
 
-### Featured Projects
+### Pages & Sections
 
-1. **01 — CHEEKO:** AI consumer hardware companion (Product · AI · Hardware · UX · Manufacturing)
-2. **02 — INSOL:** Conversational AI language-learning product (AI · Voice · Product · Software)
-3. **03 — PARAM SCIENCE EXPERIENCE CENTRE:** Interactive physics & optics platforms (Engineering · Product · Interaction)
-4. **04 — ONSTRAYS & H.I SYSTEMS:** Reasoning-based debate framework & RAG knowledge systems (Software · UX · Systems)
+1. **HOME (`#/`)**
+   - Clean, confident hero introducing identity: **Gowrishankar · AI Product Builder**.
+   - **Cheeko** featured prominently as the flagship consumer AI hardware product.
+   - Secondary project cards: **Insol**, **Param Science Experience Centre**, and **Onstrays**.
+   - Curated preview of **Builder Notes** (cross-project connections & technical discoveries).
 
----
+2. **CHEEKO (`#/cheeko`)**
+   - Dedicated project page with hardware specs and overview.
+   - **What I Worked On**: Collection of grounded build notes / articles:
+     - *The mould didn't want to let go* (Manufacturing · Injection Molding)
+     - *Why the product needed a physical knob* (Product · Interaction)
+     - *Designing around a 320×240 screen* (AI Product · Interface)
+     - *Making voice AI work inside a physical product* (AI · Hardware)
+     - *Packaging became part of the product* (Packaging · Product)
+     - *From prototype to production* (Hardware · Manufacturing)
 
-### Daily Logging Workflow
+3. **ARTICLE READING VIEW (`#/cheeko/:id`)**
+   - Dedicated reading layout for each build note:
+     - What happened
+     - What I did / how I approached it
+     - Why the decision mattered
+     - Result
+     - What I learned
 
-Your daily workflow is completely frictionless:
+4. **BUILDER NOTES (`#/notes`)**
+   - For ideas, principles, and connections that move across projects:
+     - *"Projects are containers. Ideas can move between them."*
+     - E.g., software heartbeats influencing hardware charging LEDs, RAG semantic caching, and last-mile operations field immersion.
 
-```
-BUILD
-  ↓
-CAPTURE (Voice note, photo, rough text, vendor conversation, tooling note)
-  ↓
-SEND TO ANTIGRAVITY
-  ↓
-ANTIGRAVITY STRUCTURES IT (Problem-Solving Framework)
-  ↓
-AUTOMATED CONFIDENTIALITY CLASSIFICATION (PUBLIC / PORTFOLIO / PRIVATE)
-  ↓
-ARCHIVE TO BUILDER DATABASE
-  ↓
-DONE
-```
-
-#### Problem-Solving Entry Standard:
-- **Problem:** What happened?
-- **Context:** Why did it matter?
-- **Investigation:** What did I look into?
-- **People:** Who did I work with or learn from?
-- **Hypotheses:** What could be causing it?
-- **Experiment / Action:** What did we change or test?
-- **Result:** What happened?
-- **Principle:** What did I learn?
-- **Next Time:** What would I do differently?
-- **One-Line Takeaway:** High-signal takeaway suitable for LinkedIn or portfolio callouts.
+5. **ABOUT (`#/about`)**
+   - Concise statement communicating comfortable movement into unfamiliar territory, cross-disciplinary fluency, and first-principles execution.
 
 ---
 
-### Confidentiality Guardrails
+### Adding New Content
 
-Entries marked **PRIVATE** or containing sensitive details (BOM costs, vendor names, proprietary prompts, unreleased roadmaps) are protected and filtered out from the public view by default.
+To add a new build note or cross-project note, simply append an entry to `cheeko_articles` or `builder_notes` inside `data/content.json`:
+
+```json
+{
+  "id": "slug-name",
+  "title": "Clear, specific title",
+  "category": "Discipline · Focus Area",
+  "date": "Month Year",
+  "image": "assets/images/filename.jpg",
+  "image_caption": "Optional caption",
+  "what_happened": "...",
+  "what_i_did": "...",
+  "why_it_mattered": "...",
+  "result": "...",
+  "what_i_learned": "..."
+}
+```
