@@ -324,6 +324,60 @@
       "why_it_mattered": "Once steel is cut, modifying button travel distance costs weeks of downtime and substantial rework expenses. Catching misalignment early protects both budget and timeline.",
       "result": "The first molded trial parts produced a crisp, reliable tactile click on the first shot. Firmware debounce matched physical mechanics with zero tooling rework.",
       "what_i_learned": "Small part. Surprisingly large conversation. Cross-functional leadership is about catching misalignment before it gets hardened into steel."
+    },
+    {
+      "id": "pre-boxing-qa-system",
+      "title": "Pre-Boxing QA & Knowledge Transfer System",
+      "category": "Operations \u00b7 QA & Systems",
+      "date": "March 2026",
+      "image": "assets/images/device_bare.png",
+      "image_caption": "Final hardware validation sequence before packaging handoff.",
+      "status": "Process initiated \u2014 implementation / checklist documentation in progress",
+      "what_happened": "During device preparation, the final testing sequence depended on individual team members knowing the correct firmware state and validation steps. A device could move through firmware flashing, onboarding, SD-card content, card playback, and packaging without a standardized, documented handoff between team members. This created a real risk of units entering packaging without consistent validation.",
+      "what_i_did": "I identified this ownership and knowledge gap during device preparation and proposed converting the informal testing routine into a standardized, repeatable Pre-Boxing QA + KT workflow so any trained team member can independently perform the exact same validation before a device enters the box.",
+      "why_it_mattered": "Hardware quality assurance cannot rely on one person's memory. The goal was moving from tribal knowledge (person knows the process \u2192 person tests \u2192 device gets packed) to systemic reliability (checklist \u2192 any trained team member \u2192 QA sign-off \u2192 device gets packed).",
+      "result": "Structured the 11-step validation workflow, established the core checklist criteria across boot, onboarding, and card playback, and initiated the cross-training documentation process.",
+      "what_i_learned": "A hardware process is only as reliable as its handoff. If testing depends on who is standing in the room, it's not a production process yet.",
+      "contribution": "I identified a knowledge/ownership gap during device validation and proposed converting the informal testing process into a standardized, repeatable pre-boxing QA workflow.",
+      "before_after": {
+        "before": "Person knows the process \u2192 Person tests \u2192 Device gets packed",
+        "after": "Checklist \u2192 Any trained team member \u2192 QA sign-off \u2192 Device gets packed"
+      },
+      "workflow": [
+        "DEVICE RECEIVED",
+        "FIRMWARE CHECK",
+        "RELOAD / FLASH",
+        "BOOT TEST",
+        "ONBOARDING TEST",
+        "SD-CARD CONTENT CHECK",
+        "CARD PLAYBACK TEST",
+        "AUDIO / DISPLAY CHECK",
+        "FINAL DEVICE STATE",
+        "QC SIGN-OFF",
+        "PACKAGING"
+      ],
+      "system_points": [
+        {
+          "title": "1. Pre-boxing checklist",
+          "desc": "A repeatable sequence of checks before packaging."
+        },
+        {
+          "title": "2. Knowledge Transfer (KT)",
+          "desc": "A documented walkthrough so multiple team members understand the complete procedure."
+        },
+        {
+          "title": "3. Ownership & handoff",
+          "desc": "Each device gets a clear validation owner rather than relying on one person's memory."
+        },
+        {
+          "title": "4. Cross-training",
+          "desc": "The process can be performed by another team member when the primary person is unavailable."
+        },
+        {
+          "title": "5. Failure documentation",
+          "desc": "Issues discovered during testing can be recorded and traced back to the relevant stage."
+        }
+      ]
     }
   ],
   "builder_notes": [

@@ -1293,6 +1293,60 @@
       "why_it_mattered": "Once steel is cut, modifying button travel distance costs weeks of downtime and substantial rework expenses. Catching misalignment early protects both budget and timeline.",
       "result": "The first molded trial parts produced a crisp, reliable tactile click on the first shot. Firmware debounce matched physical mechanics with zero tooling rework.",
       "what_i_learned": "Small part. Surprisingly large conversation. Cross-functional leadership is about catching misalignment before it gets hardened into steel."
+    },
+    {
+      "id": "pre-boxing-qa-system",
+      "title": "Pre-Boxing QA & Knowledge Transfer System",
+      "category": "Operations \u00b7 QA & Systems",
+      "date": "March 2026",
+      "image": "assets/images/device_bare.png",
+      "image_caption": "Final hardware validation sequence before packaging handoff.",
+      "status": "Process initiated \u2014 implementation / checklist documentation in progress",
+      "what_happened": "During device preparation, the final testing sequence depended on individual team members knowing the correct firmware state and validation steps. A device could move through firmware flashing, onboarding, SD-card content, card playback, and packaging without a standardized, documented handoff between team members. This created a real risk of units entering packaging without consistent validation.",
+      "what_i_did": "I identified this ownership and knowledge gap during device preparation and proposed converting the informal testing routine into a standardized, repeatable Pre-Boxing QA + KT workflow so any trained team member can independently perform the exact same validation before a device enters the box.",
+      "why_it_mattered": "Hardware quality assurance cannot rely on one person's memory. The goal was moving from tribal knowledge (person knows the process \u2192 person tests \u2192 device gets packed) to systemic reliability (checklist \u2192 any trained team member \u2192 QA sign-off \u2192 device gets packed).",
+      "result": "Structured the 11-step validation workflow, established the core checklist criteria across boot, onboarding, and card playback, and initiated the cross-training documentation process.",
+      "what_i_learned": "A hardware process is only as reliable as its handoff. If testing depends on who is standing in the room, it's not a production process yet.",
+      "contribution": "I identified a knowledge/ownership gap during device validation and proposed converting the informal testing process into a standardized, repeatable pre-boxing QA workflow.",
+      "before_after": {
+        "before": "Person knows the process \u2192 Person tests \u2192 Device gets packed",
+        "after": "Checklist \u2192 Any trained team member \u2192 QA sign-off \u2192 Device gets packed"
+      },
+      "workflow": [
+        "DEVICE RECEIVED",
+        "FIRMWARE CHECK",
+        "RELOAD / FLASH",
+        "BOOT TEST",
+        "ONBOARDING TEST",
+        "SD-CARD CONTENT CHECK",
+        "CARD PLAYBACK TEST",
+        "AUDIO / DISPLAY CHECK",
+        "FINAL DEVICE STATE",
+        "QC SIGN-OFF",
+        "PACKAGING"
+      ],
+      "system_points": [
+        {
+          "title": "1. Pre-boxing checklist",
+          "desc": "A repeatable sequence of checks before packaging."
+        },
+        {
+          "title": "2. Knowledge Transfer (KT)",
+          "desc": "A documented walkthrough so multiple team members understand the complete procedure."
+        },
+        {
+          "title": "3. Ownership & handoff",
+          "desc": "Each device gets a clear validation owner rather than relying on one person's memory."
+        },
+        {
+          "title": "4. Cross-training",
+          "desc": "The process can be performed by another team member when the primary person is unavailable."
+        },
+        {
+          "title": "5. Failure documentation",
+          "desc": "Issues discovered during testing can be recorded and traced back to the relevant stage."
+        }
+      ]
     }
   ],
   "builder_notes": [
@@ -1903,28 +1957,80 @@
           <div class="reading-meta-tag">${art.category} · ${art.date}</div>
           <h1 class="reading-h1">${art.title}</h1>
 
+          ${art.status ? `
+            <div style="display: inline-block; padding: 4px 10px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 4px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: 20px;">
+              <strong>Status:</strong> <em>${art.status}</em>
+            </div>
+          ` : ''}
+
           <div class="reading-visual-box">
             <img src="${art.image}" alt="${art.title}">
             ${art.image_caption ? `<div class="reading-caption">${art.image_caption}</div>` : ''}
           </div>
 
+          ${art.before_after ? `
+            <div class="before-after-box" style="margin: 28px 0 36px; padding: 20px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px;">
+              <div style="font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 14px;">Process Evolution: Before vs After</div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+                <div style="padding: 14px; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 6px;">
+                  <span style="font-size: 11px; font-weight: 600; color: #e11d48; text-transform: uppercase; letter-spacing: 0.04em;">Before</span>
+                  <p style="font-size: 13px; font-family: var(--font-mono); margin-top: 8px; line-height: 1.5; color: var(--text-secondary);">${art.before_after.before}</p>
+                </div>
+                <div style="padding: 14px; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 6px;">
+                  <span style="font-size: 11px; font-weight: 600; color: #10b981; text-transform: uppercase; letter-spacing: 0.04em;">After (Proposed)</span>
+                  <p style="font-size: 13px; font-family: var(--font-mono); margin-top: 8px; line-height: 1.5; color: var(--text-secondary);">${art.before_after.after}</p>
+                </div>
+              </div>
+            </div>
+          ` : ''}
+
           ${art.what_happened ? `
             <div class="reading-block">
-              <div class="reading-block-label">What Happened</div>
+              <div class="reading-block-label">Problem & Observation</div>
               <p class="reading-block-text">${art.what_happened}</p>
             </div>
           ` : ''}
 
           ${art.what_i_did ? `
             <div class="reading-block">
-              <div class="reading-block-label">What I Did</div>
+              <div class="reading-block-label">What I Initiated</div>
               <p class="reading-block-text">${art.what_i_did}</p>
+            </div>
+          ` : ''}
+
+          ${art.workflow ? `
+            <div class="reading-block">
+              <div class="reading-block-label">Proposed Validation Flow</div>
+              <div style="background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 16px; font-family: var(--font-mono); font-size: 12px; line-height: 1.6; text-align: center; overflow-x: auto;">
+                ${art.workflow.map((step, idx) => `
+                  <div style="display: inline-block; padding: 6px 14px; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 4px; font-weight: 500; color: var(--text-primary); margin: 2px 0;">${step}</div>
+                  ${idx < art.workflow.length - 1 ? '<div style="color: var(--text-muted); font-size: 13px; margin: 4px 0;">↓</div>' : ''}
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          ${art.system_points ? `
+            <div class="reading-block">
+              <div class="reading-block-label">The Proposed System</div>
+              <ul style="padding-left: 20px; line-height: 1.8; font-size: 15px; color: var(--text-primary);">
+                ${art.system_points.map(pt => `
+                  <li style="margin-bottom: 8px;"><strong>${pt.title}:</strong> ${pt.desc}</li>
+                `).join('')}
+              </ul>
+            </div>
+          ` : ''}
+
+          ${art.contribution ? `
+            <div class="reading-block" style="background: var(--bg-surface); border-left: 3px solid var(--accent); padding: 16px 20px; border-radius: 0 6px 6px 0; margin: 28px 0;">
+              <div class="reading-block-label" style="margin-bottom: 6px;">My Contribution</div>
+              <p class="reading-block-text" style="font-weight: 500; color: var(--text-primary); margin: 0; font-size: 15px;">${art.contribution}</p>
             </div>
           ` : ''}
 
           ${art.why_it_mattered ? `
             <div class="reading-block">
-              <div class="reading-block-label">Why</div>
+              <div class="reading-block-label">Why It Matters</div>
               <p class="reading-block-text">${art.why_it_mattered}</p>
             </div>
           ` : ''}
